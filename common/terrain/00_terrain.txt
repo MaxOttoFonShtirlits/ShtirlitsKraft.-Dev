@@ -3,6 +3,7 @@
 ### Better Mechanics: Width & Terrain
 ### Combat widths inspired by HOI4 1.11, reworked with historical + gameplay rationale
 ### Modifiers inspired by Darkest Hour and Black ICE, with original spin
+### Rebalanced attrition pass: keeps terrain harsh without stockpile vaporization
 ##################################################################
 
 
@@ -45,7 +46,7 @@ categories = {
 	desert = {
 		color = { 255 127 0 }
 		movement_cost = 1.1
-		attrition = 0.25
+		attrition = 0.08
 		combat_width = 86
 		combat_support_width = 43
 		ai_terrain_importance_factor = 8.0
@@ -61,169 +62,189 @@ categories = {
 			defence = -0.10
 		}
 
-		sickness_chance = 1.0
+		sickness_chance = 0.30
 		
-		supply_flow_penalty_factor = 0.24
+		supply_flow_penalty_factor = 0.14
 		
-		truck_attrition_factor = 1.0
+		truck_attrition_factor = 0.45
 	}
 
 	forest = {
-		color = { 89 199 85 }
-		movement_cost = 1.8
-		combat_width = 82
-		combat_support_width = 41
-		ai_terrain_importance_factor = 5.0
-		match_value = 5
-		sound_type = forest
-		buildings_max_level = {
-			bunker = 4
-			coastal_bunker = 6
-		}
+    color = { 89 199 85 }
+    movement_cost = 1.8
+    combat_width = 82
+    combat_support_width = 41
+    ai_terrain_importance_factor = 5.0
+    match_value = 5
+    sound_type = forest
+    buildings_max_level = {
+        bunker = 4
+        coastal_bunker = 6
+    }
 
-		units = {
-			attack = -0.30
-			defence = 0.15
-		}
+    units = {
+        attack = -0.30
+        defence = 0.15
+    }
 
-		enemy_army_bonus_air_superiority_factor = -0.25
-		
-		supply_flow_penalty_factor = 0.10
-		
-		truck_attrition_factor = 0.2
-	}
+    enemy_army_bonus_air_superiority_factor = -0.45
+    ground_attack_factor = -0.35
+
+    dig_in_speed_factor = 0.15
+    land_bunker_effectiveness_factor = 0.05
+
+    supply_flow_penalty_factor = 0.08
+    truck_attrition_factor = 0.15
+    }
 
 	hills = {
-		color = { 248 255 153 }
-		movement_cost = 1.6
-		combat_width = 76
-		combat_support_width = 38
-		ai_terrain_importance_factor = 3.0
-		match_value = 2
-		sound_type = desert
-		buildings_max_level = {
-			bunker = 5
-			coastal_bunker = 6
-		}
+    color = { 248 255 153 }
+    movement_cost = 1.6             # движение медленнее из-за перепадов высот
+    combat_width = 76
+    combat_support_width = 38
+    ai_terrain_importance_factor = 3.0
+    match_value = 2
+    sound_type = desert
+    buildings_max_level = {
+        bunker = 5
+        coastal_bunker = 6
+    }
 
-		units = {
-			attack = -0.40
-			defence = 0.20
-		}
+    units = {
+        attack = -0.40              # «вверх по склону» — всегда тяжелее
+        defence = 0.20              # умеренный бонус: рельеф даёт укрытия
+    }
 
-		enemy_army_bonus_air_superiority_factor = -0.20
-		
-		supply_flow_penalty_factor = 0.12
-		
-		truck_attrition_factor = 0.2
-	}
+    enemy_army_bonus_air_superiority_factor = -0.30   # превосходство в воздухе не столь подавляюще
+    ground_attack_factor = -0.15                       # урон снижен из-за рельефа, но не критично
+
+    dig_in_speed_factor = 0.25                          # окапывание затруднено каменистым грунтом
+    land_bunker_effectiveness_factor = 0.05             # лёгкий бонус: холмы маскируют укрепления
+
+    supply_flow_penalty_factor = 0.10                   # снабжение затруднено перепадами высот
+    truck_attrition_factor = 0.20                       # износ техники из-за нагрузки на двигатель
+    }
 	
 	mountain = {
-		color = { 157 192 208 }
-		movement_cost = 2.5
-		attrition = 0.45
-		combat_width = 60
-		combat_support_width = 30
-		ai_terrain_importance_factor = 10.0
-		match_value = 10
-		sound_type = desert
-		buildings_max_level = {
-			bunker = 4
-			coastal_bunker = 6
-		}
+    color = { 157 192 208 }
+    movement_cost = 2.5             # движение в горах — самое медленное
+    attrition = 0.14                # истощение от холода и рельефа
+    combat_width = 60
+    combat_support_width = 30
+    ai_terrain_importance_factor = 10.0
+    match_value = 10
+    sound_type = desert
+    buildings_max_level = {
+        bunker = 4
+        coastal_bunker = 6
+    }
 
-		units = {
-			attack = -0.65
-			defence = 0.25
-		}
+    units = {
+        attack = -0.65              # «вверх по склону» — колоссальное преимущество обороняющихся
+        defence = 0.25              # горы дают сильный бонус к защите
+    }
 
-		enemy_army_bonus_air_superiority_factor = -0.40
-		
-		supply_flow_penalty_factor = 0.35
-		
-		truck_attrition_factor = 1.0
-	}
+    enemy_army_bonus_air_superiority_factor = -0.65   # превосходство в воздухе сильно ограничено
+    ground_attack_factor = -0.50                       # урон снижен из-за рельефа и маскировки
+
+    dig_in_speed_factor = 0.30                         # окапывание затруднено, но есть природные укрытия
+    land_bunker_effectiveness_factor = 0.15            # укрепления в горах значительно усилены
+
+    supply_flow_penalty_factor = 0.22                  # снабжение в горах — кошмар
+    truck_attrition_factor = 0.60                      # износ техники колоссальный
+    }
 	
 	urban = {
-		color = { 120 120 120 }
-		movement_cost = 1.2
-		ai_terrain_importance_factor = 4.0
-		combat_width = 96
-		combat_support_width = 32
-		match_value = 4
-		sound_type = plains
-		buildings_max_level = {
-			bunker = 5
-			coastal_bunker = 6
-		}
+    color = { 120 120 120 }
+    movement_cost = 1.4          # Продвижение в городе в 2-3 раза медленнее, чем на равнине
+    ai_terrain_importance_factor = 4.0
+    combat_width = 96            # Больше войск может вести бой за счёт укрытий
+    combat_support_width = 32
+    match_value = 4
+    sound_type = plains
+    buildings_max_level = {
+        bunker = 5
+        coastal_bunker = 6
+    }
 
-		units = {
-			attack = -0.55
-			defence = 0.30
-		}
+    units = {
+        attack = -0.65           # Атака серьёзно затруднена, но не парализована
+        defence = 0.40           # Существенный бонус к защите: здания как готовые укрытия
+    }
 
-		enemy_army_bonus_air_superiority_factor = -0.50
+    # Авиация в городе сохраняет лишь ~15% эффективности
+    enemy_army_bonus_air_superiority_factor = -0.85
+    ground_attack_factor = -0.85
 
-		dig_in_speed_factor = 0.50
-		
-		supply_flow_penalty_factor = -0.15
-	}
+    # Мгновенное окапывание: подвалы, тоннели, руины — уже готовые позиции
+    dig_in_speed_factor = 1.0
+
+    # Небольшой штраф к снабжению: разрушенные дороги, но есть подземные коммуникации
+    supply_flow_penalty_factor = 0.1
+
+    # Ключевой нестандартный модификатор: городская застройка кратно усиливает любые укрепления
+    land_bunker_effectiveness_factor = 0.1
+    }
 	
 	jungle = {
-		color = { 127 191 0 }
-		movement_cost = 2.5
-		attrition = 0.40
-		combat_width = 70
-		combat_support_width = 35
-		ai_terrain_importance_factor = 6.0
-		match_value = 6
-		sound_type = forest
-		buildings_max_level = {
-			bunker = 3
-			coastal_bunker = 6
-		}
+    color = { 127 191 0 }
+    movement_cost = 2.5             # движение в джунглях — самое медленное
+    attrition = 0.12                # истощение от влажности и болезней
+    combat_width = 70
+    combat_support_width = 35
+    ai_terrain_importance_factor = 6.0
+    match_value = 6
+    sound_type = forest
+    buildings_max_level = {
+        bunker = 3
+        coastal_bunker = 6
+    }
 
-		units = {
-			attack = -0.50
-			defence = 0.15
-		}
+    units = {
+        attack = -0.50              # атака в джунглях — кошмар для наступающих
+        defence = 0.15              # умеренный бонус к защите за счёт маскировки
+    }
 
-		enemy_army_bonus_air_superiority_factor = -0.35
-		
-		sickness_chance = 1.2
-		
-		supply_flow_penalty_factor = 0.40
-		
-		truck_attrition_factor = 3.5
-	}	
+    enemy_army_bonus_air_superiority_factor = -0.85   # превосходство в воздухе практически бесполезно
+    ground_attack_factor = -0.80                       # урон снижен до минимума
+
+    dig_in_speed_factor = 0.20                         # окапывание затруднено, но есть природные укрытия
+    land_bunker_effectiveness_factor = 0.10            # бункеры в джунглях практически невидимы
+
+    sickness_chance = 0.80                             # высокая вероятность заболеваний
+    supply_flow_penalty_factor = 0.20                  # снабжение в джунглях — одна из самых сложных задач
+    truck_attrition_factor = 0.60                      # износ техники колоссальный
+    }
 	
 	marsh = {
-		color = { 76 96 35 }
-		movement_cost = 2.2
-		attrition = 0.50
-		combat_width = 66
-		combat_support_width = 33
-		ai_terrain_importance_factor = 8.0
-		match_value = 8
-		sound_type = forest
-		buildings_max_level = {
-			bunker = 3
-			coastal_bunker = 6
-		}
+    color = { 76 96 35 }
+    movement_cost = 2.2             # движение на болотах — одно из самых медленных
+    attrition = 0.10                # истощение от влажности и болезней
+    combat_width = 66
+    combat_support_width = 33
+    ai_terrain_importance_factor = 8.0
+    match_value = 8
+    sound_type = forest
+    buildings_max_level = {
+        bunker = 3
+        coastal_bunker = 6
+    }
 
-		units = {
-			attack = -0.50
-			defence = 0.10
-		}
+    units = {
+        attack = -0.50              # атака на болотах — кошмар для наступающих
+        defence = 0.10              # умеренный бонус к защите за счёт маскировки
+    }
 
-		enemy_army_bonus_air_superiority_factor = -0.20
-		
-		sickness_chance = 1.1
-		
-		supply_flow_penalty_factor = 0.45
-		
-		truck_attrition_factor = 4.5
-	}
+    # Авиация ограничена, но не слепа, как в джунглях
+    enemy_army_bonus_air_superiority_factor = -0.20
+
+    dig_in_speed_factor = 0.25      # окапывание затруднено трясиной
+    land_bunker_effectiveness_factor = 0.05 # небольшой бонус, маскировка на местности
+
+    sickness_chance = 0.70          # высокая вероятность заболеваний
+    supply_flow_penalty_factor = 0.22
+    truck_attrition_factor = 0.70
+    }
 	
 	water_fjords = {
 		naval_terrain = yes

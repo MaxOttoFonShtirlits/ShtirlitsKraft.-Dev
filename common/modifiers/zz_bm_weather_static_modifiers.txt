@@ -25,6 +25,7 @@ weather_rain_light = { # on Region
 	# Land
 	local_org_regain                       = -0.05
 	org_loss_when_moving                   =  0.05   # vanilla — small but present
+	supply_factor = -0.1
 }
 
 weather_rain_heavy = { # on Region
@@ -32,7 +33,7 @@ weather_rain_heavy = { # on Region
 	air_accidents                          =  0.3
 	air_bombing_targetting                 = -0.5
 	air_detection                          = -0.2
-	air_mission_efficiency                 = -0.3
+	air_mission_efficiency                 = -0.7
 	ground_attack_factor                   = -0.5
 	enemy_army_bonus_air_superiority_factor = -0.4
 
@@ -48,14 +49,14 @@ weather_rain_heavy = { # on Region
 	# Land / Supply
 	local_org_regain                       = -0.2
 	org_loss_when_moving                   =  0.1    # vanilla
-	supply_factor                          = -0.05
+	supply_factor                          = -0.15
 }
 
 weather_snow = { # on Region
 	# Air
 	air_accidents                          =  0.1
 	air_detection                          = -0.15
-	air_mission_efficiency                 = -0.2
+	air_mission_efficiency                 = -0.6
 	ground_attack_factor                   = -0.3
 	enemy_army_bonus_air_superiority_factor = -0.3
 
@@ -71,18 +72,18 @@ weather_snow = { # on Region
 	local_org_regain                       = -0.05
 	army_speed_factor                      = -0.1
 	supply_factor                          = -0.10   # back to vanilla — snow on supply lines matters
-	truck_attrition_factor                 =  0.3
+	truck_attrition_factor                 =  0.5
 	local_supplies                         = -0.05
 }
 
 weather_blizzard = { # on Region
 	# Air
-	air_accidents                          =  0.3
+	air_accidents                          =  0.5
 	air_bombing_targetting                 = -0.7
 	air_detection                          = -0.3
-	air_mission_efficiency                 = -0.5
+	air_mission_efficiency                 = -0.8
 	ground_attack_factor                   = -0.75
-	enemy_army_bonus_air_superiority_factor = -0.6
+	enemy_army_bonus_air_superiority_factor = -0.9
 
 	# Naval
 	carrier_traffic                        = -1.0
@@ -99,35 +100,35 @@ weather_blizzard = { # on Region
 	army_speed_factor                      = -0.3
 	supply_consumption_factor              =  0.1
 	supply_factor                          = -0.25   # vanilla was right here, BICE too lenient
-	truck_attrition_factor                 =  1.0
+	truck_attrition_factor                 =  1.5
 	local_supplies                         = -0.35
 }
 
 weather_sandstorm = { # on Region
 	# Air — nearly blind
-	air_accidents                          =  0.6
+	air_accidents                          =  0.8
 	air_bombing_targetting                 = -1.0
 	air_detection                          = -0.9
-	air_mission_efficiency                 = -0.5
+	air_mission_efficiency                 = -0.7
 	ground_attack_factor                   = -0.75
-	enemy_army_bonus_air_superiority_factor = -0.6
+	enemy_army_bonus_air_superiority_factor = -0.9
 
 	# Naval — sandstorms are continental, BICE correctly drops naval_strike
 	# (no naval_strike here)
 
 	# Land / Supply
 	local_org_regain                       = -0.5
-	org_loss_when_moving                   =  0.25   # vanilla
-	army_speed_factor                      = -0.3
-	supply_factor                          = -0.1
+	org_loss_when_moving                   =  0.3   # vanilla
+	army_speed_factor                      = -0.4
+	supply_factor                          = -0.2
 	truck_attrition_factor                 =  3.0    # vanilla correct — sand destroys engines and filters
 	local_supplies                         = -0.2
 }
 
 weather_arctic_water = { # on Region — BICE values
-	naval_attrition                        =  0.1
+	naval_attrition                        =  0.25
 	naval_retreat_speed                    = -0.05
-	navy_casualty_on_sink                  =  0.2
+	navy_casualty_on_sink                  =  0.4
 	positioning                            = -0.2
 }
 
@@ -138,13 +139,13 @@ weather_arctic_water = { # on Region — BICE values
 weather_mud = { # on Province
 	# Land
 	army_attack_factor                     = -0.4
-	army_speed_factor                      = -0.6
+	army_speed_factor                      = -0.9
 	org_loss_when_moving                   =  0.25   # vanilla
 	attrition                              =  0.7    # vanilla/DH — mud causes real casualties
 
 	# Supply
-	supply_factor                          = -0.15
-	truck_attrition_factor                 =  2.0    # BICE — 5.0 vanilla too extreme
+	supply_factor                          = -0.4
+	truck_attrition_factor                 =  3.0    # BICE — 5.0 vanilla too extreme
 	local_supplies                         = -0.5
 }
 
