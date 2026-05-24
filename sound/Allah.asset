@@ -4,16 +4,6 @@ sound = {
 	always_load = no
 }
 sound = {
-	name = "Navalny"
-	file = "effects/Дворец для Путина. История самой большой взятки.wav"
-	always_load = no
-}
-sound = {
-	name = "Strateg"
-	file = "effects/Как именно функционирует машина предательства.wav"
-	always_load = no
-}
-sound = {
 	name = "ChiangBack"
 	file = "effects/unify_china_nationalist.wav"
 	always_load = no

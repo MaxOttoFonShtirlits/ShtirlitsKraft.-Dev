@@ -4,16 +4,6 @@ soundeffect = {
 	volume = 5.00
 }
 soundeffect = {
-	name = "Navalny"
-	sounds = { sound = Navalny }
-	volume = 5.00
-}
-soundeffect = {
-	name = "Strateg"
-	sounds = { sound = Strateg }
-	volume = 5.00
-}
-soundeffect = {
 	name = "ChiangBack"
 	sounds = { sound = ChiangBack }
 	volume = 5.00
