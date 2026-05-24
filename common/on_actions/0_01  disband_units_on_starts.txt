@@ -1,0 +1,452 @@
+on_actions = { 
+	on_startup = {
+    effect = {
+        GER = {
+            delete_units = { division_template = "Infanterie-Division" disband = yes }
+            delete_units = { division_template = "Panzer-Division" disband = yes }
+            delete_units = { division_template = "Infanterie-Division (mot.)" disband = yes }
+            delete_units = { division_template = "Gebirgs-Brigade" disband = yes }
+            delete_units = { division_template = "Kavallerie-Brigade" disband = yes }			
+            load_oob = 50_w
+            add_manpower = -26400				
+            64 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = GER count = 1 }}
+        }
+
+        AST = {
+            delete_units = { division_template = "Infantry Division" disband = yes }
+            delete_units = { division_template = "Cavalry Division" disband = yes }
+            delete_units = { division_template = "Armoured Division" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            285 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = AST count = 1 }}
+        }
+
+
+        ITA = {
+#            delete_units = { division_template = "Divisione di Fanteria" disband = yes }
+#            delete_units = { division_template = "Divisione Alpina" disband = yes }
+#            delete_units = { division_template = "Divisione Coloniale" disband = yes }
+#            delete_units = { division_template = "Divisione Celere" disband = yes }
+#            delete_units = { division_template = "Reggimento di Cavalleria" disband = yes }
+#            delete_units = { division_template = "Camicie Nere" disband = yes }
+            delete_units = { division_template = "Banda Indigena Irregolare" disband = yes }
+            delete_units = { division_template = "Truppe Irregolari a Cavallo" disband = yes }
+            delete_units = { division_template = "Banda Irregolare Libica" disband = yes }
+            delete_units = { division_template = "Banda Irregolare Somala" disband = yes }
+            delete_units = { division_template = "Banda Irregolare Eritrea" disband = yes }
+            delete_units = { division_template = "Divisione Ascari Libica" disband = yes }
+            delete_units = { division_template = "Divisione Ascari Eritrea" disband = yes }
+            delete_units = { division_template = "Divisione Ascari Somala" disband = yes }
+        }
+
+        CAN = {
+            delete_units = { division_template = "District Militia" disband = yes }
+            delete_units = { division_template = "Cavalry Militia" disband = yes }
+            delete_units = { division_template = "Armored-Division" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            276 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = CAN count = 1 }}
+        }
+
+        ENG = {
+            delete_units = { division_template = "Motorised Division" disband = yes }
+            delete_units = { division_template = "Infantry Division" disband = yes }
+            delete_units = { division_template = "Cavalry Brigade" disband = yes }
+            delete_units = { division_template = "Tank Brigade" disband = yes }
+            delete_units = { division_template = "Colonial Garrison" disband = yes }
+            delete_units = { division_template = "Armoured Car Company" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            126 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = ENG count = 1 }}
+        }
+
+        FRA = {
+#            if = {limit = {FRA = {is_ai = no}}
+                delete_units = { division_template = "Division d'Infanterie" disband = yes }
+                delete_units = { division_template = "Division Coloniale" disband = yes }
+                delete_units = { division_template = "Division d'Infanterie Motorisée" disband = yes }
+                delete_units = { division_template = "Division d'Infanterie Alpine" disband = yes }
+                delete_units = { division_template = "Division de Cavalerie" disband = yes }
+                delete_units = { division_template = "Division Légère Mécanique" disband = yes }
+                delete_units = { division_template = "Brigade de Chars de Combat" disband = yes }
+                delete_units = { division_template = "Brigade Coloniale" disband = yes }
+                load_oob = 50_w
+                add_manpower = -26400
+                16 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = FRA count = 1 }}
+#            }
+        }
+
+        HUN = {
+            delete_units = { division_template = "Gyalogdandár" disband = yes }
+            delete_units = { division_template = "Huszár Dandár" disband = yes }
+            delete_units = { division_template = "Lovassági Társaság" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            43 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = HUN count = 1 }}
+        }
+
+        JAP = {
+            delete_units = { division_template = "Hohei Shidan" disband = yes }
+            delete_units = { division_template = "Dokuritsu Konsei Ryodan" disband = yes }
+            delete_units = { division_template = "Ginrinbutai" disband = yes }
+            delete_units = { division_template = "Jidousha Shidan" disband = yes }
+            delete_units = { division_template = "Chuton-chi Shidan" disband = yes }
+            delete_units = { division_template = "Kihei Shidan" disband = yes }
+#            delete_units = { division_template = "Rikusentai" disband = yes }
+        }
+
+        MAN = {
+            delete_units = { division_template = "Bubing Shi" disband = yes }
+            delete_units = { division_template = "Qu Jun" disband = yes }
+            delete_units = { division_template = "Qibing Shi" disband = yes }
+            delete_units = { division_template = "Huncheng Lu" disband = yes }
+            load_oob = 16_w
+            add_manpower = -9400
+            328 = { create_unit = { division = "name = \"Infantry\" division_template = \"16 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = MAN count = 1 }}
+        }
+
+        NZL = {
+            delete_units = { division_template = "District Force" disband = yes }
+            delete_units = { division_template = "Armoured Division" disband = yes }
+            load_oob = 16_w
+            add_manpower = -9400
+            284 = { create_unit = { division = "name = \"Infantry\" division_template = \"16 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = NZL count = 1 }}
+        }
+
+        RAJ = {
+            delete_units = { division_template = "Infantry Division" disband = yes }
+            delete_units = { division_template = "District Garrison" disband = yes }
+            delete_units = { division_template = "Armored-Division" disband = yes }
+            delete_units = { division_template = "Rajput Regiment" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            439 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = RAJ count = 1 }}
+        }
+
+        ROM = {
+            delete_units = { division_template = "Divizia de Infanterie" disband = yes }
+            delete_units = { division_template = "Brigada de Munte" disband = yes }
+            delete_units = { division_template = "Brigada de Cavalerie" disband = yes }
+            delete_units = { division_template = "Regimentul de Blindate" disband = yes }					
+            load_oob = 50_w
+            add_manpower = -26400
+            46 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = ROM count = 1 }}
+        }
+
+        SAF = {
+            delete_units = { division_template = "District Force" disband = yes }
+            delete_units = { division_template = "District Brigade" disband = yes }
+            delete_units = { division_template = "Armored-Division" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            275 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = SAF count = 1 }}
+        }
+
+        SOV = {
+            delete_units = { division_template = "Strelkovaya Diviziya" disband = yes }
+            delete_units = { division_template = "Gornostrelkovaya Diviziya" disband = yes }
+            delete_units = { division_template = "Motostrelkovaya Diviziya" disband = yes }
+            delete_units = { division_template = "Kavaleriyskaya Diviziya" disband = yes }
+            delete_units = { division_template = "Mekhanizirovaniy Korpus" disband = yes }
+            delete_units = { division_template = "Vozdushno-Desantnaya Brigada" disband = yes }
+            delete_units = { division_template = "NKVD Pogranichnaya Diviziya" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            195 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = SOV count = 1 }}
+        }
+
+        USA = {
+            delete_units = { division_template = "Infantry Division" disband = yes }
+            delete_units = { division_template = "National Guard Division" disband = yes }
+            delete_units = { division_template = "Cavalry Division" disband = yes }
+            delete_units = { division_template = "Garrison Brigade" disband = yes }
+            delete_units = { division_template = "Marine Brigade" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            361 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = USA count = 1 }}
+        }
+
+        DEN = {
+            delete_units = { division_template = "Infanteri Division" disband = yes }
+            delete_units = { division_template = "Binær Division" disband = yes }
+            delete_units = { division_template = "Kavaleri Brigade" disband = yes }
+        }
+
+        LUX = {
+            delete_units = { division_template = "Public Force" disband = yes }
+        }
+
+        FIN = {
+            delete_units = { division_template = "Jalkaväkidivisioona" disband = yes }
+            delete_units = { division_template = "Erillinen Prikaati" disband = yes }
+            delete_units = { division_template = "Ratsuväkiprikaati" disband = yes }
+        }
+
+        SWE = {
+            delete_units = { division_template = "Arméfördelning" disband = yes }
+            delete_units = { division_template = "Kavalleribrigaden" disband = yes }
+            delete_units = { division_template = " Pansarregemente" disband = yes }
+            delete_units = { division_template = "Militärområde" disband = yes }
+        }
+
+        GRE = {
+            delete_units = { division_template = "Trigonikó Pezikoú" disband = yes }
+            delete_units = { division_template = "Tetrágono Pezikoú" disband = yes }
+            delete_units = { division_template = "Merarchía Ippikoú" disband = yes }
+        }
+
+        HOL = {
+            delete_units = { division_template = "Infanterie Divisie" disband = yes }
+            delete_units = { division_template = "Koloniaal Garnizoen" disband = yes }
+            delete_units = { division_template = "Mariniersdivisie" disband = yes }
+        }
+
+        BEL = {
+            delete_units = { division_template = "Division d'Infanterie" disband = yes }
+            delete_units = { division_template = "Division de Cavalerie" disband = yes }
+            delete_units = { division_template = "Cavalerie Motorisée" disband = yes }
+            delete_units = { division_template = "Division Coloniale" disband = yes }
+        }
+
+        NOR = {
+            delete_units = { division_template = "Infanteridivisjon" disband = yes }
+            delete_units = { division_template = "Binærdivisjon" disband = yes }
+            delete_units = { division_template = "Dragonregiment" disband = yes }
+        }
+
+        POL = {
+            delete_units = { division_template = "Dywizja Piechoty" disband = yes }
+            delete_units = { division_template = "Dywizja Piechoty Górskiej" disband = yes }
+            delete_units = { division_template = "Brygada Kawalerii" disband = yes }
+        }
+
+        SIA = {
+            delete_units = { division_template = "Infantry Division" disband = yes }
+            load_oob = 50_w
+            add_manpower = -26400
+            289 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = SIA count = 1 }}
+        }
+
+        YUG = {
+            delete_units = { division_template = "Pesadijska Divizija" disband = yes }
+            delete_units = { division_template = "Gorska Pesadija" disband = yes }
+            delete_units = { division_template = "Konjička Divizija" disband = yes }
+            delete_units = { division_template = "Tenkovski Bataljon" disband = yes }
+        }
+
+        MEN = {
+            delete_units = { division_template = "Juntuán" disband = yes }
+            delete_units = { division_template = "Qibing Jun" disband = yes }
+            delete_units = { division_template = "Morit Diviziin" disband = yes }
+        }
+
+        PER = {
+            delete_units = { division_template = "Infantry Division" disband = yes }
+            delete_units = { division_template = "Cavalry Division" disband = yes }
+            delete_units = { division_template = "Iranian Gendarmerie" disband = yes }
+            }
+
+        PHI = {
+            delete_units = { division_template = "Infantry Division" disband = yes }
+        }
+
+        ALB = {
+            delete_units = { division_template = "Këmbësori Pjesëtim" disband = yes }		
+        }
+
+        INS = {
+            delete_units = { division_template = "Infanterie Divisie" disband = yes }
+            delete_units = { division_template = "KNIL Koloniaal Garnizoen" disband = yes }
+            }
+
+        MON = {
+            delete_units = { division_template = "Morit Diviziin" disband = yes }		
+        }
+
+        TAN = {
+            delete_units = { division_template = "Strelkovaya Polk" disband = yes }
+        }
+
+        MAL = {
+            delete_units = { division_template = "Malaya Infantry Brigade" disband = yes }
+        }
+
+        BRM = {
+            delete_units = { division_template = "Foghorn Leghorn" disband = yes }
+        }
+
+        AUS = {
+            delete_units = { division_template = "Infanterie Division" disband = yes }
+            delete_units = { division_template = "Alpenjäger Division" disband = yes }
+            delete_units = { division_template = "Schnelle Division" disband = yes }
+        }
+
+        CZE = {
+            delete_units = { division_template = "Pěší divize" disband = yes }
+            delete_units = { division_template = "Horská divize" disband = yes }
+            delete_units = { division_template = "Jezdecká brigáda" disband = yes }
+            delete_units = { division_template = "Rychlá divize" disband = yes }
+        }
+
+        LAT = {
+            delete_units = { division_template = "Kajnieku Divizija" disband = yes }
+            delete_units = { division_template = "Artilerijas Pulks" disband = yes }
+            delete_units = { division_template = "Aizsargi" disband = yes }
+        }
+
+        LIT = {
+            delete_units = { division_template = "Pestininku Divizija" disband = yes }
+            delete_units = { division_template = "Artilerija Divizija" disband = yes }
+            delete_units = { division_template = "Valstybės Sienos Apsaugos Skyrius" disband = yes }
+        }
+
+        EST = {
+            delete_units = { division_template = "Jalaväediviisi" disband = yes }
+            delete_units = { division_template = "Ratsavägi" disband = yes }
+        }
+
+        COG = {
+            delete_units = { division_template = "Force Publique" disband = yes }
+#            delete_units = { division_template = "Troupes du Katanga" disband = yes }
+        }
+
+
+########### China Warlord disband units
+
+			PRC = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+			}
+
+
+			SHX = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+			}
+
+			HBC = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+			}
+
+			SND = {
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+			}
+
+			YUN = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+			}
+
+			GXC = {
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+			}
+
+			GDC = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+			}
+
+			SIK = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+			}
+
+			XIC = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+			}
+
+			XSM = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Juntuán Reformed" disband = yes }
+			}
+
+			KHM = {
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+			}
+
+			GSM = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Juntuán Reformed" disband = yes }
+			}
+
+			NXM = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }
+				delete_unit_template_and_units = { division_template = "Juntuán Reformed" disband = yes }
+			}
+
+			SIC = {
+				delete_unit_template_and_units = { division_template = "Juntuán" disband = yes }
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }
+			}
+
+########### give China Warlord army to China
+########### Step 1 = transfer army to CHI
+
+#			TIB = { transfer_units_fraction = { target = CHI size = 1 stockpile_ratio = 1 army_ratio = 1 navy_ratio = 1 air_ratio = 1 keep_unit_leaders_trigger = { always = no }}}
+#			XSM = { transfer_units_fraction = { target = CHI size = 1 stockpile_ratio = 1 army_ratio = 1 navy_ratio = 1 air_ratio = 1 keep_unit_leaders_trigger = { always = no }}}
+#			KHM = { transfer_units_fraction = { target = CHI size = 1 stockpile_ratio = 1 army_ratio = 1 navy_ratio = 1 air_ratio = 1 keep_unit_leaders_trigger = { always = no }}}
+#			GSM = { transfer_units_fraction = { target = CHI size = 1 stockpile_ratio = 1 army_ratio = 1 navy_ratio = 1 air_ratio = 1 keep_unit_leaders_trigger = { always = no }}}
+#			NXM = { transfer_units_fraction = { target = CHI size = 1 stockpile_ratio = 1 army_ratio = 1 navy_ratio = 1 air_ratio = 1 keep_unit_leaders_trigger = { always = no }}}
+#			SIC = { transfer_units_fraction = { target = CHI size = 1 stockpile_ratio = 1 army_ratio = 1 navy_ratio = 1 air_ratio = 1 keep_unit_leaders_trigger = { always = no }}}
+
+########### Step 2 = delete units and disband to CHI stockpile
+			
+			CHI = {	
+				delete_unit_template_and_units = { division_template = "Sanjiao Jun" disband = yes }				# delete template from Warlord	
+				delete_unit_template_and_units = { division_template = "Qibing Jun" disband = yes }				# delete template from Warlord
+				delete_units = { division_template = "Juntuán" disband = yes }	
+				delete_units = { division_template = "Juntuán Reformed" disband = yes }
+				613 = { create_unit = { division = "name = \"Infantry\" division_template = \"Juntuán Reformed\" start_experience_factor = 0.3 start_equipment_factor = 0.05 " owner = CHI count = 1 }}
+				613 = { create_unit = { division = "name = \"Infantry\" division_template = \"Juntuán\" start_experience_factor = 0.3 start_equipment_factor = 0.05 " owner = CHI count = 1 }}
+				add_manpower = -10300
+			}
+
+###########
+
+			
+			if = {
+				limit = { MEX = { is_ai = no }}					
+				MEX = {
+					delete_unit_template_and_units = { division_template = "División de Infanteria" disband = yes }
+					delete_unit_template_and_units = { division_template = "División de Caballería" disband = yes }
+					delete_unit_template_and_units = { division_template = "Brigada Agrarista" disband = yes }
+					load_oob = 50_w
+					add_manpower = -26400
+					277 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = MEX count = 1 }}
+				}
+			}
+
+			if = {
+				limit = { BRA = { is_ai = no }}
+				BRA = {
+					delete_unit_template_and_units = { division_template = "Divisão de Infantaria" disband = yes }
+					delete_unit_template_and_units = { division_template = "Divisão de Cavalaria" disband = yes }
+					load_oob = 50_w
+					add_manpower = -26400
+					500 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = BRA count = 1  }}
+				}
+			}
+
+			if = {
+				limit = { ARG = { is_ai = no }}
+				ARG = {
+					delete_unit_template_and_units = { division_template = "División de Infanteria" disband = yes }
+					delete_unit_template_and_units = { division_template = "División de Caballería" disband = yes }
+					delete_unit_template_and_units = { division_template = "Brigada Montaña" disband = yes }
+					load_oob = 50_w
+					add_manpower = -26400
+					278 = { create_unit = { division = "name = \"Infantry\" division_template = \"50 width Infantry\" start_experience_factor = 0.3 start_equipment_factor = 0.01 " owner = ARG count = 1  }}
+				}
+			}	
+		}
+	}
+}

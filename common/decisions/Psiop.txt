@@ -1,0 +1,75 @@
+usa_psiop = {
+    # Решение: надеть скин Штирлица
+    usa_MGE = {
+        icon = generic_formable_nations
+
+        available = {
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            HUN = {
+                scoped_sound_effect = "MGESILA"
+            }
+        }
+    }
+}
+ast_psiop = {
+    # Решение: надеть скин Штирлица
+    ast_Strateg = {
+        icon = generic_formable_nations
+
+        available = {
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            RAJ = {
+                scoped_sound_effect = "Strateg"
+            }
+        }
+    }
+    ast_Navalny ={
+        icon = generic_formable_nations
+
+        available = {
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            CAN = {
+                scoped_sound_effect = "Navalny"
+            }
+        }
+    }
+}

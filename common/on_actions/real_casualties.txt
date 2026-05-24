@@ -1,0 +1,53 @@
+on_actions = {
+    on_weekly = {
+        effect = {
+            if = {
+                limit = {
+                    check_variable = { casualties_k > casualties_calculated_deaths_k }
+                }
+                set_variable = { casualties_civs_to_be_removed_k = casualties_k }
+                subtract_from_variable = { casualties_civs_to_be_removed_k = casualties_calculated_deaths_k }
+
+                # Переводим в абсолютное число людей (1k = 1000)
+                set_variable = { casualties_civs_to_be_removed = casualties_civs_to_be_removed_k }
+                multiply_variable = { casualties_civs_to_be_removed = 1000 }
+
+                if = {
+                    limit = {
+                        check_variable = { max_manpower_k > 0 }
+                        check_variable = { casualties_civs_to_be_removed > 0 }
+                    }
+                    every_state = {
+                        limit = {
+                            is_core_of = ROOT
+                            is_controlled_by = ROOT
+                        }
+                        # Доля штата в общем населении (в тыс.)
+                        set_variable = { casualties_civs_percent_for_state = state_population_k }
+                        divide_variable = { casualties_civs_percent_for_state = ROOT.max_manpower_k }
+
+                        if = {
+                            limit = {
+                                check_variable = { casualties_civs_percent_for_state > 0 }
+                            }
+                            set_variable = { casualties_civs_to_be_removed_for_state = ROOT.casualties_civs_to_be_removed }
+                            multiply_variable = { casualties_civs_to_be_removed_for_state = casualties_civs_percent_for_state }
+                            round_variable = casualties_civs_to_be_removed_for_state
+                            multiply_variable = { casualties_civs_to_be_removed_for_state = -1 }
+                            add_manpower = casualties_civs_to_be_removed_for_state
+                        }
+                    }
+                }
+
+                add_to_variable = { casualties_calculated_deaths_k = casualties_civs_to_be_removed_k }
+            }
+
+            if = {
+                limit = {
+                    check_variable = { casualties_calculated_deaths_k > casualties_k }
+                }
+                set_variable = { casualties_calculated_deaths_k = casualties_k }
+            }
+        }
+    }
+}

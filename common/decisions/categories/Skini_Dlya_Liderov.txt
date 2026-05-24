@@ -1,0 +1,33 @@
+usa_leader_skins = {
+    icon = generic_propaganda
+
+    # Категория видна только США
+    visible = {
+        tag = JAP
+    }
+}
+
+ast_leader_skins = {
+    icon = generic_propaganda
+
+    # Категория видна только США
+    visible = {
+        tag = AST
+    }
+}
+ita_leader_skins = {
+    icon = generic_propaganda
+
+    # Категория видна только США
+    visible = {
+        tag = ITA
+    }
+}
+raj_leader_skins = {
+    icon = generic_propaganda
+
+    # Категория видна только США
+    visible = {
+        tag = RAJ
+    }
+}

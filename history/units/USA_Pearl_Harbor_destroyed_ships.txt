@@ -1,0 +1,210 @@
+instant_effect = {
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "USA"
+#			version_name = "Colorado Class"
+		}
+		name = "USS West Virginia" 
+		requested_factories = 10
+		progress = 0.2
+		amount = 1
+		industrial_manufacturer = mio:USA_brooklyn_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "USA"
+#			version_name = "Colorado Class"
+		}
+		name = "USS Maryland" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+		industrial_manufacturer = mio:USA_brooklyn_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "USA"
+#			version_name = "Pennsylvania Class"
+		}
+		name = "USS California" 
+		requested_factories = 10
+		progress = 0.3
+		amount = 1
+		industrial_manufacturer = mio:USA_brooklyn_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "USA"
+#			version_name = "Pennsylvania Class"
+		}
+		name = "USS Nevada" 
+		requested_factories = 10
+		progress = 0.3
+		amount = 1
+		industrial_manufacturer = mio:USA_brooklyn_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "USA"
+#			version_name = "Pennsylvania Class"
+		}
+		name = "USS Pennsylvania" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+		industrial_manufacturer = mio:USA_brooklyn_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "USA"
+#			version_name = "Pennsylvania Class"
+		}
+		name = "USS Tennessee" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+		industrial_manufacturer = mio:USA_brooklyn_naval_yard_organization
+	}
+   add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "New Orleans Class"
+		}
+		name = "USS New Orleans"
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+   add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "New Orleans Class"
+		}
+		name = "USS San Francisco"
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+   add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "Brooklyn Class"
+		}
+		name = "USS Honolulu" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+   add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "Brooklyn Class"
+		}
+		name = "USS St. Louis"
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "Brooklyn Class"
+		}
+		name = "USS Helena" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "Omaha Class"
+		}
+		name = "USS Raleigh" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "USA"
+#			version_name = "Omaha Class"
+		}
+		name = "USS Detroit"
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_1
+			creator = "USA"
+#			version_name = "Oglala Class"
+		}
+		name = "USS Oglala" 
+		requested_factories = 10
+		progress = 0.2
+		amount = 1
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "USA"
+#			version_name = "Sims Class"
+		}
+		name = "USS Helm" 
+		requested_factories = 10
+		progress = 0.5
+		amount = 1
+		industrial_manufacturer = mio:USA_norfolk_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "USA"
+#			version_name = "Farragut Class"
+		}
+		name = "USS Shaw" 
+		requested_factories = 10
+		progress = 0.2
+		amount = 1
+		industrial_manufacturer = mio:USA_norfolk_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "USA"
+#			version_name = "Farragut Class"
+		}
+		name = "USS Cassin" 
+		requested_factories = 10
+		progress = 0.2
+		amount = 1
+		industrial_manufacturer = mio:USA_norfolk_naval_yard_organization
+	}
+    add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "USA"
+#			version_name = "Farragut Class"
+		}
+		name = "USS Downes" 
+		requested_factories = 10
+		progress = 0.2
+		amount = 1
+		industrial_manufacturer = mio:USA_norfolk_naval_yard_organization
+	}
+}

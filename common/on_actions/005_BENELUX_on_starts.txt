@@ -1,0 +1,8 @@
+on_actions = {
+	on_startup = {
+		effect = {
+		if = {limit = {LUX = {is_ai = yes}} BEL = {annex_country = {target = LUX transfer_troops = yes}}}
+		every_state = { limit = {is_core_of = LUX is_controlled_by = BEL} add_core_of = BEL remove_core_of = LUX}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+ability = {
+    # 1. Отправить генерала США в Англию
+    send_general_to_eng = {
+        name = ABILITY_SEND_GENERALS
+        desc = ABILITY_SEND_GENERALS_DESC
+        sound_effect = command_power_ability_offensive
+        type = army_leader
+
+        allowed = {
+            is_border_war = no
+            OWNER = { tag = USA }
+            is_in_faction_with = ENG
+        }
+
+        ai_will_do = { factor = -1 }
+
+        cost = 0
+        duration = 0
+        fixed_random_seed = no
+
+        one_time_effect = {
+            if = {
+                limit = { is_in_faction_with = ENG }
+                ROOT = {
+                    add_trait = { trait = us_foreign_general }
+                    set_nationality = ENG
+                }
+            }
+            else = {
+                ROOT = { retire = yes }
+            }
+        }
+    }
+
+       # 2. США - массовый возврат ВСЕХ своих генералов из Англии
+    USA_recall_generals_from_uk = {
+        name = ABILITY_RECALL_GENERALS
+        desc = ABILITY_RECALL_GENERALS_DESC
+
+        sound_effect = command_power_ability_offensive
+        type = army_leader
+
+        allowed = {
+            OWNER = { tag = USA }
+            ENG = {
+                any_army_leader = { has_trait = us_foreign_general }
+            }
+        }
+
+        ai_will_do = { factor = 0 }
+
+        cost = 0
+        duration = 0
+        fire_only_once = no
+
+        one_time_effect = {
+            ENG = {
+                every_army_leader = {
+                    limit = { has_trait = us_foreign_general }
+                    remove_trait = { trait = us_foreign_general }
+                    set_nationality = USA
+                }
+            }
+        }
+    }
+
+    # 3. Англия - добровольно вернуть одного конкретного генерала
+    ENG_return_single_general = {
+        name = ABILITY_RETURN_GENERAL
+        desc = ABILITY_RETURN_GENERAL_DESC
+
+        sound_effect = command_power_ability_offensive
+        type = army_leader
+
+        allowed = {
+            is_border_war = no
+            OWNER = { tag = ENG }
+            has_trait = us_foreign_general
+        }
+
+        ai_will_do = { factor = -1 }
+
+        cost = 0
+        duration = 0
+        fixed_random_seed = no
+
+        one_time_effect = {
+            ROOT = {
+                remove_trait = { trait = us_foreign_general }
+                set_nationality = USA
+            }
+        }
+    }
+}

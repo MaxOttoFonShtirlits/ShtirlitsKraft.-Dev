@@ -1,0 +1,311 @@
+usa_leader_skins = {
+    # Решение: надеть скин Штирлица
+    usa_become_stierlitz = {
+        icon = generic_formable_nations
+
+        available = {
+            NOT = { has_country_flag = USA_stierlitz_skin_active }
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+    complete_effect = {
+    # Устанавливаем флаг, блокирующий повторное появление этого решения
+    set_country_flag = USA_stierlitz_skin_active
+    # Применяем имя и портрет проверенным методом
+    set_country_leader_name = { 
+    name = "Max Otto von Stierlitz"
+    }
+    set_country_leader_portrait = {
+       portrait = "gfx/Skini_Dlya_Liderov/stierlitz_portrait.dds"
+    }
+    # Нейтралитет
+    set_party_name = {
+        ideology = neutrality
+        name = "Военная Администрация Тихоокеанского Театра"
+        long_name = "Военная Администрация Тихоокеанского Театра Соединённых Штатов"
+    }
+
+    # Фашизм
+    set_party_name = {
+        ideology = fascism
+        name = "Фронт Освобождения Китая"
+        long_name = "Фронт Освобождения Китая — Штирлиц"
+    }
+
+    # Демократия
+    set_party_name = {
+        ideology = democratic
+        name = "Тихоокеанская Республика"
+        long_name = "Тихоокеанская Республика"
+    }
+
+    # Коммунизм
+        set_party_name = {
+        ideology = communism
+        name = "Тихоокеанская Социалистическая Республика"
+        long_name = "Тихоокеанская Социалистическая Республика"
+        }
+        CHI = {
+        set_country_leader_name = { 
+        name = "Мимик"
+        }
+        }
+        USA = {
+        set_country_leader_name = { 
+        name = "Комплексер"
+        }
+        }
+    }
+}
+
+    # Решение: снять скин, вернуть Рузвельта
+    usa_revert_to_roosevelt = {
+        icon = generic_formable_nations
+
+        available = {
+            has_country_flag = USA_stierlitz_skin_active
+        }
+
+        visible = {
+            has_country_flag = USA_stierlitz_skin_active
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            # Снимаем флаг, делая доступным первое решение
+            set_country_leader_name = { 
+            name = "Max Otto von Stierlitz"
+            }
+            set_country_leader_portrait = {
+            portrait = "gfx/Skini_Dlya_Liderov/stierlitz_portrait.dds"
+            }
+        }
+    }
+    jap_return_of_Chiang = {
+        icon = generic_formable_nations
+
+        available = {
+            NOT = { country_exists = CHI }
+            has_subject = TIB
+            country_exists = RNG
+        }
+
+        visible = {
+            NOT = { country_exists = CHI }
+            NOT = { has_country_flag = Chiang_Return }
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            set_cosmetic_tag = Kitay
+            set_country_flag = Chiang_Return
+            sound_effect = "ChiangBack"
+            RNG = {
+                add_ideas = { national_defense_state }
+                add_ideas = { rng_hidden_idea_1 }
+                set_politics = {
+                    ruling_party = fascism
+                    elections_allowed = no
+                }
+                create_country_leader = {
+	            name = "Chiang Kai-shek"
+	            picture = "gfx/leaders/JAP/chiang_sigma.dds"
+	            expire = "1965.1.1"
+	            ideology = gen_nazism
+                traits = { 
+		            sigma_blue_shirt_puppet_master
+	            }
+                }
+                annex_country = {
+                    target = MEN
+                    transfer_troops = yes
+                }
+                annex_country = {
+                    target = MAN
+                    transfer_troops = yes
+                }
+                annex_country = {
+                    target = TIB
+                    transfer_troops = yes
+                }
+                every_state = { limit = {is_core_of = TIB is_controlled_by = RNG} add_core_of = RNG remove_core_of = TIB}
+                 every_state = { limit = {is_core_of = MEN is_controlled_by = RNG} add_core_of = RNG remove_core_of = MEN}
+            }
+
+        }
+    }
+    jap_Unite_Chinas = {
+        icon = generic_formable_nations
+
+        available = {
+            country_exists = RNG
+            has_completed_focus = JAP_tojos_premiership
+        }
+
+        visible = {
+            has_country_flag = Chiang_Return
+            NOT = {
+                has_country_flag = Total_Mobilization_Of_The_Nation
+            }
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            set_country_flag = Total_Mobilization_Of_The_Nation
+            sound_effect = "ChinaUnitedandReady"
+            set_country_leader_name = { 
+            name = "Max Otto von Stierlitz"
+            }
+            set_country_leader_portrait = {
+            portrait = "gfx/Skini_Dlya_Liderov/stierlitz.dds"
+            }
+            set_cosmetic_tag = Kitay_2
+            JAP = {
+            #annex_country = {
+            #   target = RNG
+            #  transfer_troops = yes
+            #}
+            #  every_state = { limit = {is_core_of = CHI is_controlled_by = JAP} add_core_of = JAP remove_core_of = CHI}
+            #  every_state = { limit = {is_core_of = RNG is_controlled_by = JAP} add_core_of = JAP remove_core_of = RNG}
+            RNG = {
+            add_ideas = { rng_hidden_idea_2 }
+            }
+            every_state = { limit = {is_core_of = AUS is_controlled_by = JAP} add_core_of = JAP remove_core_of = AUS}
+              create_field_marshal = {
+                name = "Chiang Kai-shek"
+                picture = "chiang_sigma.dds"
+                skill = 4
+                attack_skill = 3
+                defense_skill = 4
+                planning_skill = 2
+                logistics_skill = 2
+                traits = { politically_connected harsh_leader cautious skilled_staffer }
+            
+              }
+            }
+        }
+    }
+}
+ast_leader_skins = {
+    ast_become_Sas = {
+        icon = generic_formable_nations
+
+        available = {
+            NOT = { has_country_flag = AST_sas_skin_active }
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            # Устанавливаем флаг, блокирующий повторное появление этого решения
+            set_country_flag = AST_sas_skin_active
+
+            # Применяем имя и портрет проверенным методом
+            set_country_leader_name = { 
+                name = "Сас"
+            }
+            set_country_leader_portrait = {
+                portrait = "gfx/Skini_Dlya_Liderov/Sas.dds"
+            }
+        }
+    }
+}
+ita_leader_skins = {
+    ita_become_Vaira = {
+        icon = generic_formable_nations
+
+        available = {
+            NOT = { has_country_flag = ITA_vaira_skin_active }
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            # Устанавливаем флаг, блокирующий повторное появление этого решения
+            set_country_flag = ITA_vaira_skin_active
+
+            # Применяем имя и портрет проверенным методом
+            set_country_leader_name = { 
+                name = "Вайра"
+            }
+            set_country_leader_portrait = {
+                portrait = "gfx/Skini_Dlya_Liderov/Vaira.dds"
+            }
+        }
+    } 
+}
+raj_leader_skins = {
+    raj_become_Pozdniakov = {
+        icon = generic_formable_nations
+
+        available = {
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            # Применяем имя и портрет проверенным методом
+            set_country_leader_name = { 
+                name = "Наггетс"
+            }
+            set_country_leader_portrait = {
+                portrait = "gfx/Skini_Dlya_Liderov/Pozdniakov.dds"
+            }
+        }
+    } 
+}

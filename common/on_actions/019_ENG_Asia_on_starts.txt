@@ -1,0 +1,18 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {limit = {NEP = {is_ai = yes}} RAJ = {annex_country = {target = NEP transfer_troops = no}}}
+			if = {limit = {BHU = {is_ai = yes}} RAJ = {annex_country = {target = BHU transfer_troops = no}}}
+			if = {limit = {BRM = {is_ai = yes}} RAJ = {annex_country = {target = BRM transfer_troops = no}}}
+	
+			every_state = { limit = {is_core_of = NEP is_controlled_by = RAJ} add_core_of = RAJ remove_core_of = NEP}	
+			every_state = { limit = {is_core_of = BHU is_controlled_by = RAJ} add_core_of = RAJ remove_core_of = BHU}
+			every_state = { limit = {is_core_of = BRM is_controlled_by = RAJ} add_core_of = RAJ remove_core_of = BRM}
+
+			if = {limit = {MAL = {is_ai = yes}} AST = {annex_country = {target = MAL transfer_troops = no}}}
+			if = {limit = {NZL = {is_ai = yes}} AST = {annex_country = {target = NZL transfer_troops = no}}}
+			every_state = { limit = {is_core_of = MAL is_controlled_by = AST} add_core_of = AST remove_core_of = MAL}
+			every_state = { limit = {is_core_of = NZL is_controlled_by = AST} add_core_of = AST remove_core_of = NZL}
+		}		
+	}
+}

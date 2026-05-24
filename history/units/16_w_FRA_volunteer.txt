@@ -1,0 +1,42 @@
+﻿division_template = {
+	name = "16w France volunteer"
+  	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+		militia = { x = 3 y = 0 }
+		militia = { x = 3 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+	priority = 0
+}
+
+units = {
+	division = {
+		name = "1. Division de Volunteer" 
+		location = 9434
+		division_template = "16w France volunteer"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division = {
+		location = 9434
+		name = "2. Division de Volunteer" 
+		division_template = "16w France volunteer"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division = {
+		location = 9434
+		name = "3. Division de Volunteer" 
+		division_template = "16w France volunteer"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+}

@@ -1,0 +1,66 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = ethiopia_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = ETH
+			has_dlc = "By Blood Alone"
+			NOT = {
+				any_other_country = { 
+					original_tag = ETH # There can be only one...
+					has_government = ROOT # or four actually...
+				}
+			}
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 1000 }  
+	initial_show_position = {
+		x = 38
+		y = 0
+	}
+
+
+ 	################################################
+
+ 	### #   # ###  ### ###  ###  ##  #   ###  ## ### 
+	 #  ## ## #  # #   #  #  #  #  # #    #  #    #  
+	 #  # # # ###  ##  ###   #  #### #    #   #   #  
+	 #  #   # #    #   #  #  #  #  # #    #    #  #  
+	### #   # #    ### #  # ### #  # ### ### ##   # 
+
+	################################################
+
+	focus = {
+		id = ETH_surrender
+		icon = GFX_focus_CZE_german_puppet
+	
+		x = 2
+		y = 0
+		
+		cost = 26
+		available = {
+		}
+		ai_will_do = {
+			base = 100
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			ITA = {annex_country = {target = ETH transfer_troops = no} }
+		}
+	}	
+}

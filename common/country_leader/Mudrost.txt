@@ -1,0 +1,8 @@
+leader_traits = {
+    sigma_blue_shirt_puppet_master = {
+            political_power_factor = 0.15         # Усиление политической власти
+            stability_factor = 0.10               # Консолидация власти
+            war_support_factor = 0.05             # Мобилизация нации
+            civilian_intel_to_others = -70.0
+    }
+}

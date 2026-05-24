@@ -1,0 +1,6 @@
+SOV_winter_war = {
+	icon = military_operation	
+	picture = GFX_report_event_soviet_tanks_snow
+	allowed = { original_tag = SOV }
+	visible = { always = yes }
+}

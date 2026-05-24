@@ -1,0 +1,129 @@
+﻿
+
+
+air_wings = {
+	126 = { 
+		small_plane_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_cas_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Fairey Gordon"
+		}
+		small_plane_cas_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Fairey Gordon"
+		}
+		small_plane_cas_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Fairey Gordon"
+		}
+		medium_plane_airframe_1 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Bristol Blenheim"
+		}
+		medium_plane_airframe_1 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Bristol Blenheim"
+		}
+		small_plane_naval_bomber_airframe_0 = {
+			owner = "ENG" 
+			amount = 100
+			version_name = "Vickers Vildebeest"
+		}
+
+	}
+	"HMS Furious"  = {
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+	}
+	"HMS Courageous"  = {
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+	}
+	"HMS Glorious"  = {
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+	}
+	"HMS Eagle"  = {
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Hawker Nimrod" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "ENG" amount = 10 version_name = "Blackburn Shark" }
+	}
+}
+
+	#########################
+	## STARTING PRODUCTION ##
+	#########################
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_0
+			creator = "ENG" 
+			version_name = "Gloster Gladiator"
+		}
+		requested_factories = 1
+		progress = 0.15
+		efficiency = 50
+		industrial_manufacturer = mio:ENG_supermarine_organization
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = medium_plane_airframe_1
+			creator = "ENG" 
+			version_name = "Bristol Blenheim"
+		}
+		requested_factories = 1
+		progress = 0.1
+		efficiency = 50
+		industrial_manufacturer = mio:ENG_de_havilland_organization
+	}
+}
+	#####################

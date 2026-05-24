@@ -1,0 +1,262 @@
+# Better Mechanics: Weather
+# Static modifiers for weather conditions
+# Synthesised from Vanilla, Black Ice (BICE), and Darkest Hour (DH)
+# BM spin: BICE as base, adjusted per condition, vanilla/DH picks folded in where superior
+
+########################################
+# REGION-SCOPED WEATHER
+########################################
+
+weather_rain_light = { # on Region
+	# Air
+	air_accidents                          =  0.1
+	air_detection                          = -0.1
+	air_mission_efficiency                 = -0.1
+	ground_attack_factor                   = -0.2
+	enemy_army_bonus_air_superiority_factor = -0.2
+
+	# Naval
+	naval_detection                        = -0.2
+	naval_hit_chance                       = -0.1    # BICE -0.2 trimmed — light rain, not a squall
+	naval_speed_factor                     = -0.05
+	naval_strike                           = -0.5
+	naval_retreat_speed                    =  0.1
+
+	# Land
+	local_org_regain                       = -0.05
+	org_loss_when_moving                   =  0.05   # vanilla — small but present
+}
+
+weather_rain_heavy = { # on Region
+	# Air
+	air_accidents                          =  0.3
+	air_bombing_targetting                 = -0.5
+	air_detection                          = -0.2
+	air_mission_efficiency                 = -0.3
+	ground_attack_factor                   = -0.5
+	enemy_army_bonus_air_superiority_factor = -0.4
+
+	# Naval
+	carrier_traffic                        = -1.0
+	naval_detection                        = -0.5
+	naval_hit_chance                       = -0.5
+	naval_speed_factor                     = -0.3
+	naval_strike                           = -0.9
+	naval_retreat_speed                    =  0.2
+	positioning                            = -0.1
+
+	# Land / Supply
+	local_org_regain                       = -0.2
+	org_loss_when_moving                   =  0.1    # vanilla
+	supply_factor                          = -0.05
+}
+
+weather_snow = { # on Region
+	# Air
+	air_accidents                          =  0.1
+	air_detection                          = -0.15
+	air_mission_efficiency                 = -0.2
+	ground_attack_factor                   = -0.3
+	enemy_army_bonus_air_superiority_factor = -0.3
+
+	# Naval
+	naval_detection                        = -0.3
+	naval_hit_chance                       = -0.2
+	naval_speed_factor                     = -0.1
+	naval_strike                           = -0.7
+	naval_retreat_speed                    =  0.1
+	positioning                            = -0.1
+
+	# Land / Supply
+	local_org_regain                       = -0.05
+	army_speed_factor                      = -0.1
+	supply_factor                          = -0.10   # back to vanilla — snow on supply lines matters
+	truck_attrition_factor                 =  0.3
+	local_supplies                         = -0.05
+}
+
+weather_blizzard = { # on Region
+	# Air
+	air_accidents                          =  0.3
+	air_bombing_targetting                 = -0.7
+	air_detection                          = -0.3
+	air_mission_efficiency                 = -0.5
+	ground_attack_factor                   = -0.75
+	enemy_army_bonus_air_superiority_factor = -0.6
+
+	# Naval
+	carrier_traffic                        = -1.0
+	naval_detection                        = -0.8
+	naval_hit_chance                       = -0.5    # BICE -0.65 trimmed slightly
+	naval_speed_factor                     = -0.5
+	naval_strike                           = -0.97
+	naval_retreat_speed                    =  0.2
+	positioning                            = -0.2
+
+	# Land / Supply
+	local_org_regain                       = -0.3
+	org_loss_when_moving                   =  0.25   # vanilla — exhausting to move in a blizzard
+	army_speed_factor                      = -0.3
+	supply_consumption_factor              =  0.1
+	supply_factor                          = -0.25   # vanilla was right here, BICE too lenient
+	truck_attrition_factor                 =  1.0
+	local_supplies                         = -0.35
+}
+
+weather_sandstorm = { # on Region
+	# Air — nearly blind
+	air_accidents                          =  0.6
+	air_bombing_targetting                 = -1.0
+	air_detection                          = -0.9
+	air_mission_efficiency                 = -0.5
+	ground_attack_factor                   = -0.75
+	enemy_army_bonus_air_superiority_factor = -0.6
+
+	# Naval — sandstorms are continental, BICE correctly drops naval_strike
+	# (no naval_strike here)
+
+	# Land / Supply
+	local_org_regain                       = -0.5
+	org_loss_when_moving                   =  0.25   # vanilla
+	army_speed_factor                      = -0.3
+	supply_factor                          = -0.1
+	truck_attrition_factor                 =  3.0    # vanilla correct — sand destroys engines and filters
+	local_supplies                         = -0.2
+}
+
+weather_arctic_water = { # on Region — BICE values
+	naval_attrition                        =  0.1
+	naval_retreat_speed                    = -0.05
+	navy_casualty_on_sink                  =  0.2
+	positioning                            = -0.2
+}
+
+########################################
+# PROVINCE-SCOPED WEATHER
+########################################
+
+weather_mud = { # on Province
+	# Land
+	army_attack_factor                     = -0.4
+	army_speed_factor                      = -0.6
+	org_loss_when_moving                   =  0.25   # vanilla
+	attrition                              =  0.7    # vanilla/DH — mud causes real casualties
+
+	# Supply
+	supply_factor                          = -0.15
+	truck_attrition_factor                 =  2.0    # BICE — 5.0 vanilla too extreme
+	local_supplies                         = -0.5
+}
+
+weather_extreme_cold = { # on Province
+	# Land
+	army_attack_factor                     = -0.2
+	breakthrough_factor                    = -0.3    # from vanilla — cold kills offensive momentum
+	dig_in_speed_factor                    = -0.6
+	local_org_regain                       = -0.05
+	ground_attack_factor                   = -0.2
+
+	# Supply / Attrition
+	winter_attrition                       =  0.35   # nudged up from BICE 0.3
+	supply_consumption_factor              =  0.25   # BICE — cold doubles fuel/food needs
+	supply_factor                          = -0.1
+	truck_attrition_factor                 =  0.5
+	local_supplies                         = -0.2
+}
+
+weather_very_cold = { # on Province
+	# Land
+	army_attack_factor                     = -0.1
+	breakthrough_factor                    = -0.15   # from vanilla
+	dig_in_speed_factor                    = -0.4
+	ground_attack_factor                   = -0.1
+
+	# Supply / Attrition
+	winter_attrition                       =  0.2    # nudged up from BICE 0.15
+	supply_consumption_factor              =  0.1
+	supply_factor                          = -0.05
+	truck_attrition_factor                 =  0.2
+	local_supplies                         = -0.1
+}
+
+weather_very_hot = { # on Province
+	# Land
+	army_attack_factor                     = -0.1
+	ground_attack_factor                   = -0.1
+	local_org_regain                       = -0.05
+
+	# Supply / Attrition
+	heat_attrition                         =  0.1
+	supply_consumption_factor              =  0.2
+	truck_attrition_factor                 =  0.1
+	local_supplies                         = -0.1
+}
+
+weather_extreme_hot = { # on Province
+	# Land
+	army_attack_factor                     = -0.2
+	ground_attack_factor                   = -0.2
+	local_org_regain                       = -0.1
+
+	# Supply / Attrition
+	heat_attrition                         =  0.2
+	supply_consumption_factor              =  0.5
+	supply_factor                          = -0.1
+	truck_attrition_factor                 =  0.25
+	local_supplies                         = -0.2
+}
+
+weather_ground_snow_medium = { # on Province
+	# Land — key Russia-in-January fix
+	army_attack_factor                     = -0.40
+	army_speed_factor                      = -0.2
+	army_attack_speed_factor               = -0.35   # from vanilla — slows offensive tempo
+	breakthrough_factor                    = -0.15   # from vanilla
+	org_loss_when_moving                   =  0.1    # from vanilla
+	local_org_regain                       = -0.05   # all three agree on high, adding to medium too
+	dig_in_speed_factor                    =  0.05   # vanilla — defenders benefit from snow cover
+
+	# Supply
+	supply_factor                          = -0.30   # BM pushes harder than BICE (-0.1) or vanilla (-0.20)
+	truck_attrition_factor                 =  0.5
+	winter_attrition                       =  0.2
+	local_supplies                         = -0.1
+}
+
+weather_ground_snow_high = { # on Province
+	# Land — maximum Russia-in-January punishment
+	army_attack_factor                     = -0.6
+	army_speed_factor                      = -0.5
+	army_attack_speed_factor               = -0.75   # from vanilla — offensives grind to a halt
+	breakthrough_factor                    = -0.4    # from vanilla — no breakthroughs in deep snow
+	org_loss_when_moving                   =  0.25   # from vanilla
+	local_org_regain                       = -0.05
+	ground_attack_factor                   = -0.2    # BM addition — CAS impaired by snow/low vis
+	dig_in_speed_factor                    =  0.15   # vanilla — defenders entrench well in deep snow
+
+	# Supply
+	supply_factor                          = -0.45   # BM pushes hardest here — snow buries supply roads
+	truck_attrition_factor                 =  1.0
+	winter_attrition                       =  0.25
+	local_supplies                         = -0.2
+}
+
+########################################
+# NIGHT (Province — multiplied by darkness)
+########################################
+
+night = { # on Province
+	# Air
+	air_bombing_targetting                 = -0.5
+	air_attack_factor                      = -0.50
+	ground_attack_factor                   = -0.75   # BICE — night CAS was nearly nonexistent historically
+
+	# Naval
+	carrier_traffic                        = -1.0
+	naval_hit_chance                       = -0.3
+	naval_retreat_speed                    =  0.1
+	naval_strike                           = -0.9
+	naval_torpedo_hit_chance_factor        =  0.1    # BICE — night torpedo attacks historically effective
+	navy_capital_ship_defence_factor       = -0.2    # BICE
+	navy_screen_defence_factor             = -0.1    # BICE
+}

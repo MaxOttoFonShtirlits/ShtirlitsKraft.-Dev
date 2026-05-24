@@ -1,0 +1,86 @@
+﻿	
+	
+air_wings = {
+	### 1 USAAF Wing -- Los Angeles
+	378 = {
+		small_plane_cas_airframe_1 = {
+			owner = "USA" 
+			amount = 100
+			version_name = "A-17"
+		}
+		small_plane_airframe_1 = {
+			owner = "USA" 
+			amount = 100
+			version_name = "P-36A"
+		}
+		small_plane_airframe_1 = {
+			owner = "USA" 
+			amount = 100
+			version_name = "P-36A"
+		}
+		small_plane_airframe_1 = {
+			owner = "USA" 
+			amount = 100
+			version_name = "P-36A"
+		}
+		medium_plane_airframe_1 = {
+			owner = "USA" 
+			amount = 100
+			version_name = "B-18"
+		}
+		medium_plane_airframe_1 = {
+			owner = "USA" 
+			amount = 100
+			version_name = "B-18"
+		}
+		medium_plane_airframe_1 =  {
+			owner = "USA" 
+			amount = 100
+			version_name = "PBY"
+		}
+	}
+	"USS Ranger" = {
+		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F4B"}
+		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F4B"}
+		cv_small_plane_cas_airframe_0 =  { owner = "USA" amount = 10 version_name = "SBU Corsair" }
+		cv_small_plane_cas_airframe_0 =  { owner = "USA" amount = 10 version_name = "SBU Corsair" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "USA" amount = 10 version_name = "BM-2" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "USA" amount = 10 version_name = "BM-2" }		
+	}
+	"USS Lexington" = {
+		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F4B"}
+		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F4B"}
+		cv_small_plane_cas_airframe_0 =  { owner = "USA" amount = 10 version_name = "SBU Corsair" }
+		cv_small_plane_cas_airframe_0 =  { owner = "USA" amount = 10 version_name = "SBU Corsair" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "USA" amount = 10 version_name = "BM-2" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "USA" amount = 10 version_name = "BM-2" }	
+	}
+	"USS Saratoga" = {
+		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F4B"}
+		cv_small_plane_airframe_0 =  { owner = "USA" amount = 10 version_name = "F4B"}
+		cv_small_plane_cas_airframe_0 =  { owner = "USA" amount = 10 version_name = "SBU Corsair" }
+		cv_small_plane_cas_airframe_0 =  { owner = "USA" amount = 10 version_name = "SBU Corsair" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "USA" amount = 10 version_name = "BM-2" }
+		cv_small_plane_naval_bomber_airframe_0 =  { owner = "USA" amount = 10 version_name = "BM-2" }	
+	}
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_airframe_1
+			creator = "USA" 
+			version_name = "P-36A"
+		}
+		requested_factories = 1
+		progress = 0.15
+		efficiency = 50
+		industrial_manufacturer = mio:USA_north_american_aviation_organization
+	}
+
+}
+#####################

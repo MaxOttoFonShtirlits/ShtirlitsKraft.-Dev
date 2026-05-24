@@ -1,0 +1,77 @@
+ideas = {
+	economy = {
+		law = yes
+		use_list_view = yes
+		San_Min_Velik = {
+			cost = 100
+			removal_cost = -1
+			level = 2
+			cancel_if_invalid = no
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				tag = NEW
+			}
+			available = {
+			}
+			allowed_to_remove = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_expected_value = 1
+			}
+		}
+	}
+	trade_laws = {
+		law = yes
+		use_list_view = yes
+		Fodi_Daun = {
+			cost = 100
+			removal_cost = -1
+			level = 2
+			cancel_if_invalid = no
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				tag = NEW
+			}
+			available = {
+			}
+			allowed_to_remove = {
+				always = no
+			}
+			modifier = {
+				min_export = 1
+				POLITICAL_POWER_GAIN = -3
+			}
+		}
+	}
+	mobilization_laws = {
+		law = yes
+		use_list_view = yes
+		Allah_Velik = {
+			cost = 100
+			removal_cost = -1
+			level = 2
+			cancel_if_invalid = no
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				tag = NEW
+			}
+			available = {
+			}
+			allowed_to_remove = {
+				always = no
+			}
+			modifier = {
+				conscription = -1
+				monthly_population = -2
+				weekly_manpower = -99999
+			}
+		}
+	}
+}

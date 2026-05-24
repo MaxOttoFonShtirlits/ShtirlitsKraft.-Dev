@@ -1,0 +1,86 @@
+leader_traits = {
+    # Немецкий генерал: Мастер тактики и прорыва.
+    # Его стиль требует высочайшей сыгранности штаба, что в чужой армии
+    # ограничивает его возможности по управлению крупными силами.
+    german_foreign_general = {
+        type = land
+        trait_type = personality_trait
+        gain_xp = {
+            always = no
+        }
+        allowed = {
+            always = yes
+        }
+        modifier = {
+            army_speed_factor = 0.05
+            breakthrough_factor = 0.10
+            planning_speed = 0.10
+            defense_factor = -0.10
+            max_commander_army_size = -14
+            max_army_group_size = -4
+            promote_cost_factor = 10           
+        }
+        ai_will_do = {
+            factor = 0
+        }
+        new_commander_weight = {
+            factor = 0
+        }
+    }
+
+    # Советский генерал: Специалист по стойкой обороне и политической работе.
+    # Централизованный стиль позволяет управлять чуть более крупной группой,
+    # чем у немецкого коллеги, но ценой гибкости.
+    soviet_foreign_general = {
+        type = land
+        trait_type = personality_trait
+        gain_xp = {
+            always = no
+        }
+        allowed = {
+            always = yes
+        }
+        modifier = {
+            max_dig_in = 1
+            morale_factor = 0.05
+            planning_speed = -0.30
+            max_commander_army_size = -12
+            max_army_group_size = -4
+            promote_cost_factor = 10              # УЖЕСТОЧЕНО: с -3 на -12. Лимит: 12 дивизий.
+        }
+        ai_will_do = {
+            factor = 0
+        }
+        new_commander_weight = {
+            factor = 0
+        }
+    }
+
+    # Американский генерал: Эксперт по логистике и планированию.
+    # Сильная штабная культура и упор на снабжение позволяют ему лучше
+    # других справляться с управлением более крупными иностранными контингентами.
+    us_foreign_general = {
+        type = land
+        trait_type = personality_trait
+        gain_xp = {
+            always = no
+        }
+        allowed = {
+            always = yes
+        }
+        modifier = {
+            supply_consumption_factor = -0.05
+            planning_speed = 0.10
+            experience_gain_factor = -0.10
+            max_commander_army_size = -10
+            max_army_group_size = -3
+            promote_cost_factor = 10        
+        }
+        ai_will_do = {
+            factor = 0
+        }
+        new_commander_weight = {
+            factor = 0
+        }
+    }
+}

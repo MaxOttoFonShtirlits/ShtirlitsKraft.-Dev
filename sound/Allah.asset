@@ -1,0 +1,35 @@
+sound = {
+	name = "MGESILA"
+	file = "effects/Paravozik.wav"
+	always_load = no
+}
+sound = {
+	name = "Navalny"
+	file = "effects/Дворец для Путина. История самой большой взятки.wav"
+	always_load = no
+}
+sound = {
+	name = "Strateg"
+	file = "effects/Как именно функционирует машина предательства.wav"
+	always_load = no
+}
+sound = {
+	name = "ChiangBack"
+	file = "effects/unify_china_nationalist.wav"
+	always_load = no
+}
+sound = {
+	name = "ChinaUnitedandReady"
+	file = "effects/china_daili.wav"
+	always_load = no
+}
+sound = {
+	name = "SSSRNapali"
+	file = "effects/Vorwärts nach Osten Rußlandlied - German Wehrmacht Song About Op.wav"
+	always_load = no
+}
+sound = {
+	name = "UsaVSChi"
+	file = "effects/EYWOR_Dadao_March.wav"
+	always_load = no
+}

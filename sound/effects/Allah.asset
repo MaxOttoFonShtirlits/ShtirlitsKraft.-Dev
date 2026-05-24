@@ -1,0 +1,35 @@
+soundeffect = {
+	name = "MGESILA"
+	sounds = { sound = MGESILA }
+	volume = 5.00
+}
+soundeffect = {
+	name = "Navalny"
+	sounds = { sound = Navalny }
+	volume = 5.00
+}
+soundeffect = {
+	name = "Strateg"
+	sounds = { sound = Strateg }
+	volume = 5.00
+}
+soundeffect = {
+	name = "ChiangBack"
+	sounds = { sound = ChiangBack }
+	volume = 5.00
+}
+soundeffect = {
+	name = "ChinaUnitedandReady"
+	sounds = { sound = ChinaUnitedandReady }
+	volume = 5.00
+}
+soundeffect = {
+	name = "SSSRNapali"
+	sounds = { sound = SSSRNapali }
+	volume = 5.00
+}
+soundeffect = {
+	name = "USANapali"
+	sounds = { sound = UsaVSChi }
+	volume = 5.00
+}
