@@ -221,7 +221,11 @@ buildings = {
         state_production_speed_coastal_bunker_factor = 0.1
         land_bunker_effectiveness_factor = 0.2     
         static_anti_air_damage_factor = 0.15
-		static_anti_air_hit_chance_factor = 0.25            
+		static_anti_air_hit_chance_factor = 0.25
+		cas_damage_reduction = 0.15                 
+        org_loss_when_moving = -0.15                
+        local_intel_to_enemies = -0.25
+		recon_factor = 0.2     
     }		
     }
 
