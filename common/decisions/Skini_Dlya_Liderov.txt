@@ -1,10 +1,9 @@
-usa_leader_skins = {
+jap_leader_skins = {
     # Решение: надеть скин Штирлица
-    usa_become_stierlitz = {
+    jap_become_stierlitz = {
         icon = generic_formable_nations
 
         available = {
-            NOT = { has_country_flag = USA_stierlitz_skin_active }
         }
 
         visible = {
@@ -16,11 +15,11 @@ usa_leader_skins = {
         }
 
         cost = 0
-        fire_only_once = no
+        fire_only_once = yes
 
     complete_effect = {
     # Устанавливаем флаг, блокирующий повторное появление этого решения
-    set_country_flag = USA_stierlitz_skin_active
+    set_country_flag = JAP_stierlitz_path_active
     # Применяем имя и портрет проверенным методом
     set_country_leader_name = { 
     name = "Max Otto von Stierlitz"
@@ -28,33 +27,6 @@ usa_leader_skins = {
     set_country_leader_portrait = {
        portrait = "gfx/Skini_Dlya_Liderov/stierlitz_portrait.dds"
     }
-    # Нейтралитет
-    set_party_name = {
-        ideology = neutrality
-        name = "Военная Администрация Тихоокеанского Театра"
-        long_name = "Военная Администрация Тихоокеанского Театра Соединённых Штатов"
-    }
-
-    # Фашизм
-    set_party_name = {
-        ideology = fascism
-        name = "Фронт Освобождения Китая"
-        long_name = "Фронт Освобождения Китая — Штирлиц"
-    }
-
-    # Демократия
-    set_party_name = {
-        ideology = democratic
-        name = "Тихоокеанская Республика"
-        long_name = "Тихоокеанская Республика"
-    }
-
-    # Коммунизм
-        set_party_name = {
-        ideology = communism
-        name = "Тихоокеанская Социалистическая Республика"
-        long_name = "Тихоокеанская Социалистическая Республика"
-        }
         CHI = {
         set_country_leader_name = { 
         name = "Мимик"
@@ -214,8 +186,9 @@ usa_leader_skins = {
         }
     }
 }
+usa_leader_skins = {}
 ast_leader_skins = {
-    ast_become_Sas = {
+    ast_become_Pozdniakov = {
         icon = generic_formable_nations
 
         available = {
@@ -239,10 +212,10 @@ ast_leader_skins = {
 
             # Применяем имя и портрет проверенным методом
             set_country_leader_name = { 
-                name = "Сас"
+                name = "Поздняков"
             }
             set_country_leader_portrait = {
-                portrait = "gfx/Skini_Dlya_Liderov/Sas.dds"
+                portrait = "gfx/Skini_Dlya_Liderov/Pozdniakov.dds"
             }
         }
     }
@@ -276,35 +249,6 @@ ita_leader_skins = {
             }
             set_country_leader_portrait = {
                 portrait = "gfx/Skini_Dlya_Liderov/Vaira.dds"
-            }
-        }
-    } 
-}
-raj_leader_skins = {
-    raj_become_Pozdniakov = {
-        icon = generic_formable_nations
-
-        available = {
-        }
-
-        visible = {
-            always = yes
-        }
-
-        ai_will_do = {
-            base = 0
-        }
-
-        cost = 0
-        fire_only_once = no
-
-        complete_effect = {
-            # Применяем имя и портрет проверенным методом
-            set_country_leader_name = { 
-                name = "Наггетс"
-            }
-            set_country_leader_portrait = {
-                portrait = "gfx/Skini_Dlya_Liderov/Pozdniakov.dds"
             }
         }
     } 

@@ -1,4 +1,4 @@
-usa_leader_skins = {
+jap_leader_skins = {
     icon = generic_propaganda
 
     # Категория видна только США
@@ -6,7 +6,14 @@ usa_leader_skins = {
         tag = JAP
     }
 }
+usa_leader_skins = {
+    icon = generic_propaganda
 
+    # Категория видна только США
+    visible = {
+        tag = USA
+    }
+}
 ast_leader_skins = {
     icon = generic_propaganda
 
@@ -21,13 +28,5 @@ ita_leader_skins = {
     # Категория видна только США
     visible = {
         tag = ITA
-    }
-}
-raj_leader_skins = {
-    icon = generic_propaganda
-
-    # Категория видна только США
-    visible = {
-        tag = RAJ
     }
 }

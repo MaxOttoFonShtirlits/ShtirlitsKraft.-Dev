@@ -1,9 +1,4 @@
 sound = {
-	name = "MGESILA"
-	file = "effects/Paravozik.wav"
-	always_load = no
-}
-sound = {
 	name = "ChiangBack"
 	file = "effects/unify_china_nationalist.wav"
 	always_load = no

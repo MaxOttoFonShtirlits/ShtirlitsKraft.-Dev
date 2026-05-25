@@ -1,9 +1,0 @@
-usa_psiop = {
-    icon = generic_propaganda
-
-    # Категория видна только США
-    visible = {
-        tag = JAP
-        has_country_flag = USA_stierlitz_skin_active
-    }
-}

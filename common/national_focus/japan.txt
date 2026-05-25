@@ -9792,82 +9792,102 @@ focus_tree = {
 	}
 
 	focus = {
-		id = JAP_tojos_premiership
-		icon = GFX_focus_JAP_tojos_premiership
-		mutually_exclusive = { focus = JAP_yamamotos_premiership focus = JAP_the_crysanthemum_throne focus = JAP_solidify_tohokai_rule }
-		x = -2
-		y = 2
-		relative_position_id = JAP_ichioku_isshin
+    id = JAP_tojos_premiership
+    icon = GFX_focus_JAP_tojos_premiership
+    mutually_exclusive = { focus = JAP_yamamotos_premiership focus = JAP_the_crysanthemum_throne focus = JAP_solidify_tohokai_rule }
+    x = -2
+    y = 2
+    relative_position_id = JAP_ichioku_isshin
 
-		prerequisite = { focus = JAP_ichioku_isshin }
+    prerequisite = { focus = JAP_ichioku_isshin }
 
-		cost = 5
+    cost = 5
 
-		offset = {
-			x = -1
-			y = 0
-			trigger = {
-				has_country_flag = JAP_tohokai_prime_minister_added
-			}
-		}
+    offset = {
+        x = -1
+        y = 0
+        trigger = {
+            OR = {
+                has_country_flag = JAP_tohokai_prime_minister_added
+                has_country_flag = JAP_stierlitz_path_active   # <-- срабатывает и для Штирлица
+            }
+        }
+    }
 
-		ai_will_do = {
-			factor = 1
-		}
+    ai_will_do = {
+        factor = 1
+    }
 
-		available = {
-			OR = {
-				AND = {
-					JAP_army_faction_is_at_least_influential = yes
-					JAP_army_faction_is_greater_than_navy = yes
-				}
-				AND = {
-					any_enemy_country = {
-						is_major = yes
-						custom_trigger_tooltip = {
-							tooltip = JAP_tojos_premiership_tt
-							NOT = {
-								is_literally_china = yes
-							}
-						}
-					}	
-					has_war_support > 0.9
-				}
-			}
-		}
+    available = {
+        OR = {
+            AND = {
+                JAP_army_faction_is_at_least_influential = yes
+                JAP_army_faction_is_greater_than_navy = yes
+            }
+            AND = {
+                any_enemy_country = {
+                    is_major = yes
+                    custom_trigger_tooltip = {
+                        tooltip = JAP_tojos_premiership_tt
+                        NOT = {
+                            is_literally_china = yes
+                        }
+                    }
+                }	
+                has_war_support > 0.9
+            }
+        }
+    }
 
-		bypass = {
+    bypass = {
+    }
 
-		}
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    available_if_capitulated = no
 
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
+    search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_IMPERIAL_INFLUENCE }
 
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_IMPERIAL_INFLUENCE }
+    completion_reward = {
+        hidden_effect = {
+            if = {
+                limit = { has_country_flag = JAP_stierlitz_path_active }
+                # Назначаем Тодзио формально (сохраняется для скриптов), но меняем имя и портрет на Штирлица
+                set_cosmetic_tag = Kitay_2
+                add_country_leader_role = {
+                    character = JAP_hideki_tojo
+                    promote_leader = yes
+                    country_leader = {
+                        ideology = emperor_fascism
+                        expire = "1952.1.1.1"
+                        traits = { JAP_IJA_prime_minister_trait }
+                    }
+                }
+                set_country_leader_name = { 
+                    name = "Max Otto von Stierlitz"
+                }
+                set_country_leader_portrait = {
+                    portrait = "gfx/Skini_Dlya_Liderov/stierlitz.dds"
+                }
+            }
+            else = {
+                # Оригинальный путь — классический Тодзио
+                set_cosmetic_tag = JAP_army_dominant
+                add_country_leader_role = {
+                    character = JAP_hideki_tojo
+                    promote_leader = yes
+                    country_leader = {
+                        ideology = emperor_fascism
+                        expire = "1952.1.1.1"
+                        traits = { JAP_IJA_prime_minister_trait }
+                    }
+                }
+            }
+        }	
 
-		completion_reward = {
-			hidden_effect = {
-
-				set_cosmetic_tag = JAP_army_dominant
-
-			}	
-
-			add_war_support = 0.05
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_country_leader_role = {
-				character = JAP_hideki_tojo
-				promote_leader = yes
-				country_leader = {
-					ideology = emperor_fascism
-					expire = "1952.1.1.1"
-					traits = { JAP_IJA_prime_minister_trait }
-				}
-			}
-		}
-	}
+        add_war_support = 0.05
+    }
+}
 
 	focus = {
 		id = JAP_yamamotos_premiership
@@ -10218,12 +10238,13 @@ focus_tree = {
 
 		available = {
 			has_war = yes
+
 			any_core_state = {
 				JAP_is_home_islands_state = yes
-				NOT = {
-					is_fully_controlled_by = ROOT
-				}
+				is_fully_controlled_by = ROOT
 			}
+			
+			has_war_support > 0.99
 		}
 
 		bypass = {
@@ -10296,12 +10317,10 @@ focus_tree = {
 			}
 			any_core_state = {
 				JAP_is_home_islands_state = yes
-				NOT = {
-					is_fully_controlled_by = ROOT
-				}
+				is_fully_controlled_by = ROOT
 			}
 			has_stability > 0.4
-			has_war_support > 0.8
+			has_war_support > 0.99
 		}
 
 		bypass = {
@@ -27715,6 +27734,7 @@ focus_tree = {
 			}
 			ELSE = {
 				every_controlled_state = {
+					every_state = { limit = {is_core_of = AFA is_controlled_by = JAP} add_core_of = JAP remove_core_of = AFA}
 					limit = {
 						is_core_of = AFA
 						is_fully_controlled_by = ROOT

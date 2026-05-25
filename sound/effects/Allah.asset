@@ -1,9 +1,4 @@
 soundeffect = {
-	name = "MGESILA"
-	sounds = { sound = MGESILA }
-	volume = 5.00
-}
-soundeffect = {
 	name = "ChiangBack"
 	sounds = { sound = ChiangBack }
 	volume = 5.00
