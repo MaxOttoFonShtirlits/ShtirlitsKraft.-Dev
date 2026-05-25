@@ -9849,7 +9849,6 @@ focus_tree = {
     search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_IMPERIAL_INFLUENCE }
 
     completion_reward = {
-        hidden_effect = {
             if = {
                 limit = { has_country_flag = JAP_stierlitz_path_active }
                 # Назначаем Тодзио формально (сохраняется для скриптов), но меняем имя и портрет на Штирлица
@@ -9883,8 +9882,6 @@ focus_tree = {
                     }
                 }
             }
-        }	
-
         add_war_support = 0.05
     }
 }
@@ -10870,11 +10867,46 @@ focus_tree = {
 		search_filters = {  }
 
 		completion_reward = {
-
-			swap_ideas = {
+			if = {
+                limit = { has_country_flag = JAP_stierlitz_path_active }
+                # Назначаем Тодзио формально (сохраняется для скриптов), но меняем имя и портрет на Штирлица
+                add_country_leader_role = {
+                    character = JAP_hideki_tojo
+                    promote_leader = yes
+                    country_leader = {
+                        ideology = emperor_fascism
+                        expire = "1952.1.1.1"
+                        traits = { JAP_IJA_prime_minister_trait }
+                    }
+                }
+                set_country_leader_name = { 
+                    name = "Max Otto von Stierlitz"
+                }
+                set_country_leader_portrait = {
+                    portrait = "gfx/Skini_Dlya_Liderov/stierlitz.dds"
+                }
+				swap_ideas = {
 				remove_idea = JAP_crumbling_military_cabinet_idea_4
 				add_idea = JAP_crumbling_military_cabinet_idea_5
-			}	
+			    }
+            }
+            else = {
+                # Оригинальный путь — классический Тодзио
+                add_country_leader_role = {
+                    character = JAP_hideki_tojo
+                    promote_leader = yes
+                    country_leader = {
+                        ideology = emperor_fascism
+                        expire = "1952.1.1.1"
+                        traits = { JAP_IJA_prime_minister_trait }
+                    }
+                }
+				swap_ideas = {
+				remove_idea = JAP_crumbling_military_cabinet_idea_4
+				add_idea = JAP_crumbling_military_cabinet_idea_5
+			    }
+            }
+
 
 		}
 	}

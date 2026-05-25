@@ -21,53 +21,7 @@ jap_leader_skins = {
     # Устанавливаем флаг, блокирующий повторное появление этого решения
     set_country_flag = JAP_stierlitz_path_active
     # Применяем имя и портрет проверенным методом
-    set_country_leader_name = { 
-    name = "Max Otto von Stierlitz"
     }
-    set_country_leader_portrait = {
-       portrait = "gfx/Skini_Dlya_Liderov/stierlitz_portrait.dds"
-    }
-        CHI = {
-        set_country_leader_name = { 
-        name = "Мимик"
-        }
-        }
-        USA = {
-        set_country_leader_name = { 
-        name = "Комплексер"
-        }
-        }
-    }
-}
-
-    # Решение: снять скин, вернуть Рузвельта
-    usa_revert_to_roosevelt = {
-        icon = generic_formable_nations
-
-        available = {
-            has_country_flag = USA_stierlitz_skin_active
-        }
-
-        visible = {
-            has_country_flag = USA_stierlitz_skin_active
-        }
-
-        ai_will_do = {
-            base = 0
-        }
-
-        cost = 0
-        fire_only_once = no
-
-        complete_effect = {
-            # Снимаем флаг, делая доступным первое решение
-            set_country_leader_name = { 
-            name = "Max Otto von Stierlitz"
-            }
-            set_country_leader_portrait = {
-            portrait = "gfx/Skini_Dlya_Liderov/stierlitz_portrait.dds"
-            }
-        }
     }
     jap_return_of_Chiang = {
         icon = generic_formable_nations
