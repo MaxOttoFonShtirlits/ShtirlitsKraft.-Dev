@@ -2,6 +2,7 @@ add_namespace = EnhancedAIOptions
 
 country_event = {
 	id = EnhancedAIOptions.1
+	hidden = yes	
 	title = EnhancedAIOptions.t
 	desc = EnhancedAIOptions.desc
 	picture = GFX_report_event_soviet_soldiers_tank
@@ -10,8 +11,5 @@ country_event = {
 	option = {
 		name = EnhancedAIOptions.1.a
 		set_global_flag = SpaceMarines
-	}
-	option = {
-		name = EnhancedAIOptions.1.b
 	}
 }

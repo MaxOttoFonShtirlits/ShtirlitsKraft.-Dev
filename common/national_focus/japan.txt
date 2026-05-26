@@ -29403,7 +29403,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_CHARACTER }
 
 		completion_reward = {
-
+			add_potential_special_forces_tree = yes
 			add_tech_bonus = {
 				name = JAP_sea_mountaineers
 				bonus = 1
@@ -29474,7 +29474,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_CHARACTER }
 
 		completion_reward = {
-			
+			add_potential_special_forces_tree = yes
 			add_tech_bonus = {
 				name = JAP_jungle_adaptation
 				bonus = 1
@@ -29534,7 +29534,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
+			JAP_army_faction_is_at_least_influential = yes
 			#JAP_army_faction_is_at_least_influential = yes
 		}
 
@@ -29693,9 +29693,7 @@ focus_tree = {
 		id = JAP_pivot_towards_defensive_measures
 		icon = GFX_goal_generic_defence
 		
-		mutually_exclusive = {
-			focus = JAP_strenghten_the_supply_lines
-		}
+
 
 		prerequisite = { focus = JAP_army_weapons_administration_headquarters focus = JAP_jungle_adaptation focus = JAP_sea_mountaineers }
 
@@ -29710,7 +29708,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
+			JAP_army_faction_is_at_least_influential = yes
 		}
 
 		bypass = {
@@ -29739,9 +29737,7 @@ focus_tree = {
 		id = JAP_strenghten_the_supply_lines
 		icon = GFX_focus_generic_supply_line
 		
-		mutually_exclusive = {
-			focus = JAP_pivot_towards_defensive_measures
-		}
+
 
 		prerequisite = { focus = JAP_army_weapons_administration_headquarters focus = JAP_jungle_adaptation focus = JAP_sea_mountaineers }
 
@@ -29756,7 +29752,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
+			JAP_army_faction_is_at_least_influential = yes
 		}
 
 		bypass = {
