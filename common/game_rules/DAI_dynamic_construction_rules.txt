@@ -1,0 +1,27 @@
+DAI_dynamic_construction_profile = {
+	name = "DAI_RULE_DYNAMIC_CONSTRUCTION_PROFILE"
+	group = "RULE_GROUP_GAMEPLAY"
+	default = {
+		name = "BALANCED"
+		text = "DAI_RULE_OPTION_BALANCED"
+		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_BALANCED_DESC"
+	}
+	option = {
+		name = "CONSERVATIVE"
+		text = "DAI_RULE_OPTION_CONSERVATIVE"
+		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_CONSERVATIVE_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = "AGGRESSIVE"
+		text = "DAI_RULE_OPTION_AGGRESSIVE"
+		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_AGGRESSIVE_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = "DEBUG"
+		text = "DAI_RULE_OPTION_DEBUG"
+		desc = "DAI_RULE_DYNAMIC_CONSTRUCTION_DEBUG_DESC"
+		allow_achievements = no
+	}
+}

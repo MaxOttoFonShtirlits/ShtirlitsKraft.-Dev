@@ -1,0 +1,17 @@
+add_namespace = EnhancedAIOptions
+
+country_event = {
+	id = EnhancedAIOptions.1
+	title = EnhancedAIOptions.t
+	desc = EnhancedAIOptions.desc
+	picture = GFX_report_event_soviet_soldiers_tank
+	is_triggered_only = yes
+
+	option = {
+		name = EnhancedAIOptions.1.a
+		set_global_flag = SpaceMarines
+	}
+	option = {
+		name = EnhancedAIOptions.1.b
+	}
+}
