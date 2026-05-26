@@ -1,0 +1,26 @@
+bm_sp_attack_helicopter_organization = {
+	include = generic_helicopter_organization
+	icon = GFX_idea_generic_helicopter_1
+
+	allowed = {
+		has_dlc = "Gotterdammerung"
+	}
+	available = {
+		FROM = {
+			is_special_project_completed = sp:bm_attack_helicopter_project
+		}
+	}
+
+	equipment_type = { bm_attack_helicopter_equipment }
+	research_categories = { helicopter_tech }
+
+	initial_trait = {
+		name = bm_sp_attack_helicopter_organization_initial_trait
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+}

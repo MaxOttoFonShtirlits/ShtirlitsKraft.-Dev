@@ -1,0 +1,79 @@
+bm_anti_aircraft_truck_project = {
+	specialization = specialization_land
+	icon = GFX_sp_anti_aircraft_truck
+	project_tags = {
+		sp_tag_rocket
+		sp_tag_guided_bomb
+	}
+
+	breakthrough_cost = {
+		specialization_land = 1
+	}
+
+	resource_cost = {
+		resources = {
+			chromium = 2
+			steel = 3
+		}
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.small
+
+	allowed = {
+		has_dlc = "Gotterdammerung"
+	}
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				is_special_project_completed = sp:sp_rockets_ground_to_air_missile
+				has_tech = antiair5
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_land_breakthrough_reward_low
+		bm_land_breakthrough_reward_medium
+		bm_land_scientist_xp_reward_low
+		bm_land_scientist_xp_reward_medium
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_anti_aircraft_truck_project_tt_eq
+				ICON = GFX_bm_anti_aircraft_truck_eq_icon
+				NAME = bm_anti_aircraft_truck_equipment
+				DESC = bm_anti_aircraft_truck_equipment_desc
+			}
+			custom_effect_tooltip = bm_divider
+			custom_effect_tooltip = {
+				localization_key = bm_anti_aircraft_truck_project_tt_unit
+				ICON = GFX_bm_motorized_guided_anti_air_unit_icon
+				NAME = bm_motorized_guided_anti_air
+				DESC = bm_motorized_guided_anti_air_desc
+			}
+		}
+		enable_equipments = {
+			bm_anti_aircraft_truck_equipment_0
+		}
+		enable_subunits = {
+			bm_motorized_guided_anti_air
+		}
+	}
+}

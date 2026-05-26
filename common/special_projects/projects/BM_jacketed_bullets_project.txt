@@ -1,0 +1,211 @@
+bm_jacketed_bullets_project = {
+	specialization = specialization_land
+	icon = GFX_sp_jacketed_bullets
+
+	breakthrough_cost = {
+		specialization_land = 1
+	}
+
+	resource_cost = {
+		resources = {
+			steel = 1
+			aluminium = 1
+		}
+	}
+
+	ai_will_do = {
+		base = 1
+	}
+
+	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small
+
+	available = {
+		FROM = {
+			has_tech = support_weapons
+			has_tech = infantry_weapons
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_land_scientist_xp_reward_low
+		bm_land_scientist_xp_reward_medium
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_land_breakthrough_reward_low
+	}
+
+	project_output = {
+		country_effects = {
+			hidden_effect = {
+				custom_effect_tooltip = bm_jacketed_bullets_project_impact_name
+				custom_effect_tooltip = bm_jacketed_bullets_project_impact_desc
+				custom_effect_tooltip = bm_jacketed_bullets_project_piercer_name
+				custom_effect_tooltip = bm_jacketed_bullets_project_piercer_desc
+			}
+			if = {
+				limit = {
+					has_country_flag = bm_jacketed_bullets_project_impact_flag
+				}
+				custom_effect_tooltip = {
+					localization_key = bm_jacketed_bullets_project_impact_tt
+					NAME = bm_jacketed_bullets_project_impact_name
+					DESC = bm_jacketed_bullets_project_impact_desc
+					ICON = GFX_bm_bm_impact_rounds_icon
+				}
+				add_equipment_bonus = {
+					name = bm_jacketed_bullets_project_impact_bonus
+					bonus = {
+						infantry_equipment = {
+							soft_attack = 0.15
+							defense = 0.05
+							build_cost_ic = 0.15
+							instant = yes
+						}
+					}					
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_country_flag = bm_jacketed_bullets_project_piercer_flag
+					}
+					custom_effect_tooltip = {
+						localization_key = bm_jacketed_bullets_project_piercer_tt
+						NAME = bm_jacketed_bullets_project_piercer_name
+						DESC = bm_jacketed_bullets_project_piercer_desc
+						ICON = GFX_bm_piercer_rounds_icon
+					}
+					add_equipment_bonus = {
+						name = bm_jacketed_bullets_project_piercer_bonus
+						bonus = {
+							infantry_equipment = {
+								hard_attack = 0.20
+								ap_attack = 0.30
+								build_cost_ic = 0.15
+								instant = yes
+							}
+						}				
+					}
+				}
+				else = {
+					custom_effect_tooltip = bm_jacketed_bullets_by_the_end_tt
+					custom_effect_tooltip = bm_divider_2
+					custom_effect_tooltip = {
+						localization_key = bm_jacketed_bullets_project_piercer_tt
+						NAME = bm_jacketed_bullets_project_piercer_name
+						DESC = bm_jacketed_bullets_project_piercer_desc
+						ICON = GFX_bm_piercer_rounds_icon
+					}
+					effect_tooltip = {
+						add_equipment_bonus = {
+							project = FROM
+							bonus = {
+								infantry_equipment = {
+									hard_attack = 0.20
+									ap_attack = 0.30
+									build_cost_ic = 0.15
+									instant = yes
+								}
+							}				
+						}						
+					}
+					custom_effect_tooltip = bm_divider
+					custom_effect_tooltip = {
+						localization_key = bm_jacketed_bullets_project_impact_tt
+						NAME = bm_jacketed_bullets_project_impact_name
+						DESC = bm_jacketed_bullets_project_impact_desc
+						ICON = GFX_bm_bm_impact_rounds_icon
+					}
+					effect_tooltip = {
+						add_equipment_bonus = {
+							project = FROM
+							bonus = {
+								infantry_equipment = {
+									soft_attack = 0.15
+									defense = 0.05
+									build_cost_ic = 0.15
+									instant = yes
+								}
+							}					
+						}
+					}
+				}
+			}
+		}
+	}
+
+	unique_prototype_rewards = {
+		bm_jacketed_bullets_project_rewards = {
+			fire_only_once = yes
+
+			threshold = {
+				min = 20
+				max = 100
+			}
+
+			weight = {
+				base = 1000
+			}
+
+			option = {
+				token = bm_jacketed_bullets_project_impact_option
+
+				iteration_output = {
+					country_effects = {
+						set_country_flag = bm_jacketed_bullets_project_impact_flag
+						custom_effect_tooltip = {
+							localization_key = bm_jacketed_bullets_project_impact_tt
+							NAME = bm_jacketed_bullets_project_impact_name
+							DESC = bm_jacketed_bullets_project_impact_desc
+							ICON = GFX_bm_bm_impact_rounds_icon
+						}
+						effect_tooltip = {
+							add_equipment_bonus = {
+								name = bm_jacketed_bullets_project_impact_bonus
+								bonus = {
+									infantry_equipment = {
+										soft_attack = 0.15
+										defense = 0.05
+										build_cost_ic = 0.15
+										instant = yes				
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			option = {
+				token = bm_jacketed_bullets_project_piercer_option
+
+				iteration_output = {
+					country_effects = {
+						set_country_flag = bm_jacketed_bullets_project_piercer_flag
+						custom_effect_tooltip = {
+							localization_key = bm_jacketed_bullets_project_piercer_tt
+							NAME = bm_jacketed_bullets_project_piercer_name
+							DESC = bm_jacketed_bullets_project_piercer_desc
+							ICON = GFX_bm_piercer_rounds_icon
+						}
+						effect_tooltip = {
+							add_equipment_bonus = {
+								name = bm_jacketed_bullets_project_piercer_bonus
+								bonus = {
+									infantry_equipment = {
+										hard_attack = 0.20
+										ap_attack = 0.30
+										build_cost_ic = 0.15
+										instant = yes
+									}
+								}
+							}							
+						}							
+					}	
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+bm_pressurized_cabin_project = {
+	specialization = specialization_air
+	icon = GFX_sp_pressurized_cabin
+	project_tags = sp_tag_aircraft
+
+	breakthrough_cost = {
+		specialization_air = {
+			base = 2
+			modifier = {
+				add = -1
+				OR = {
+					has_tech = modern_large_airframe
+					has_tech = modern_medium_airframe
+				}
+			}
+		}
+	}
+
+	resource_cost = {
+		resources = {
+			rubber = 4
+		}
+	}
+
+
+
+	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small
+
+	allowed = {
+		has_dlc = "By Blood Alone"
+	}
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				OR = {
+					has_tech = advanced_large_airframe
+					has_tech = advanced_medium_airframe	
+				}
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_air_breakthrough_reward_low
+		bm_air_breakthrough_reward_medium
+		bm_air_breakthrough_reward_high
+		bm_air_scientist_xp_reward_low
+		bm_air_scientist_xp_reward_medium
+		bm_air_scientist_xp_reward_high
+		bm_air_scientist_xp_reward_very_high
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_pressurized_cabin_project_tt
+				NAME = bm_pressurized_cabins
+				DESC = bm_pressurized_cabins_desc
+				ICON = GFX_pressurized_cabins_module_icon
+			}
+			custom_effect_tooltip = bm_divider_2
+			custom_effect_tooltip = {
+				localization_key = bm_pressurized_cabin_project_tip_tt
+				TECH_1 = modern_large_airframe
+				TECH_2 = modern_medium_airframe
+			}
+		}
+		enable_equipment_modules = {
+			bm_pressurized_cabin_1
+			bm_pressurized_cabin_2
+		}
+	}
+}

@@ -1,0 +1,81 @@
+bm_aa_missile_project = {
+	specialization = specialization_air
+	icon = GFX_sp_anti_air_missile
+	project_tags = {
+		sp_tag_rocket
+		sp_tag_guided_bomb
+	}
+	
+	breakthrough_cost = {
+		specialization_air = {
+			base = 1
+			modifier = {
+				add = -1
+				OR = {
+					has_tech = advanced_computing_machine
+					has_tech = antiair5
+				}
+			}
+		}
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.medium
+
+	allowed = {
+		has_dlc = "By Blood Alone"
+	}
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+                has_tech = sp_rockets_improved_guidance
+				has_tech = modern_small_airframe
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_air_scientist_xp_reward_low
+		bm_air_scientist_xp_reward_medium
+		bm_air_scientist_xp_reward_high
+		bm_air_scientist_xp_reward_very_high
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_reward_high
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_progress_loss_high
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_aa_missile_project_tt
+				ICON = GFX_aa_missile_module_icon
+				NAME = bm_aa_missile_1
+				DESC = bm_aa_missile_1_desc
+			}
+			custom_effect_tooltip = bm_divider_2
+			custom_effect_tooltip = {
+				localization_key = bm_aa_missile_project_tip_tt
+				TECH_1 = advanced_computing_machine
+				TECH_2 = antiair5
+			}
+		}
+		enable_equipment_modules = {
+			bm_aa_missile_1
+		}
+	}
+
+
+}

@@ -1,0 +1,99 @@
+bm_stealth_jet_project = {
+	specialization = specialization_air
+	icon = GFX_sp_stealth_jet
+	project_tags = {
+		sp_tag_aircraft
+		sp_tag_jet
+	}
+
+	breakthrough_cost = {
+		specialization_air = {
+			base = 2
+			modifier = {
+				add = -1
+				OR = {
+					has_tech = engines_4
+					has_tech = sp_centrifugal_jet_tech
+				}
+			}
+		}
+	}
+
+	resource_cost = {
+		resources = {
+        	aluminium = 2
+        	tungsten = 3
+		}
+	}
+
+	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small
+
+	allowed = {
+		has_dlc = "By Blood Alone"
+	}
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				has_tech = advanced_small_airframe
+				has_tech = advanced_large_airframe
+				is_special_project_completed = sp:sp_air_axial_jet_engine
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_reward_high
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_progress_loss_high
+		bm_air_breakthrough_reward_low
+		bm_air_breakthrough_reward_medium
+		bm_air_breakthrough_reward_high
+		bm_air_scientist_xp_reward_low
+		bm_air_scientist_xp_reward_medium
+		bm_air_scientist_xp_reward_high
+		bm_air_scientist_xp_reward_very_high
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_stealth_jet_project_bomber_tt
+				NAME = bm_stealth_bomber_equipment_0
+				DESC = bm_stealth_bomber_equipment_0_desc
+				ICON = GFX_bm_stealth_bomber_eq_icon
+				
+			}
+			custom_effect_tooltip = bm_divider
+			custom_effect_tooltip = {
+				localization_key = bm_stealth_jet_project_fighter_tt
+				NAME = bm_stealth_fighter_equipment_0
+				DESC = bm_stealth_fighter_equipment_0_desc
+				ICON = GFX_bm_stealth_fighter_eq_icon
+			}
+			custom_effect_tooltip = bm_divider_2
+			custom_effect_tooltip = {
+				localization_key = bm_stealth_jet_project_tip_tt
+				TECH_1 = engines_4
+				TECH_2 = sp_centrifugal_jet_tech
+			}
+		}
+		enable_equipments = {
+			bm_stealth_bomber_equipment_0
+			bm_stealth_fighter_equipment_0
+		}
+	}
+}

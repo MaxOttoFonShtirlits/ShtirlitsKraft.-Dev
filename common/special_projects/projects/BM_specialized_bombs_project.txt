@@ -1,0 +1,252 @@
+bm_specialized_bombs_project = {
+	specialization = specialization_air
+	icon = GFX_sp_specialized_bombs
+	project_tags = {
+		sp_tag_aircraft
+		sp_tag_bomb
+	}
+
+	breakthrough_cost = {
+		specialization_air = {
+			base = 2
+			modifier = {
+				add = -1
+				OR = {
+					has_tech = advanced_small_airframe
+					has_tech = advanced_medium_airframe
+				}
+			}
+		}
+	}
+
+	resource_cost = {
+		resources = {
+			steel = 3
+			aluminium = 2
+		}
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.small
+
+	allowed = {
+		has_dlc = "By Blood Alone"
+	}
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				has_tech = early_bombs # USES EARLY BOMBS INSTEAD OF HEAVY BOMBS BECUASE UTTNH
+				OR = {
+					has_tech = improved_small_airframe
+					has_tech = improved_medium_airframe
+				}
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_air_breakthrough_reward_low
+		bm_air_breakthrough_reward_medium
+		bm_air_breakthrough_reward_high
+		bm_air_scientist_xp_reward_low
+		bm_air_scientist_xp_reward_medium
+	}
+
+	project_output = {
+		country_effects = {
+			if = {
+				limit = {
+					has_country_flag = bm_specialized_bombs_project_cluster_flag
+				}
+				custom_effect_tooltip = bm_divider_2
+				custom_effect_tooltip = {
+					localization_key = bm_specialized_bombs_project_cluster_tt
+					NAME = bm_cluster_bomb_1
+					DESC = bm_cluster_bomb_1_desc
+					ICON = GFX_bm_cluster_bomb_module_icon
+				}
+				# GETS ACTIVATED IN THE PROTOTYPE ITERATION
+				#hidden_effect = {
+				#	set_technology = {
+				#		bm_sp_cluster_bomb_technology = 1
+				#		popup = no
+				#	}
+				#}
+			}
+			else = {
+				if = {
+					limit = {
+						has_country_flag = bm_specialized_bombs_project_napalm_flag
+					}
+					custom_effect_tooltip = bm_divider_2
+					custom_effect_tooltip = {
+						localization_key = bm_specialized_bombs_project_napalm_tt
+						NAME = bm_napalm_bomb_1
+						DESC = bm_napalm_bomb_1_desc
+						ICON = GFX_bm_napalm_bomb_module_icon
+					}
+					# GETS ACTIVATED IN THE PROTOTYPE ITERATION
+					#hidden_effect = {
+					#	set_technology = {
+					#		bm_sp_napalm_bomb_technology = 1
+					#		popup = no
+					#	}
+					#}
+				}
+				else = {
+					custom_effect_tooltip = bm_specialized_bombs_project_tt
+					custom_effect_tooltip = bm_divider_2
+					custom_effect_tooltip = {
+						localization_key = bm_specialized_bombs_project_cluster_tt
+						NAME = bm_cluster_bomb_1
+						DESC = bm_cluster_bomb_1_desc
+						ICON = GFX_bm_cluster_bomb_module_icon
+					}
+					custom_effect_tooltip = bm_divider
+					custom_effect_tooltip = {
+						localization_key = bm_specialized_bombs_project_napalm_tt
+						NAME = bm_napalm_bomb_1
+						DESC = bm_napalm_bomb_1_desc
+						ICON = GFX_bm_napalm_bomb_module_icon
+					}
+					custom_effect_tooltip = bm_divider_2
+					custom_effect_tooltip = {
+						localization_key = bm_specialized_bombs_project_tip_tt
+						TECH_1 = advanced_small_airframe
+						TECH_2 = advanced_medium_airframe
+					}
+				}
+			}
+		}
+	}
+
+	unique_prototype_rewards = {
+		bm_specialized_bombs_project_rewards = {
+			fire_only_once = yes
+			force_reward_if_available = yes
+
+			threshold = {
+				min = 80
+				max = 100
+			}
+
+			weight = {
+				base = 1000
+			}
+
+			option = {
+				token = bm_specialized_bombs_project_cluster_option
+
+				iteration_output = {
+					country_effects = {
+						set_country_flag = bm_specialized_bombs_project_cluster_flag
+						custom_effect_tooltip = {
+							localization_key = bm_specialized_bombs_project_cluster_tt
+							NAME = bm_cluster_bomb_1
+							DESC = bm_cluster_bomb_1_desc
+							ICON = GFX_bm_cluster_bomb_module_icon
+						}
+					}
+
+					scientist_effects = {
+						if = {
+							limit = {
+								has_scientist_level = {
+									level < 5
+									specialization = specialization_air
+								}
+							}
+							random_list = {
+								50 = {
+									#No Effect
+								}
+								30 = {
+									add_scientist_xp = {
+										experience = constant:sp_scientist_xp_gain.low
+										specialization = specialization_air
+									}
+								}
+								10 = {
+									add_scientist_xp = {
+										experience = constant:sp_scientist_xp_gain.medium
+										specialization = specialization_air
+									}
+								}
+							}
+						}
+					}
+
+					enable_equipment_modules = {
+						bm_cluster_bomb_1
+					}
+				}
+			}
+			option = {
+				token = bm_specialized_bombs_project_napalm_option
+
+				iteration_output = {
+					country_effects = {
+						set_country_flag =bm_specialized_bombs_project_napalm_flag
+						custom_effect_tooltip = {
+							localization_key = bm_specialized_bombs_project_napalm_tt
+							NAME = bm_napalm_bomb_1
+							DESC = bm_napalm_bomb_1_desc
+							ICON = GFX_bm_napalm_bomb_module_icon
+						}
+					}
+
+					scientist_effects = {
+						if = {
+							limit = {
+								NOT = {
+									has_trait = scientist_trait_bombs_expert
+								}
+							}
+							random_list = {
+								70 = {
+									#No effect
+								}
+								30 = {
+									add_scientist_trait = scientist_trait_bombs_expert
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								NOT = {
+									has_trait = scientist_trait_brilliant_theorist
+								}
+							}
+							random_list = {
+								70 = {
+									#No effect
+								}
+								30 = {
+									add_scientist_trait = scientist_trait_brilliant_theorist
+								}
+							}
+						}
+					}
+
+					enable_equipment_modules = {
+						bm_napalm_bomb_1
+					}
+				}
+			}
+		}
+	}
+}

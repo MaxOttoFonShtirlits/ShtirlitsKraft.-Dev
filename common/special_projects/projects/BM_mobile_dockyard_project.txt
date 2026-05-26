@@ -1,0 +1,69 @@
+bm_mobile_dockyard_project = {
+	specialization = specialization_naval
+	icon = GFX_sp_mobile_dockyard
+
+	breakthrough_cost = {
+		specialization_naval = {
+			base = 2
+			modifier = {
+				add = -1
+				has_tech = damage_control_3
+			}
+		}
+	}
+
+	resource_cost = {
+		resources = {
+			rubber = 2
+		}
+	}
+
+	ai_will_do = {
+		base = 1
+	}
+
+	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small
+
+	available = {
+		FROM = {
+			has_tech = damage_control_2
+			has_tech = construction4
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_naval_breakthrough_reward_low
+		bm_naval_breakthrough_reward_medium
+		bm_naval_breakthrough_reward_high
+		bm_naval_scientist_xp_reward_low
+		bm_naval_scientist_xp_reward_medium
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_mobile_dockyard_project_tt
+				NAME = bm_sp_mobile_dockyard_technology
+				DESC = bm_sp_mobile_dockyard_technology_desc
+				ICON = GFX_bm_mobile_dockyard_icon
+				STATS = tech_effect|bm_sp_mobile_dockyard_technology
+			}
+			hidden_effect = {
+				set_technology = {
+					bm_sp_mobile_dockyard_technology = 1
+					popup = no
+				}
+			}
+			custom_effect_tooltip = bm_divider_2
+			custom_effect_tooltip = {
+				localization_key = bm_mobile_dockyard_project_tip_tt
+				TECH_1 = damage_control_3
+			}
+		}
+	}
+}

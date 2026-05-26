@@ -1,0 +1,94 @@
+bm_manpads_project = {
+	specialization = specialization_land
+	icon = GFX_sp_manpads
+	project_tags = sp_tag_rocket
+
+	breakthrough_cost = {
+		specialization_land = {
+			base = 1
+			modifier = {
+				add = -1
+				has_tech = antiair5
+			}
+		}
+	}
+
+	resource_cost = {
+		resources = {
+			aluminium = 3
+			tungsten = 2
+		}
+	}
+
+
+
+	prototype_time = sp_time.prototype.medium
+	complexity = sp_complexity.small
+
+	allowed = {
+		has_dlc = "Gotterdammerung"
+	}
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				has_tech = antiair3
+				OR = {
+					has_tech = sp_rockets_improved_guidance
+					is_special_project_completed = sp:sp_rockets_ground_to_air_missile
+				}
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_land_breakthrough_reward_low
+		bm_land_breakthrough_reward_medium
+		bm_land_scientist_xp_reward_low
+		bm_land_scientist_xp_reward_medium
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_manpads_project_equipment_tt
+				ICON = GFX_bm_manpads_eq_icon
+				NAME = bm_manpads_equipment
+				DESC = bm_manpads_equipment_desc
+			}
+			custom_effect_tooltip = bm_divider
+			custom_effect_tooltip = {
+				localization_key = bm_manpads_project_unit_tt
+				ICON = GFX_bm_manpads_support_company_unit_icon
+				NAME = bm_manpads_support_company
+				DESC = bm_manpads_support_company_desc
+			}			
+			custom_effect_tooltip = bm_divider_2
+			custom_effect_tooltip = {
+				localization_key = bm_manpads_project_tip_tt
+				TECH_1 = antiair5
+			}
+		}
+
+		enable_equipments = {
+			bm_manpads_equipment_0
+		}
+
+		enable_subunits = {
+			bm_manpads_support_company
+		}
+	}
+}

@@ -1,0 +1,83 @@
+bm_anti_tank_guided_missile_project = {
+	specialization = specialization_land
+	icon = GFX_sp_anti_tank_guided_missile
+	project_tags = {
+		sp_tag_rocket
+		sp_tag_guided_bomb
+		sp_tag_tank
+	}
+
+	breakthrough_cost = {
+		specialization_land = 2
+	}
+
+	resource_cost = {
+		resources = {
+			tungsten = 2
+			steel = 4
+		}
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.medium
+
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				has_tech = sp_rockets_improved_guidance
+				has_tech = antitank5
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_land_breakthrough_reward_low
+		bm_land_breakthrough_reward_medium
+		bm_land_breakthrough_reward_high
+		bm_land_scientist_xp_reward_low
+		bm_land_scientist_xp_reward_medium
+		bm_land_scientist_xp_reward_high
+		bm_land_scientist_xp_reward_very_high
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_reward_high
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_progress_loss_high
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_anti_tank_guided_missile_project_equipment
+				NAME = bm_guided_anti_tank_launcher_equipment
+				DESC = bm_guided_anti_tank_launcher_equipment_desc
+				ICON = GFX_bm_guided_anti_tank_launcher_eq_icon
+			}
+			custom_effect_tooltip = bm_divider
+			custom_effect_tooltip = {
+				localization_key = bm_anti_tank_guided_missile_project_unit
+				NAME = bm_guided_anti_armor_company
+				DESC = bm_guided_anti_armor_company_desc
+				ICON = GFX_bm_guided_anti_armor_company_unit_icon
+			}
+		}
+
+		enable_subunits = {
+			bm_guided_anti_armor_company
+		}
+		enable_equipments = {
+			bm_guided_anti_tank_launcher_equipment_0
+		}
+	}
+}

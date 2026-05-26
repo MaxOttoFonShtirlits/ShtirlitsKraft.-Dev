@@ -1,0 +1,63 @@
+bm_canines_project = {
+	specialization = specialization_land
+	icon = GFX_sp_canines
+
+	breakthrough_cost = {
+		specialization_land = 0
+	}
+
+	ai_will_do = {
+		base = 1
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.small
+
+	allowed = {
+		has_dlc = "La Resistance"
+	}
+	available = {
+		FROM = {
+			has_tech = tech_military_police
+			has_tech = tech_recon
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_loss_low
+		bm_land_breakthrough_reward_low
+		bm_land_breakthrough_reward_medium
+		bm_land_scientist_xp_reward_low
+	}
+
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_canines_project_tt
+				NAME = bm_sp_canine_technology
+				DESC = bm_sp_canine_technology_desc
+				ICON = GFX_bm_canine_icon
+				STATS = tech_effect|bm_sp_canine_technology
+			}
+			hidden_effect = {
+				set_technology = {
+					bm_sp_canine_technology = 1
+					popup = no
+				}
+			}
+		}
+
+		sub_unit_bonus = {
+			category_recon = {
+				recon = 0.20
+				supply_consumption = 0.08
+			}
+
+			military_police = {
+				suppression_factor = 0.15
+				supply_consumption = 0.08
+			}	
+		}
+	}
+}

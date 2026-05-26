@@ -1,0 +1,73 @@
+bm_tracked_mine_project = {
+	specialization = specialization_land
+	icon = GFX_sp_goliath_tracked_mine
+
+	breakthrough_cost = {
+		specialization_land = 1
+	}
+
+	resource_cost = {
+		resources = {
+			steel = 3
+		}
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.small
+
+	available = {
+		if = {
+			limit = {
+				FROM = {
+					is_ai = yes
+				}
+			}
+			FROM = {
+				always = no
+			}
+		}
+		else = {
+			FROM = {
+				has_tech = tech_engineers2
+				has_tech = mechanised_infantry
+			}
+		}
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_reward_medium
+		bm_progress_reward_high
+		bm_progress_loss_low
+		bm_progress_loss_medium
+		bm_progress_loss_high
+		bm_land_breakthrough_reward_low
+		bm_land_breakthrough_reward_medium
+		bm_land_scientist_xp_reward_low
+		bm_land_scientist_xp_reward_medium
+	}
+	
+	project_output = {
+		country_effects = {
+			custom_effect_tooltip = {
+				localization_key = bm_tracked_mine_project_equipment
+				ICON = GFX_bm_tracked_mine_eq_icon
+				NAME = bm_tracked_mine_equipment
+				DESC = bm_tracked_mine_equipment_desc
+			}
+			custom_effect_tooltip = bm_divider
+			custom_effect_tooltip = {
+				localization_key = bm_tracked_mine_project_unit
+				ICON = GFX_bm_tracked_mine_unit_icon
+				NAME = bm_tracked_mine_company
+				DESC = bm_tracked_mine_company_desc
+			}
+		}			
+		enable_equipments = {
+			bm_tracked_mine_equipment_0
+		}
+		enable_subunits = {
+			bm_tracked_mine_company
+		}
+	}
+}

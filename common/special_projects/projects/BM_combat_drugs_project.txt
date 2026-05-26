@@ -1,0 +1,163 @@
+bm_combat_drugs_project = {
+	specialization = specialization_land
+	icon = GFX_sp_combat_drugs
+
+	breakthrough_cost = {
+		specialization_land = 0
+	}
+
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 0
+			has_war = now
+		}
+	}
+
+	prototype_time = sp_time.prototype.short
+	complexity = sp_complexity.small
+
+	available = {
+		
+	}
+
+	generic_prototype_rewards = {
+		bm_progress_reward_low
+		bm_progress_loss_low
+		bm_land_breakthrough_reward_low
+		bm_land_breakthrough_reward_medium
+		bm_land_scientist_xp_reward_low
+		bm_land_scientist_xp_reward_medium
+	}
+
+	project_output = {
+		country_effects = {
+			if = {
+				limit = {
+					has_country_flag = bm_combat_drugs_project_reward_animal_testing_flag
+				}
+				custom_effect_tooltip = {
+					localization_key = bm_combat_drugs_project_tt
+					NAME = bm_combat_drugs_project_tt_name
+					DESC = bm_combat_drugs_project_tt_desc
+					ICON = GFX_bm_animal_drug_icon
+				}
+				custom_effect_tooltip = bm_divider_2
+				add_dynamic_modifier = {
+					modifier = bm_sp_combat_drugs_animal_testing
+					days = 250
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = bm_combat_drugs_project_reward_human_testing_flag
+				}
+				custom_effect_tooltip = {
+					localization_key = bm_combat_drugs_project_tt
+					NAME = bm_combat_drugs_project_tt_name
+					DESC = bm_combat_drugs_project_tt_desc
+					ICON = GFX_bm_human_drug_icon
+				}
+				custom_effect_tooltip = bm_divider_2
+				add_dynamic_modifier = {
+					modifier = bm_sp_combat_drugs_human_testing
+					days = 250
+				}
+				else = {
+					custom_effect_tooltip = {
+						localization_key = bm_combat_drugs_project_tt
+						NAME = bm_combat_drugs_project_tt_name
+						DESC = bm_combat_drugs_project_tt_desc
+						ICON = GFX_bm_combat_drugs_icon
+					}
+					custom_effect_tooltip = bm_divider_2
+					effect_tooltip = {
+						add_dynamic_modifier = {
+							modifier = bm_sp_combat_drugs_animal_testing
+							days = 250
+						}						
+					}
+				}
+			}
+		}
+	}
+
+	unique_prototype_rewards = {
+		bm_combat_drugs_project_reward = {
+			fire_only_once = yes
+
+			threshold = {
+				min = 55
+				max = 100
+			}
+
+			weight = {
+				base = 1000
+			}
+
+			option = {
+				token = bm_combat_drugs_project_reward_animal_testing
+
+				iteration_output = {
+					country_effects = {
+						set_country_flag = bm_combat_drugs_project_reward_animal_testing_flag
+						custom_effect_tooltip = {
+							localization_key = bm_combat_drugs_project_reward_animal_testing_tt
+							NAME = bm_combat_drugs_project_reward_animal_testing_tt_name
+							DESC = bm_combat_drugs_project_reward_animal_testing_tt_desc
+							ICON = GFX_bm_animal_testing_icon
+						}
+						custom_effect_tooltip = bm_divider_2
+						effect_tooltip = {
+							add_dynamic_modifier = {
+								modifier = bm_sp_combat_drugs_animal_testing
+								days = 250
+							}
+						}
+						custom_effect_tooltip = bm_divider_2
+						FROM = {
+							add_project_progress_ratio = constant:sp_progress.gain.medium 
+						}
+					}
+				}
+			}
+
+			option = {
+				token = bm_combat_drugs_project_reward_human_testing
+
+				iteration_output = {
+					country_effects = {
+						set_country_flag = bm_combat_drugs_project_reward_human_testing_flag
+						custom_effect_tooltip = {
+							localization_key = bm_combat_drugs_project_reward_human_testing_tt
+							NAME = bm_combat_drugs_project_reward_human_testing_tt_name
+							DESC = bm_combat_drugs_project_reward_human_testing_tt_desc
+							ICON = GFX_bm_experimental_testing_icon
+						}
+						custom_effect_tooltip = bm_divider_2
+						effect_tooltip = {
+							add_dynamic_modifier = {
+								modifier = bm_sp_combat_drugs_human_testing
+								days = 250
+							}
+						}
+						custom_effect_tooltip = bm_divider_2
+						FROM = {
+							add_project_progress_ratio = constant:sp_progress.loss.medium
+						}
+						add_breakthrough_progress = {
+							value = sp_breakthrough_progress.low
+							specialization = specialization_land
+						}
+					}
+					scientist_effects = {
+						add_scientist_xp = {
+							experience = constant:sp_scientist_xp_gain.high
+							specialization = specialization_land
+						}
+					}
+				}
+			}
+		}
+	}
+}

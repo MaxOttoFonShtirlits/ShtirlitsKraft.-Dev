@@ -1,0 +1,48 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "GER_JET_FTR_2_ho229-mesh"
+		file = "gfx/models/PKToalReskinMOD/aircraft/Major/GER/7_JET_fighter_2/GER_JET_FTR_2_ho229.mesh"
+		animation = { id = "GER_JET_FTR_2_ho229_crash"							type = "GER_JET_FTR_2_ho229_crash_animation" }
+		animation = { id = "GER_JET_FTR_2_ho229_droping_fuel_tank"				type = "GER_JET_FTR_2_ho229_droping_fuel_tank_animation" }
+		animation = { id = "GER_JET_FTR_2_ho229_idle_1"						type = "GER_JET_FTR_2_ho229_idle_1_animation" }
+		animation = { id = "GER_JET_FTR_2_ho229_idle_1_no_tank"				type = "GER_JET_FTR_2_ho229_idle_1_no_tank_animation" }
+		animation = { id = "GER_JET_FTR_2_ho229_idle_2"						type = "GER_JET_FTR_2_ho229_idle_2_animation" }
+		animation = { id = "GER_JET_FTR_2_ho229_idle_2_no_tank"				type = "GER_JET_FTR_2_ho229_idle_2_no_tank_animation" }
+		scale = 0.7
+		meshsettings = {
+			texture_diffuse = "GER_JET_FTR_2_ho229_A.dds"
+            texture_normal = "w_Weapon_N.dds"
+            texture_specular = "w_Weapon_S.dds"
+			shader = PdxMeshAdvanced
+		 }
+	}
+	
+	pdxmesh = {
+		name = "GER_JET_SB_1_Horten_18-mesh"
+		file = "gfx/models/PKToalReskinMOD/aircraft/Major/GER/9_JET_S_bomber_1/GER_JET_SB_1_Horten_18.mesh"
+		animation = { id = "GER_JET_SB_1_Horten_18_idle_A"										type = "GER_JET_SB_1_Horten_18_idle_A-animation" }
+		animation = { id = "GER_JET_SB_1_Horten_18_bombing_A"									type = "GER_JET_SB_1_Horten_18_bombing_A-animation" }
+		animation = { id = "GER_JET_SB_1_Horten_18_bombing_B"									type = "GER_JET_SB_1_Horten_18_bombing_B-animation" }
+		animation = { id = "GER_JET_SB_1_Horten_18_mgdefence_A"									type = "GER_JET_SB_1_Horten_18_mgdefence_A-animation" }
+		scale = 1.5
+		meshsettings = {
+			texture_diffuse = "GER_JET_SB_1_Horten_18_A.dds"
+            texture_normal = "w_Weapon_N.dds"
+            texture_specular = "w_Weapon_S.dds"
+			shader = PdxMeshAdvanced
+		 }
+	}
+	
+	pdxmesh = {
+		name = "SpzLang_APC_mesh"
+		file = "gfx/models/units/vehicles/SpzLang.mesh"
+
+		animation = { id = "attack"			type = "SpzLang_attack_animation" }
+		animation = { id = "attack_2"			type = "SpzLang_attack_2_animation" }
+		animation = { id = "idle"			type = "SpzLang_idle_animation" }
+		animation = { id = "move"			type = "SpzLang_moving_animation" }
+		scale = 0.6
+	}
+	
+}
