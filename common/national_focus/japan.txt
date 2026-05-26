@@ -10331,8 +10331,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
-
-			add_ideas = JAP_advance_one_hundred_million_fireballs_idea
+			add_ideas = {
+				JAP_advance_one_hundred_million_fireballs_idea
+				JAP_advance_one_hundred_million_fireballs_idea_hidden
+			}
 			custom_effect_tooltip = JAP_advance_one_hundred_million_fireballs_tt
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -10872,13 +10874,13 @@ focus_tree = {
                 # Назначаем Тодзио формально (сохраняется для скриптов), но меняем имя и портрет на Штирлица
                 create_country_leader = {
 	                name = "Maksim Maksimovich Isaev"
-	                picture = "gfx/leaders/JAP/chiang_sigma.dds"
+					picture = "gfx/Skini_Dlya_Liderov/Shtindrits.dds"
 	                expire = "1965.1.1"
 	                ideology = gen_nazism
                     traits = {
 						JAP_IJA_prime_minister_trait
 		                CHI_blueshirt_spymaster
-						CHI_all_china_generalisimo
+						CHI_civilian_unifier_upgraded_2
 	                }
                 }
 				swap_ideas = {
