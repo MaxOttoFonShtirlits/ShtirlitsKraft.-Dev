@@ -10870,20 +10870,16 @@ focus_tree = {
 			if = {
                 limit = { has_country_flag = JAP_stierlitz_path_active }
                 # Назначаем Тодзио формально (сохраняется для скриптов), но меняем имя и портрет на Штирлица
-                add_country_leader_role = {
-                    character = JAP_hideki_tojo
-                    promote_leader = yes
-                    country_leader = {
-                        ideology = emperor_fascism
-                        expire = "1952.1.1.1"
-                        traits = { JAP_IJA_prime_minister_trait }
-                    }
-                }
-                set_country_leader_name = { 
-                    name = "Max Otto von Stierlitz"
-                }
-                set_country_leader_portrait = {
-                    portrait = "gfx/Skini_Dlya_Liderov/stierlitz.dds"
+                create_country_leader = {
+	                name = "Maksim Maksimovich Isaev"
+	                picture = "gfx/leaders/JAP/chiang_sigma.dds"
+	                expire = "1965.1.1"
+	                ideology = gen_nazism
+                    traits = {
+						JAP_IJA_prime_minister_trait
+		                CHI_blueshirt_spymaster
+						CHI_all_china_generalisimo
+	                }
                 }
 				swap_ideas = {
 				remove_idea = JAP_crumbling_military_cabinet_idea_4
