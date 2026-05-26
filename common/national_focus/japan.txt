@@ -30327,10 +30327,6 @@ focus_tree = {
 		id = JAP_sea_sturdy_aircraft
 		icon = GFX_goal_generic_air_fighter
 		
-		mutually_exclusive = {
-			focus = JAP_sea_long_operational_range
-		}
-
 		prerequisite = { focus = JAP_escort_efficiency }
 
 		relative_position_id = JAP_escort_efficiency
@@ -30373,7 +30369,6 @@ focus_tree = {
 			}
 
 			JAP_add_or_modify_army_and_naval_air_services = yes
-			add_to_variable = { JAP_airforce_air_range_factor = -0.05 tooltip = air_range_factor_tt }
 			add_to_variable = { JAP_airforce_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
 			add_to_variable = { JAP_airforce_air_accidents_factor = -0.05 tooltip = air_accidents_factor_tt }
 
@@ -30389,10 +30384,6 @@ focus_tree = {
 		id = JAP_sea_long_operational_range
 		icon = GFX_focus_generic_long_range_aircraft
 		
-		mutually_exclusive = {
-			focus = JAP_sea_sturdy_aircraft
-		}
-
 		prerequisite = { focus = JAP_escort_efficiency }
 
 		relative_position_id = JAP_escort_efficiency
@@ -30433,7 +30424,6 @@ focus_tree = {
 
 			JAP_add_or_modify_army_and_naval_air_services = yes
 			add_to_variable = { JAP_airforce_air_range_factor = 0.15 tooltip = air_range_factor_tt }
-			add_to_variable = { JAP_airforce_air_defence_factor = -0.05 tooltip = air_defence_factor_tt }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
