@@ -9384,7 +9384,7 @@
 		available = {
 			has_country_leader = { ruling_only = yes character = FRA_charles_de_gaulle}
 		}
-		
+		allow_branch = { if = { limit = { has_game_rule = { rule = obsolete_focus_branches_visibility option = HIDE }} has_completed_focus = FRA_confirm_eastern_commitments }}
 		bypass = {
 
 		}
@@ -9927,7 +9927,7 @@
 			}
 			
 		}
-		
+		allow_branch = { if = { limit = { has_game_rule = { rule = obsolete_focus_branches_visibility option = HIDE }} has_completed_focus = FRA_confirm_eastern_commitments }}
 		bypass = {
 			FRA = { has_capitulated = yes } 
 			not = { has_idea = FRA_defeatism }
