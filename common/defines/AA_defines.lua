@@ -35,7 +35,7 @@ NDefines.NAir.CAS_NIGHT_ATTACK_FACTOR = 0.05            -- было 0.25 (BM)
 
 -- CAS в наземном бою: умеренный нерф (через NMilitary, дублируем здесь для чистоты)
 NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.04
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.07
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.03
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2
 
 --------------------------------------------------------------------------------------------------------------

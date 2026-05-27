@@ -7991,7 +7991,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_cabinet_intelligence_bureau }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -8055,7 +8055,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_cabinet_intelligence_bureau }
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 1
@@ -8101,7 +8101,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_found_the_great_japan_press_association }
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 1
@@ -8171,7 +8171,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_national_spiritual_mobliization_movement }
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 1
@@ -8299,7 +8299,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_the_central_economic_council }
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 1
@@ -8368,7 +8368,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_the_central_economic_council }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -26860,7 +26860,7 @@ focus_tree = {
 		x = -4
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -26982,7 +26982,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27076,7 +27076,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27244,7 +27244,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27296,7 +27296,7 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
