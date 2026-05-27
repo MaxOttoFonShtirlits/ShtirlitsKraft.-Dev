@@ -7595,7 +7595,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_konoes_first_cabinet }
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -13655,7 +13655,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_demand_tonkinese_bases }
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -13945,7 +13945,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_demand_tonkinese_bases }
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -14073,7 +14073,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_occupy_siam focus = JAP_sea_pressure_siam }
 
-		cost = 4
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
