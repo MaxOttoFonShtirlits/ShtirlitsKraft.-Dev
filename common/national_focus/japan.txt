@@ -7244,7 +7244,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -7314,7 +7314,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
-		cost = 10
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -7356,7 +7356,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_purge_the_kodoha_faction }
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -7472,7 +7472,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_promulgate_the_military_ministers_system }
 
-		cost = 2
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -7538,7 +7538,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_the_harakiri_debate }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -7882,7 +7882,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_reiterate_the_three_principles_of_hirota focus = JAP_konoes_first_cabinet }
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 1
@@ -8231,7 +8231,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_the_central_economic_council }
 
-		cost = 7
+		cost = 4
 
 		ai_will_do = {
 			factor = 1
@@ -11188,7 +11188,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_establish_mongol_military_government }
 
-		cost = 2
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -11263,7 +11263,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_establish_mongol_military_government }
 
-		cost = 3
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -11319,7 +11319,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_reorganize_the_united_autonomous_government }
 
-		cost = 3
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -11412,7 +11412,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_mengjiang_united_autonomous_government }
 
-		cost = 3
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -11565,9 +11565,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
-			CHI = {
-            add_ideas = { chi_hidden_idea_1 }
-            }
+			hidden_effect = {
+
+				CHI = {
+                add_ideas = { chi_hidden_idea_1 }
+                }
+
+			}	
 
 			add_manpower = 15000
 
@@ -12107,7 +12111,7 @@ focus_tree = {
 		completion_reward = {
 
 			729 = {
-				add_claim_by = ROOT
+				add_core_by = RNG
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -12885,7 +12889,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_nanshin_ron }
 
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -12941,7 +12945,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_nanshin_ron }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -13150,7 +13154,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_unsinkable_aircraft_carriers }
 
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -13210,7 +13214,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_isolate_oceania }
 
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -13312,7 +13316,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_battle_for_australia }
 
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -13545,7 +13549,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_nanshin_ron }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -13658,7 +13662,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_demand_tonkinese_bases }
 
-		cost = 2
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -13948,7 +13952,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_demand_tonkinese_bases }
 
-		cost = 2
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -15063,7 +15067,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_hokushin_ron }
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -15129,7 +15133,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_strenghten_manchukuo_imperial_army }
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -15398,7 +15402,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_kantokuen }
 
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -15557,7 +15561,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_kantokuen }
 
-		cost = 5
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -25167,7 +25171,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-
+			add_political_power = 50
 			random_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
@@ -25728,7 +25732,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -25832,7 +25836,7 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -25891,7 +25895,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26087,7 +26091,7 @@ focus_tree = {
 		x = 2
 		y = 1 
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26129,7 +26133,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26191,7 +26195,7 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26237,7 +26241,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26310,7 +26314,7 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26365,7 +26369,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26425,7 +26429,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -26555,7 +26559,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 3
@@ -26681,7 +26685,7 @@ focus_tree = {
 		x = -5
 		y = 1
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -26863,7 +26867,7 @@ focus_tree = {
 		x = -4
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27367,7 +27371,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27437,7 +27441,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27489,7 +27493,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27565,7 +27569,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -27635,7 +27639,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -27692,7 +27696,7 @@ focus_tree = {
 		x = 4
 		y = 1
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -27805,7 +27809,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -27952,7 +27956,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 2
@@ -28110,7 +28114,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 2
@@ -28875,7 +28879,7 @@ focus_tree = {
 		x = 3
 		y = 1
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -28961,7 +28965,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 7
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -29049,7 +29053,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 7
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -29138,7 +29142,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 6
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -29704,7 +29708,7 @@ focus_tree = {
 		x = -1
 		y = 2
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -29729,7 +29733,6 @@ focus_tree = {
 			JAP_add_or_modify_imperial_army = yes
 			add_to_variable = { JAP_army_dig_in_speed_factor = 0.1 tooltip = dig_in_speed_factor_tt }
 			add_to_variable = { JAP_army_max_dig_in = 2 tooltip = max_dig_in_tt }
-			add_to_variable = { JAP_army_supply_consumption_factor = -0.1 tooltip = supply_consumption_factor_tt }
 			add_to_variable = { JAP_army_army_defence_factor = 0.1 tooltip = army_defence_factor_tt }
 
 		}
@@ -29748,7 +29751,7 @@ focus_tree = {
 		x = 1
 		y = 2
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -29789,7 +29792,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -29949,7 +29952,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -30147,7 +30150,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -30216,7 +30219,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -30335,7 +30338,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -30392,7 +30395,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -30472,7 +30475,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
@@ -30581,7 +30584,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -30644,7 +30647,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 6
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -30851,7 +30854,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -30965,7 +30968,7 @@ focus_tree = {
 		x = 3
 		y = 1
 
-		cost = 10
+		cost = 4
 
 		ai_will_do = {
 			factor = 3
