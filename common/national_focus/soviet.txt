@@ -8788,6 +8788,11 @@ focus_tree = {
 				has_civil_war = yes
 			}	
 		}
+		bypass = {
+			MON = {
+				is_subject = no
+			}
+		}
 
 		available = {
 			any_allied_country = {

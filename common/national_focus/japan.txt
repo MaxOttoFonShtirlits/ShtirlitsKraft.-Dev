@@ -11565,6 +11565,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
+			CHI = {
+            add_ideas = { chi_hidden_idea_1 }
+            }
 
 			add_manpower = 15000
 
