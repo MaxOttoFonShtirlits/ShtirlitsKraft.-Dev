@@ -8945,7 +8945,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_imperial_rule_assistance_association }
 
-		cost = 10
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -8986,7 +8986,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_the_yokusan_sonendan }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -9030,7 +9030,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_imperial_rule_assistance_association }
 
-		cost = 10
+		cost = 6
 
 		ai_will_do = {
 			factor = 1
@@ -9092,7 +9092,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_imperial_rule_assistance_association }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -9149,7 +9149,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_formalize_the_tonarigumi focus = JAP_sea_national_defense_state focus = JAP_form_the_yokusan_sonendan }
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -9801,7 +9801,7 @@ focus_tree = {
 
     prerequisite = { focus = JAP_ichioku_isshin }
 
-    cost = 5
+    cost = 2
 
     offset = {
         x = -1
@@ -9896,7 +9896,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_ichioku_isshin }
 
-		cost = 5
+		cost = 2
 
 		offset = {
 			x = -1
@@ -9967,7 +9967,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_ichioku_isshin }
 
-		cost = 5
+		cost = 2
 
 		offset = {
 			x = -1
