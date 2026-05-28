@@ -26369,7 +26369,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -26429,7 +26429,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -26559,7 +26559,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 6
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
@@ -26867,7 +26867,7 @@ focus_tree = {
 		x = -4
 		y = 1
 
-		cost = 2
+		cost = 1
 
 		ai_will_do = {
 			factor = 3
@@ -26989,7 +26989,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27083,7 +27083,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27251,7 +27251,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27303,7 +27303,7 @@ focus_tree = {
 		x = 2
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27371,7 +27371,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27441,7 +27441,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27493,7 +27493,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27569,7 +27569,7 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -27639,7 +27639,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -29952,7 +29952,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -30150,7 +30150,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -30287,7 +30287,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
@@ -30338,7 +30338,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 3
