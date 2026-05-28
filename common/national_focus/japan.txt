@@ -8231,7 +8231,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_the_central_economic_council }
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -8742,7 +8742,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_tripartite_pact }
 
-		cost = 6
+		cost = 4
 
 		ai_will_do = {
 			factor = 1
@@ -25732,7 +25732,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 3
