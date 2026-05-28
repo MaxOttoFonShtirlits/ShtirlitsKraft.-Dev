@@ -7595,7 +7595,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_konoes_first_cabinet }
 
-		cost = 2
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -7939,7 +7939,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_national_spiritual_mobliization_movement }
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -7991,7 +7991,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_cabinet_intelligence_bureau }
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -8055,7 +8055,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_form_cabinet_intelligence_bureau }
 
-		cost = 6
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -8101,7 +8101,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_found_the_great_japan_press_association }
 
-		cost = 4
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -9288,7 +9288,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_imperial_rule_assistance_association }
 
-		cost = 3
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -9412,7 +9412,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_greater_east_asian_co_properity_sphere }
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -9535,7 +9535,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_greater_east_asian_co_properity_sphere }
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -9643,7 +9643,7 @@ focus_tree = {
 
 		prerequisite = { focus = JAP_sea_greater_east_asian_co_properity_sphere }
 
-		cost = 3
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
