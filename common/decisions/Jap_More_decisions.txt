@@ -91,6 +91,25 @@ jap_occupation_reorganization = {
             #  every_state = { limit = {is_core_of = RNG is_controlled_by = JAP} add_core_of = JAP remove_core_of = RNG}
             RNG = {
             add_ideas = { rng_hidden_idea_2 }
+            hidden_effect = {	
+                set_technology = {
+				    excavation1 = 1
+					excavation2 = 1
+					excavation3 = 1
+                    excavation4 = 1
+                    excavation5 = 1
+                    electronic_mechanical_engineering = 1
+                    cavity_magnatron = 1
+                    centimetric_radar = 1
+                    phased_array = 1
+                    monopulse_radar = 1
+                    basic_fortification_tech = 1
+                    coastal_fort_tech_1 = 1
+                    coastal_fort_tech_2 = 1
+                    land_fort_tech_1 = 1
+                    land_fort_tech_2 = 1
+                    stronghold_network_tech = 1
+				}
             }
             every_state = { limit = {is_core_of = AUS is_controlled_by = JAP} add_core_of = JAP remove_core_of = AUS}
               create_field_marshal = {
