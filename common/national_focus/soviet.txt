@@ -8800,7 +8800,6 @@ focus_tree = {
 				is_major = no
 			}
 			num_of_civilian_factories_available_for_projects > 2
-			is_subject = no
 		}
 		
 		search_filters = {}
