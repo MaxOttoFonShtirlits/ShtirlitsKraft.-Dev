@@ -57,6 +57,37 @@ ast_leader_skins = {
             }
         }
     }
+    ast_become_Vaira = {
+        icon = generic_formable_nations
+
+        available = {
+            NOT = { has_country_flag = AST_vaira_skin_active }
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            # Устанавливаем флаг, блокирующий повторное появление этого решения
+            set_country_flag = AST_vaira_skin_active
+
+            # Применяем имя и портрет проверенным методом
+            set_country_leader_name = { 
+                name = "Вайра"
+            }
+            set_country_leader_portrait = {
+                portrait = "gfx/Skini_Dlya_Liderov/Vaira_2.dds"
+            }
+        }
+    } 
 }
 ita_leader_skins = {
     ita_become_Vaira = {
@@ -87,6 +118,39 @@ ita_leader_skins = {
             }
             set_country_leader_portrait = {
                 portrait = "gfx/Skini_Dlya_Liderov/Vaira.dds"
+            }
+        }
+    } 
+}
+fin_leader_skins = {
+    fin_become_Kalich = {
+        icon = generic_formable_nations
+
+        available = {
+            NOT = { has_country_flag = Fin_skin_active }
+        }
+
+        visible = {
+            always = yes
+        }
+
+        ai_will_do = {
+            base = 0
+        }
+
+        cost = 0
+        fire_only_once = no
+
+        complete_effect = {
+            # Устанавливаем флаг, блокирующий повторное появление этого решения
+            set_country_flag = Fin_skin_active
+
+            # Применяем имя и портрет проверенным методом
+            set_country_leader_name = { 
+                name = "Калыч"
+            }
+            set_country_leader_portrait = {
+                portrait = "gfx/Skini_Dlya_Liderov/Kalich.dds"
             }
         }
     } 

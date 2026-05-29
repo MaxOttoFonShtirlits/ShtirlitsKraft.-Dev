@@ -30,3 +30,11 @@ ita_leader_skins = {
         tag = ITA
     }
 }
+fin_leader_skins = {
+    icon = generic_propaganda
+
+    # Категория видна только США
+    visible = {
+        tag = FIN
+    }
+}
