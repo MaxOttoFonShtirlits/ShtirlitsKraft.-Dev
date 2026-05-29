@@ -1,0 +1,19 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			set_variable = { global.BM_AI_RESEARCH_elapsed_months = 0 }
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = BM_AI_RESEARCH_monthly_done }
+				}
+				set_global_flag = { flag = BM_AI_RESEARCH_monthly_done days = 1 value = 1 }
+				add_to_variable = { global.BM_AI_RESEARCH_elapsed_months = 1 }
+			}
+		}
+	}
+}

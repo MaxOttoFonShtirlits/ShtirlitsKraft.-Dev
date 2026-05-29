@@ -1,0 +1,1515 @@
+# Enhanced AI - Research
+
+####################################################################################################
+#	INDUSTRY
+####################################################################################################
+
+research_industry_techs_1 = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = basic_machine_tools
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = concentrated_industry
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = dispersed_industry
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = construction1
+		value = 100
+	}
+}
+
+research_industry_techs_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_machine_tools
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = concentrated_industry2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = dispersed_industry2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = construction2
+		value = 100
+	}
+}
+
+research_industry_techs_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_machine_tools
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = concentrated_industry3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = dispersed_industry3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = construction3
+		value = 100
+	}
+}
+
+research_industry_techs_4 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 59 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = assembly_line_production
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = concentrated_industry4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = dispersed_industry4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = construction4
+		value = 100
+	}
+}
+
+research_industry_techs_5 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = streamlined_line
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = concentrated_industry5
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = dispersed_industry5
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = construction5
+		value = 100
+	}
+}
+
+####################################################################################################
+#	SYNTHETIC RESOURCES
+####################################################################################################
+
+research_refs_and_silos = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = fuel_silos
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = synth_oil_experiments
+		value = 100
+	}
+}
+
+research_processing_techs_1 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 50
+		synthetic_refinery > 5
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = oil_processing
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = rubber_processing
+		value = 100
+	}
+}
+
+research_processing_techs_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+		is_major = yes
+		num_of_military_factories > 100
+		synthetic_refinery > 10
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_oil_processing
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_rubber_processing
+		value = 100
+	}
+}
+
+research_processing_techs_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 59 }
+		is_major = yes
+		num_of_military_factories > 150
+		synthetic_refinery > 20
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_oil_processing
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_rubber_processing
+		value = 100
+	}
+}
+
+research_processing_techs_4 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+		is_major = yes
+		num_of_military_factories > 200
+		synthetic_refinery > 40
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = modern_oil_processing
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = modern_rubber_processing
+		value = 100
+	}
+}
+
+####################################################################################################
+#	INFANTRY
+####################################################################################################
+
+research_infantry_techs_1 = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = infantry_weapons
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = infantry_weapons1
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = support_weapons
+		value = 100
+	}
+}
+
+research_infantry_techs_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 23 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = infantry_weapons2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_infantry_weapons
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = support_weapons2
+		value = 100
+	}
+}
+
+research_infantry_techs_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_infantry_weapons_2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = support_weapons3
+		value = 100
+	}
+}
+
+research_infantry_techs_4 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 71 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_infantry_weapons
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = support_weapons4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = infantry_at
+		value = 100
+	}
+}
+
+research_infantry_techs_5 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = infantry_at2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = night_vision
+		value = 100
+	}
+}
+
+research_infantry_techs_6 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 95 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_infantry_weapons2
+		value = 100
+	}
+}
+
+research_infantry_techs_7 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 119 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = night_vision2
+		value = 100
+	}
+}
+
+####################################################################################################
+#	ARTILLERY
+####################################################################################################
+
+research_arty_techs_1 = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = gw_artillery
+		value = 100
+	}
+}
+
+research_arty_techs_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = interwar_artillery
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = interwar_antiair
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = interwar_antitank
+		value = 100
+	}
+}
+
+research_arty_techs_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 23 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = artillery1
+		value = 100
+	}
+}
+
+research_arty_techs_4 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = artillery2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antiair1
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antitank1
+		value = 100
+	}
+}
+
+research_arty_techs_5 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 59 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = artillery3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antiair2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antitank2
+		value = 100
+	}
+}
+
+research_arty_techs_6 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 71 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = artillery4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antiair3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antitank3
+		value = 100
+	}
+}
+
+research_arty_techs_7 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = artillery5
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antiair4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antitank4
+		value = 100
+	}
+}
+
+research_arty_techs_8 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 95 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = antiair5
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = antitank5
+		value = 100
+	}
+}
+
+####################################################################################################
+#	SUPPORT
+####################################################################################################
+
+research_support_techs_1 = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_support
+		value = 100
+	}
+}
+
+research_support_techs_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_engineers
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_recon
+		value = 100
+	}
+}
+
+research_support_techs_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 23 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_field_hospital
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_logistics_company
+		value = 100
+	}
+}
+
+research_support_techs_3_majors = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 23 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_maintenance_company
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_signal_company
+		value = 100
+	}
+}
+
+research_support_techs_4 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_engineers2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_recon2
+		value = 100
+	}
+}
+
+research_support_techs_5 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_field_hospital2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_logistics_company2
+		value = 100
+	}
+}
+
+research_support_techs_5_majors = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_maintenance_company2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_signal_company2
+		value = 100
+	}
+}
+
+research_support_techs_6 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 71 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_engineers3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_recon3
+		value = 100
+	}
+}
+
+research_support_techs_7 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_field_hospital3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_logistics_company3
+		value = 100
+	}
+}
+
+research_support_techs_7_majors = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_signal_company3
+		value = 100
+	}
+}
+
+research_support_techs_8 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 107 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_engineers4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_recon4
+		value = 100
+	}
+}
+
+research_support_techs_9 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 119 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_field_hospital4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_logistics_company4
+		value = 100
+	}
+}
+
+research_support_techs_9_majors = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 119 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_signal_company4
+		value = 100
+	}
+}
+
+####################################################################################################
+#	ARMOR
+####################################################################################################
+
+research_light_tanks = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = gwtank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = gwtank
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_light_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_light_tank
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_light_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_light_tank
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tech_trucks
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = motorised_infantry
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = electronic_mechanical_engineering
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = radio
+		value = 100
+	}
+}
+
+research_basic_medium_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 23 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = basic_medium_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_medium_tank
+		value = 100
+	}
+}
+
+research_basic_heavy_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 50
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = basic_heavy_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_heavy_tank
+		value = 100
+	}
+}
+
+research_mech = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = mechanised_infantry
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_radio
+		value = 100
+	}
+}
+
+research_improved_medium_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_medium_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_medium_tank
+		value = 100
+	}
+}
+
+research_improved_heavy_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+		is_major = yes
+		num_of_military_factories > 50
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_heavy_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_heavy_tank
+		value = 100
+	}
+}
+
+research_advanced_medium_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+		is_major = yes
+		num_of_military_factories > 60
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_light_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_light_tank
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_medium_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_medium_tank
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = mechanised_infantry2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_radio
+		value = 100
+	}
+}
+
+research_advanced_heavy_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+		is_major = yes
+		num_of_military_factories > 75
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_heavy_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_heavy_tank
+		value = 100
+	}
+}
+
+research_modern_tank = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 107 }
+		is_major = yes
+		num_of_military_factories > 60
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = main_battle_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = main_battle_tank
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = mechanised_infantry3
+		value = 100
+	}
+}
+
+research_amphibious_techs_1 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 59 }
+		is_major = yes
+		num_of_military_factories > 30
+		has_navy_size = { size > 100 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = amphibious_tank_chassis
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = amphibious_drive
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = amphibious_mechanized_infantry
+		value = 100
+	}
+}
+
+research_amphibious_techs_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 83 }
+		is_major = yes
+		num_of_military_factories > 30
+		has_navy_size = { size > 100 }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = amphibious_mechanized_infantry_2
+		value = 100
+	}
+}
+
+####################################################################################################
+#	SMALL AIRCRAFT
+####################################################################################################
+
+research_fighter_and_cas_1 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 25
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = aa_lmg
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = early_bombs
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = iw_small_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = engines_1
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = early_fighter
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_small_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = engines_2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = fighter1
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = CAS1
+		value = 100
+	}
+}
+
+research_plane_modules = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 23 }
+		is_major = yes
+		num_of_military_factories > 25
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = aircraft_construction
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = range_improvements
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = aa_hmg
+		value = 100
+	}
+}
+
+research_fighter_and_cas_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+		is_major = yes
+		num_of_military_factories > 25
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = survivability_studies
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = improved_small_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = engines_3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = fighter2
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = CAS2
+		value = 100
+	}
+}
+
+research_fighter_and_cas_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 95 }
+		is_major = yes
+		num_of_military_factories > 25
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = aa_cannon_1
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = heavy_bombs
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = advanced_small_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = engines_4
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = fighter3
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = CAS3
+		value = 100
+	}
+}
+
+####################################################################################################
+#	BIG AIRCRAFT
+####################################################################################################
+
+research_tac_1 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 75
+		has_doctrine = new_operational_integrity
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = iw_medium_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = early_bomber
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_medium_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tactical_bomber1
+		value = 100
+	}
+}
+
+research_tac_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+		is_major = yes
+		num_of_military_factories > 75
+		has_doctrine = new_operational_integrity
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_medium_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tactical_bomber2
+		value = 100
+	}
+}
+
+research_tac_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 95 }
+		is_major = yes
+		num_of_military_factories > 75
+		has_doctrine = new_operational_integrity
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_medium_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = tactical_bomber3
+		value = 100
+	}
+}
+
+research_strat_1 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 125
+		has_doctrine = new_strategic_destruction
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = iw_large_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = basic_large_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = strategic_bomber1
+		value = 100
+	}
+}
+
+research_strat_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+		is_major = yes
+		num_of_military_factories > 125
+		has_doctrine = new_strategic_destruction
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = improved_large_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = strategic_bomber2
+		value = 100
+	}
+}
+
+research_strat_3 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 95 }
+		is_major = yes
+		num_of_military_factories > 125
+		has_doctrine = new_strategic_destruction
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = advanced_large_airframe
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = strategic_bomber3
+		value = 100
+	}
+}
+
+####################################################################################################
+#	OTHER
+####################################################################################################
+
+research_basic_trains = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = basic_train
+		value = 100
+	}
+}
+
+research_armored_trains = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 11 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = armored_train
+		value = 100
+	}
+}
+
+research_railway_guns = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+		is_major = yes
+		num_of_military_factories > 30
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = railway_gun
+		value = 100
+	}
+}
+
+research_mp = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 35 }
+		is_major = yes
+		num_occupied_states > 0
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = tech_military_police
+		value = 100
+	}
+}
+
+research_silly_armored_cars = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 71 }
+		is_major = yes
+		num_of_military_factories > 200
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = armored_car1
+		value = 100
+	}
+}
+
+research_le_funny_katyusha = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 71 }
+		is_major = yes
+		num_of_military_factories > 30
+		OR = {
+			has_doctrine = new_mobile_warfare
+			has_doctrine = mass_assault
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = rocket_artillery
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = motorized_rocket_unit
+		value = 100
+	}
+}
+
+research_armored_support_1 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 47 }
+		is_major = yes
+		num_of_military_factories > 50
+		is_special_project_completed = sp:sp_land_military_engineering_vehicles
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = sp_armored_engineer_tech
+		value = 100
+	}
+}
+
+research_armored_support_2 = {
+	enable = {
+		check_variable = { global.BM_AI_RESEARCH_elapsed_months > 95 }
+		is_major = yes
+		num_of_military_factories > 60
+		is_special_project_completed = sp:sp_land_military_engineering_vehicles
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_tech
+		id = sp_armored_maintenance_tech
+		value = 100
+	}
+	ai_strategy = {
+		type = research_tech
+		id = sp_armored_signal_tech
+		value = 100
+	}
+}
