@@ -127,7 +127,7 @@ fin_leader_skins = {
         icon = generic_formable_nations
 
         available = {
-            NOT = { has_country_flag = Fin_skin_active }
+           #NOT = { has_country_flag = Fin_skin_active }
         }
 
         visible = {
@@ -143,7 +143,7 @@ fin_leader_skins = {
 
         complete_effect = {
             # Устанавливаем флаг, блокирующий повторное появление этого решения
-            set_country_flag = Fin_skin_active
+            #set_country_flag = Fin_skin_active
 
             # Применяем имя и портрет проверенным методом
             set_country_leader_name = { 
