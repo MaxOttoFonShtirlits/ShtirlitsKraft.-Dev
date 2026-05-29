@@ -52,7 +52,7 @@ jap_occupation_reorganization = {
                     transfer_troops = yes
                 }
                 every_state = { limit = {is_core_of = TIB is_controlled_by = RNG} add_core_of = RNG remove_core_of = TIB}
-                 every_state = { limit = {is_core_of = MEN is_controlled_by = RNG} add_core_of = RNG remove_core_of = MEN}
+                every_state = { limit = {is_core_of = MEN is_controlled_by = RNG} add_core_of = RNG remove_core_of = MEN}
             }
 
         }
@@ -81,14 +81,7 @@ jap_occupation_reorganization = {
 
         complete_effect = {
             set_country_flag = Total_Mobilization_Of_The_Nation
-            sound_effect = "ChinaUnitedandReady"
-            set_country_leader_name = { 
-            name = "Max Otto von Stierlitz"
-            }
-            set_country_leader_portrait = {
-            portrait = "gfx/Skini_Dlya_Liderov/stierlitz.dds"
-            }
-            set_cosmetic_tag = Kitay_2
+            scoped_sound_effect = "ChinaUnitedandReady"
             JAP = {
             #annex_country = {
             #   target = RNG
