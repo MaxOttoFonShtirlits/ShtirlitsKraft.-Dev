@@ -8790,7 +8790,7 @@ focus_tree = {
 		}
 		bypass = {
 			MON = {
-				is_subject = no
+				is_subject = yes
 			}
 		}
 
