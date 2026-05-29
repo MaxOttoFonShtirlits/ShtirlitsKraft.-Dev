@@ -1632,7 +1632,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = FIN_national_unity
-		cost = 5
+		cost = 2
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = FIN_in_a_defensive_war_against_a_major_tt
@@ -1649,14 +1649,14 @@ focus_tree = {
 			if = { #Just for tooltip purposes
 				limit = {
 					has_war = no
-					country_exists = SWE
+					country_exists = GER
 					NOT = {
-						has_war_with = SWE
+						has_war_with = GER
 						any_enemy_country = {
-							is_in_faction_with = SWE
+							is_in_faction_with = GER
 						}
 					}
-					SWE = { is_subject = no }
+					GER = { is_subject = no }
 				}
 				effect_tooltip = {
 					country_event = AAT_finland_winter_war.01
@@ -1664,14 +1664,14 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					country_exists = SWE
+					country_exists = GER
 					NOT = {
-						has_war_with = SWE
+						has_war_with = GER
 						any_enemy_country = {
-							is_in_faction_with = SWE
+							is_in_faction_with = GER
 						}
 					}
-					SWE = { is_subject = no }
+					GER = { is_subject = no }
 				}
 				country_event = AAT_finland_winter_war.01
 			}
