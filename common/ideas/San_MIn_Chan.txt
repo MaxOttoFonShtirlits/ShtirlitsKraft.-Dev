@@ -13,13 +13,13 @@ ideas = {
 				army_defence_against_minor_factor = -0.25
 				army_attack_against_major_factor = -0.7
 				army_attack_against_minor_factor = -0.25
-				army_org_factor = -0.45
-				army_morale_factor = -0.25
+				army_org_factor = -0.75
+				army_morale_factor = -0.85
 				command_power_gain_mult = -0.2
 				experience_gain_army_factor = -0.35
 				#land_mastery_gain_factor = -0.35
 				special_forces_training_time_factor = 10
-				conscription_factor = -0.5
+				conscription_factor = -0.8
 				mobilization_speed = -0.5
 			}#
         }
