@@ -1,0 +1,488 @@
+ideas = {
+
+	country = {
+
+		Nuke_debuff_200 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -2.0
+			}
+		}
+
+		Nuke_debuff_150 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -1.5
+			}
+		}
+
+		Nuke_debuff_120 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -1.2
+			}
+		}
+
+		Nuke_debuff_100 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -1.0
+			}
+		}
+
+		Nuke_debuff_95 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.95
+			}
+		}
+
+		Nuke_debuff_90 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.9
+			}
+		}
+
+		Nuke_debuff_85 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.85
+			}
+		}
+
+		Nuke_debuff_80 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.8
+			}
+		}
+
+		Nuke_debuff_75 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.75
+			}
+		}
+
+		Nuke_debuff_70 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.7
+			}
+		}
+
+		Nuke_debuff_65 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.65
+			}
+		}
+
+		Nuke_debuff_60 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.6
+			}
+		}
+
+		Nuke_debuff_55 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.55
+			}
+		}
+
+		Nuke_debuff_50 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.5
+			}
+		}
+
+		Nuke_debuff_45 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.45
+			}
+		}
+
+		Nuke_debuff_40 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.4
+			}
+		}
+
+		Nuke_debuff_35 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.35
+			}
+		}
+
+		Nuke_debuff_30 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.3
+			}
+		}
+
+		Nuke_debuff_25 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.25
+			}
+		}
+
+		Nuke_debuff_20 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.2
+			}
+		}
+
+		Nuke_debuff_15 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.15
+			}
+		}
+
+		Nuke_debuff_10 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.1
+			}
+		}
+
+		Nuke_debuff_5 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_war = yes
+			}
+			removal_cost = -1
+			picture = generic_army_problems
+			modifier = {
+				surrender_limit = -0.05
+			}
+		}
+
+		##### France debug ideas #####
+        
+        FRA_debug_idea_3 = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+				always = yes
+			}
+            available = {
+                has_idea = FRA_disjointed_government
+				has_war = yes
+            }
+            removal_cost = -1
+            picture = generic_pp_unity_bonus
+            modifier = {
+                surrender_limit = 0.03
+            }
+        }
+        
+        FRA_debug_idea_8 = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+				always = yes
+			}
+            available = {
+                has_idea = FRA_disjointed_government
+				has_war = yes
+            }
+            removal_cost = -1
+            picture = generic_pp_unity_bonus
+            modifier = {
+                surrender_limit = 0.08
+            }
+        }
+        
+        FRA_debug_idea_12 = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+				always = yes
+			}
+            available = {
+                has_idea = FRA_disjointed_government
+				has_war = yes
+            }
+            removal_cost = -1
+            picture = generic_pp_unity_bonus
+            modifier = {
+                surrender_limit = 0.12
+            }
+        }
+        
+        FRA_debug_idea_17 = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+				always = yes
+			}
+            available = {
+                has_idea = FRA_disjointed_government
+				has_war = yes
+            }
+            removal_cost = -1
+            picture = generic_pp_unity_bonus
+            modifier = {
+                surrender_limit = 0.17
+            }
+        }
+        
+        FRA_debug_idea_20 = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+				always = yes
+			}
+            available = {
+                has_idea = FRA_disjointed_government
+				has_war = yes
+            }
+            removal_cost = -1
+            picture = generic_pp_unity_bonus
+            modifier = {
+                surrender_limit = 0.20
+            }
+        }
+	}
+}

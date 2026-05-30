@@ -1,0 +1,167 @@
+on_actions = {
+
+    on_war_relation_added = {
+
+        effect = {
+
+            if = {
+                limit = {
+                    OR = {
+                        ROOT = { original_tag = FRA }
+                        FROM = { original_tag = FRA }
+                    }
+                    FRA = { has_idea = FRA_disjointed_government }
+                }
+                if = {
+                    limit = {
+                        any_country = { 
+                            has_war_with = FRA
+                            has_collaboration = {
+                                target = FRA
+                                value > 0.99
+                            }
+                        }
+                    }
+                    FRA = {
+                        add_ideas = FRA_debug_idea_20
+                    }
+                }
+                else_if = {
+                    limit = {
+                        any_country = { 
+                            has_war_with = FRA
+                            has_collaboration = {
+                                target = FRA
+                                value > 0.89
+                            }
+                        }
+                    }
+                    FRA = {
+                        add_ideas = FRA_debug_idea_17
+                    }
+                }
+                else_if = {
+                    limit = {
+                        any_country = { 
+                            has_war_with = FRA
+                            has_collaboration = {
+                                target = FRA
+                                value > 0.74
+                            }
+                        }
+                    }
+                    FRA = {
+                        add_ideas = FRA_debug_idea_12
+                    }
+                }
+                else_if = {
+                    limit = {
+                        any_country = { 
+                            has_war_with = FRA
+                            has_collaboration = {
+                                target = FRA
+                                value > 0.59
+                            }
+                        }
+                    }
+                    FRA = {
+                        add_ideas = FRA_debug_idea_8
+                    }
+                }
+                else_if = {
+                    limit = {
+                        any_country = { 
+                            has_war_with = FRA
+                            has_collaboration = {
+                                target = FRA
+                                value > 0.44
+                            }
+                        }
+                    }
+                    FRA = {
+                        add_ideas = FRA_debug_idea_3
+                    }
+                }
+            }
+        }
+    }
+
+	on_operation_completed = { #raise the debug idea level if complete collab during war
+
+		effect = {
+			
+			if = {
+				limit = {
+					THIS = operation_collaboration_government
+					FROM = {
+                        original_tag = FRA
+						has_idea = FRA_disjointed_government
+						has_war_with = ROOT
+						NOT = { has_idea = debug_idea_20 }
+					}
+				}
+                if = {
+                    limit = {
+						OR = {
+							ROOT = {
+                        	    has_collaboration = {
+                        	        target = FROM
+                        	        value > 0.89
+                        	    }
+                        	}
+							ROOT = {
+                        	    has_collaboration = {
+                        	        target = FROM
+                        	        value > 0.74
+                        	    }
+                        	}
+							ROOT = {
+                        	    has_collaboration = {
+                        	        target = FROM
+                        	        value > 0.59
+                        	    }
+                        	}
+						}
+                    }
+                    FROM = {
+                        add_ideas = FRA_debug_idea_20
+                    }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_collaboration = {
+                                target = FROM
+                                value > 0.44
+                            }
+                        }
+                    }
+                    FROM = {
+                        add_ideas = FRA_debug_idea_17
+                        remove_ideas = FRA_debug_idea_12
+                        remove_ideas = FRA_debug_idea_8
+                        remove_ideas = FRA_debug_idea_3
+                    }
+                }
+                else_if = {
+                    limit = {
+                        ROOT = {
+                            has_collaboration = {
+                                target = FROM
+                                value > 0.29
+                            }
+                        }
+                        NOT = {
+                            FRA = { has_idea = FRA_debug_idea_17 }
+                        }
+                    }
+                    FROM = {
+                        add_ideas = FRA_debug_idea_12
+                        remove_ideas = FRA_debug_idea_8
+                        remove_ideas = FRA_debug_idea_3
+                    }
+                }
+			}
+		}
+	}
+}

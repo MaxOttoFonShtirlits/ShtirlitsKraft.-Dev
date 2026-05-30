@@ -1,0 +1,813 @@
+on_actions = {
+	on_nuke_drop = {
+		effect = {
+			FROM = {
+				controller = {
+#										############################################
+#										################ EDIT ZONE ################# - your custom edits will reset to default everytime I updated the mod
+#										############################################
+
+					set_variable = { config_debuff_progress_rate 		   = 1 } ## <-- debuff progress gain multiplier, 1 is 100% (default), 2 is 200%, 1.2 is 120% , 0.5 is 50% etc.
+
+					set_variable = { config_base_progress_nuke 			 = 100 } ## <-- base nuclear strike debuff progress, 100 (default)
+
+					set_variable = { config_base_progress_thermonuke  	 = 150 } ## <-- base thermonuclear strike debuff progress, 150 (default)(50% more than basic nuke)
+				}
+
+				set_variable = { config_nuclear_kill_percentage			= 0.95 } ## <-- nuclear kill percent, 0.95 = 5% (default), 0.85 = 15% etc.
+
+				set_variable = { config_thermo_kill_percentage			= 0.90 } ## <-- thermonuclear kill percent, 0.90 = 10% (default)
+
+				set_variable = { config_nuclear_kill_flat 			 = -100000 } ## <-- nuclear kill added after percentage, -100000 (default)
+
+				set_variable = { config_thermo_kill_flat 			 = -200000 } ## <-- thermonuclear kill added after percentage, -200000 (default)
+
+				##############################################################################################
+				##############################################################################################
+				if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = fallout_atomic
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_atomic
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_atomic_z
+						days = 365 #						<--- change nuclear fallout duration here ###
+					}
+					set_state_flag = state_nuclear_striked_z
+					controller = {
+						set_country_flag = country_nuclear_striked_x1
+					}
+				}
+				else_if = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = fallout_thermonuclear
+						}
+					}
+					remove_dynamic_modifier = {
+						modifier = fallout_thermonuclear
+					}
+					add_dynamic_modifier = {
+						modifier = fallout_thermonuclear_z
+						days = 730 #						<--- change thermonuclear fallout duration here ###
+					}
+					set_state_flag = state_thermonuclear_striked_z
+					controller = {
+						set_country_flag = country_thermonuclear_striked_x1
+					}
+				}
+				else = {
+					set_state_flag = state_nuclear_striked_z
+					controller = {
+						set_country_flag = country_nuclear_striked_x1
+					}
+				}
+
+
+				##### Kills in State #####
+				
+				if = {
+					limit = {
+						NOT = { has_state_flag = state_val_popz_set }
+					}
+					set_variable = { state_initial_popz = state_population_k }
+					set_variable = { state_popz_new_current = state_population_k }
+					set_state_flag = state_val_popz_set
+				}
+				if = {
+					limit = {
+						has_state_flag = state_nuclear_striked_z
+					}
+					multiply_variable = { state_popz_new_current = config_nuclear_kill_percentage }
+					add_manpower = config_nuclear_kill_flat
+					clr_state_flag = state_nuclear_striked_z
+				}
+				if = {
+					limit = {
+						has_state_flag = state_thermonuclear_striked_z
+					}
+					multiply_variable = { state_popz_new_current = config_thermo_kill_percentage }
+					add_manpower = config_thermo_kill_flat
+					clr_state_flag = state_thermonuclear_striked_z
+				}
+				if = {
+					limit = {
+						check_variable = { state_initial_popz > 9999 } #10M+
+					}
+					while_loop_effect = {
+						limit = {
+							check_variable = { state_initial_popz > state_popz_new_current }
+						}
+						add_manpower = -100000
+						subtract_from_variable = { state_initial_popz = 100 }
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = { state_initial_popz > 999 } #1M+
+					}
+					while_loop_effect = {
+						limit = {
+							check_variable = { state_initial_popz > state_popz_new_current }
+						}
+						add_manpower = -10000
+						subtract_from_variable = { state_initial_popz = 10 }
+					}
+				}
+				else = {
+					while_loop_effect = {
+						limit = {
+							check_variable = { state_initial_popz > state_popz_new_current }
+						}
+						add_manpower = -1000
+						subtract_from_variable = { state_initial_popz = 1 }
+					}
+				}
+
+
+				##### repeating strike penalty #####
+
+				controller = { set_variable = { repeating_strike_factor = 1 } }
+				set_state_flag = state_striked_z
+				if = {
+					limit = {
+						has_state_flag = state_striked_x9
+					}
+					clr_state_flag = state_striked_x9
+					set_state_flag = state_striked_x10
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.75 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x8
+					}
+					clr_state_flag = state_striked_x8
+					set_state_flag = state_striked_x9
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.78 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x7
+					}
+					clr_state_flag = state_striked_x7
+					set_state_flag = state_striked_x8
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.82 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x6
+					}
+					clr_state_flag = state_striked_x6
+					set_state_flag = state_striked_x7
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.85 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x5
+					}
+					clr_state_flag = state_striked_x5
+					set_state_flag = state_striked_x6
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.88 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x4
+					}
+					clr_state_flag = state_striked_x4
+					set_state_flag = state_striked_x5
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.91 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x3
+					}
+					clr_state_flag = state_striked_x3
+					set_state_flag = state_striked_x4
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.94 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x2
+					}
+					clr_state_flag = state_striked_x2
+					set_state_flag = state_striked_x3
+					controller = {
+						multiply_variable = { repeating_strike_factor = 0.97 }
+					}
+				}
+				if = {
+					limit = {
+						has_state_flag = state_striked_x1
+					}
+					clr_state_flag = state_striked_x1
+					set_state_flag = state_striked_x2
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = state_nuclear_striked
+						}
+						has_state_flag = state_striked_z
+					}
+					set_state_flag = state_striked_x1
+					set_state_flag = state_nuclear_striked
+				}
+				controller = {
+					if = {
+						limit = {
+							has_war_with = ROOT
+						}
+
+
+						##### base debuff progress #####
+
+						set_variable = { base_debuff_progress = 0 }
+						if = {
+							limit = {
+								has_country_flag = country_nuclear_striked_x1
+							}
+							clr_country_flag = country_nuclear_striked_x1
+							add_to_variable = { base_debuff_progress = config_base_progress_nuke }
+						}
+						else_if = {
+							limit = {
+								has_country_flag = country_thermonuclear_striked_x1
+							}
+							clr_country_flag = country_thermonuclear_striked_x1
+							add_to_variable = { base_debuff_progress = config_base_progress_thermonuke }
+						}
+						else = {
+							add_to_variable = { base_debuff_progress = config_base_progress_nuke }
+						}
+
+						##### enemy factory count factor #####
+
+						set_variable = { debuff_progress_multiplier = 0 }
+						if = {
+							limit = {
+								num_of_factories > 2000 ## <-- more than 1000 factories ####
+							}
+							add_to_variable = { debuff_progress_multiplier = 0.3 }	### <-- number to normal nukes required to achieve -100% surrender limit debuff is 20 divided by this value
+							if = {													### However, 16 divided by the number is the number of normal nukes required to make a country cap without taking any land
+								limit = {
+									is_major = no								  	### This is so that minor nations capitulate triple as quickly as major nations
+								}
+								add_to_variable = { debuff_progress_multiplier = 0.9 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 1750 ## <-- 900 to 1000 factories ####
+							}
+							add_to_variable = { debuff_progress_multiplier = 0.35 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 1.05 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 1500 ## <-- 800 to 900 factories ####
+							}
+							add_to_variable = { debuff_progress_multiplier = 0.44 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 1.32 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 1250
+							}
+							add_to_variable = { debuff_progress_multiplier = 0.6 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 1.8 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 1000
+							}
+							add_to_variable = { debuff_progress_multiplier = 0.8 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 2.4 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 900
+							}
+							add_to_variable = { debuff_progress_multiplier = 1 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 3 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 800
+							}
+							add_to_variable = { debuff_progress_multiplier = 1.1 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 3.3 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 700
+							}
+							add_to_variable = { debuff_progress_multiplier = 1.2 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 3.6 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 600
+							}
+							add_to_variable = { debuff_progress_multiplier = 1.4 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 4.2 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 500
+							}
+							add_to_variable = { debuff_progress_multiplier = 1.6 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 4.8 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 400
+							}
+							add_to_variable = { debuff_progress_multiplier = 1.8 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 5.4 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 250
+							}
+							add_to_variable = { debuff_progress_multiplier = 2 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 6 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 200
+							}
+							add_to_variable = { debuff_progress_multiplier = 2.2 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 6.6 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 175
+							}
+							add_to_variable = { debuff_progress_multiplier = 2.5 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 7.5 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 150
+							}
+							add_to_variable = { debuff_progress_multiplier = 2.8 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 8.4 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 125
+							}
+							add_to_variable = { debuff_progress_multiplier = 3.4 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 10.2 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 100
+							}
+							add_to_variable = { debuff_progress_multiplier = 4 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 12 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 90
+							}
+							add_to_variable = { debuff_progress_multiplier = 4.5 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 13.5 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 80
+							}
+							add_to_variable = { debuff_progress_multiplier = 5 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 15 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 70
+							}
+							add_to_variable = { debuff_progress_multiplier = 5.5 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 16.5 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 60
+							}
+							add_to_variable = { debuff_progress_multiplier = 6 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 18 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 50
+							}
+							add_to_variable = { debuff_progress_multiplier = 7 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 21 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 40
+							}
+							add_to_variable = { debuff_progress_multiplier = 10 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 30 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 30
+							}
+							add_to_variable = { debuff_progress_multiplier = 14 } 
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 42 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 20
+							}
+							add_to_variable = { debuff_progress_multiplier = 18 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 54 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories > 10
+							}
+							add_to_variable = { debuff_progress_multiplier = 20 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 60 }
+							}
+						}
+						else_if = {
+							limit = {
+								num_of_factories < 11
+							}
+							add_to_variable = { debuff_progress_multiplier = 25 }
+							if = {
+								limit = {
+									is_major = no
+								}
+								add_to_variable = { debuff_progress_multiplier = 75 }
+							}
+						}
+
+						##### enemy nuclear capability factors #####
+
+						set_variable = { nuclear_capability_factor = 1 }
+
+						if = {
+							limit = {
+								has_tech = nukes
+							}
+							subtract_from_variable = { nuclear_capability_factor = 0.1 } ## debuff progress gain -10% if enemy has nuclear bomb tech
+						}
+						if = {
+							limit = {
+								has_tech = thermonuclear_bombs
+							}
+							subtract_from_variable = { nuclear_capability_factor = 0.1 } ## debuff progress gain -10% if enemy has thermonuclear tech
+						}
+						if = {
+							limit = {
+								num_of_nukes > 10 
+							}
+							subtract_from_variable = { nuclear_capability_factor = 0.1 } ## debuff progress gain -10% if enemy has more than 10 nukes
+						}
+						if = {
+							limit = {
+								num_of_nukes > 50
+							}
+							subtract_from_variable = { nuclear_capability_factor = 0.1 } ## debuff progress gain -10% if enemy has more than 50 nukes
+						}
+
+						################
+						### PROGRESS ###
+						################
+						
+						if = {
+							limit = {
+								NOT = {
+									has_variable = debuff_progress
+								}
+							}
+							set_variable = { debuff_progress = 0 }
+						}
+						multiply_variable = { debuff_progress_multiplier = nuclear_capability_factor }
+
+						multiply_variable = { base_debuff_progress = debuff_progress_multiplier }
+
+						multiply_variable = { base_debuff_progress = repeating_strike_factor }
+
+						multiply_variable = { base_debuff_progress = config_debuff_progress_rate }
+
+						add_to_variable = { debuff_progress = base_debuff_progress }
+
+						############################################
+						############## VERSION TWO #################
+						############################################
+						
+						remove_ideas = {
+							Nuke_debuff_5
+							Nuke_debuff_10
+							Nuke_debuff_15
+							Nuke_debuff_20
+							Nuke_debuff_25
+							Nuke_debuff_30
+							Nuke_debuff_35
+							Nuke_debuff_40
+							Nuke_debuff_45
+							Nuke_debuff_50
+							Nuke_debuff_55
+							Nuke_debuff_60
+							Nuke_debuff_65
+							Nuke_debuff_70
+							Nuke_debuff_75
+							Nuke_debuff_80
+							Nuke_debuff_85
+							Nuke_debuff_90
+							Nuke_debuff_95
+							Nuke_debuff_100
+							Nuke_debuff_120
+							Nuke_debuff_150
+							Nuke_debuff_200
+						}
+
+						if = {
+							limit = {
+								check_variable = { debuff_progress > 2299 }
+							}
+							add_ideas = Nuke_debuff_200
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 2199 }
+							}
+							add_ideas = Nuke_debuff_150
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 2099 }
+							}
+							add_ideas = Nuke_debuff_120
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1999 }
+							}
+							add_ideas = Nuke_debuff_100
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1899 }
+							}
+							add_ideas = Nuke_debuff_95
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1799 }
+							}
+							add_ideas = Nuke_debuff_90
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1699 }
+							}
+							add_ideas = Nuke_debuff_85
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1599 }
+							}
+							add_ideas = Nuke_debuff_80
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1499 }
+							}
+							add_ideas = Nuke_debuff_75
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1399 }
+							}
+							add_ideas = Nuke_debuff_70
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1299 }
+							}
+							add_ideas = Nuke_debuff_65
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1199 }
+							}
+							add_ideas = Nuke_debuff_60
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 1099 }
+							}
+							add_ideas = Nuke_debuff_55
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 999 }
+							}
+							add_ideas = Nuke_debuff_50
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 899 }
+							}
+							add_ideas = Nuke_debuff_45
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 799 }
+							}
+							add_ideas = Nuke_debuff_40
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 699 }
+							}
+							add_ideas = Nuke_debuff_35
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 599 }
+							}
+							add_ideas = Nuke_debuff_30
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 499 }
+							}
+							add_ideas = Nuke_debuff_25
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 399 }
+							}
+							add_ideas = Nuke_debuff_20
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 299 }
+							}
+							add_ideas = Nuke_debuff_15
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 199 }
+							}
+							add_ideas = Nuke_debuff_10
+						}
+						else_if = {
+							limit = {
+								check_variable = { debuff_progress > 99 }
+							}
+							add_ideas = Nuke_debuff_5
+						}
+					}
+				}
+			}
+		}
+	}
+}
