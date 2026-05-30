@@ -24,7 +24,9 @@ jap_occupation_reorganization = {
             set_country_flag = Chiang_Return
             scoped_sound_effect = "ChiangBack"
             RNG = {
+                hidden_effect = {	
                 add_ideas = { national_defense_state }
+                }
                 add_ideas = { rng_hidden_idea_1 }
                 set_politics = {
                     ruling_party = fascism
@@ -83,6 +85,17 @@ jap_occupation_reorganization = {
             set_country_flag = Total_Mobilization_Of_The_Nation
             scoped_sound_effect = "ChinaUnitedandReady"
             JAP = {
+            create_field_marshal = {
+                name = "Chiang Kai-shek"
+                picture = "chiang_sigma.dds"
+                skill = 4
+                attack_skill = 3
+                defense_skill = 4
+                planning_skill = 2
+                logistics_skill = 2
+                traits = { politically_connected harsh_leader cautious skilled_staffer }
+            }
+            }
             #annex_country = {
             #   target = RNG
             #  transfer_troops = yes
@@ -90,8 +103,8 @@ jap_occupation_reorganization = {
             #  every_state = { limit = {is_core_of = CHI is_controlled_by = JAP} add_core_of = JAP remove_core_of = CHI}
             #  every_state = { limit = {is_core_of = RNG is_controlled_by = JAP} add_core_of = JAP remove_core_of = RNG}
             RNG = {
-            add_ideas = { rng_hidden_idea_2 }
             hidden_effect = {	
+                add_ideas = { rng_hidden_idea_2 }
                 set_technology = {
 				    excavation1 = 1
 					excavation2 = 1
@@ -111,19 +124,6 @@ jap_occupation_reorganization = {
                     stronghold_network_tech = 1
 				}
             }
-            every_state = { limit = {is_core_of = AUS is_controlled_by = JAP} add_core_of = JAP remove_core_of = AUS}
-              create_field_marshal = {
-                name = "Chiang Kai-shek"
-                picture = "chiang_sigma.dds"
-                skill = 4
-                attack_skill = 3
-                defense_skill = 4
-                planning_skill = 2
-                logistics_skill = 2
-                traits = { politically_connected harsh_leader cautious skilled_staffer }
-            
-              }
             }
-        }
     }
 }

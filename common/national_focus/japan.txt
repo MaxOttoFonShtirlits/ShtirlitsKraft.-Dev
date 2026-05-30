@@ -12111,7 +12111,7 @@ focus_tree = {
 		completion_reward = {
 
 			729 = {
-				add_core_by = RNG
+				add_core_of = RNG
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
