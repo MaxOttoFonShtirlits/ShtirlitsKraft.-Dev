@@ -1,4 +1,4 @@
-version="Beta"
+version="Le-Dinart Pidor"
 tags={
 	"Historical"
 	"Alternative History"
