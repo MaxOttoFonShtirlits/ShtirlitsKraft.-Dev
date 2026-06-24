@@ -13,6 +13,7 @@
 	initial_show_position = {
 		x = 0
 	}
+	shared_focus = ABDA_abdacom
 
 	
 	default = no

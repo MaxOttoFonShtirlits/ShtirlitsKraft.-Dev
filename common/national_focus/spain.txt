@@ -2255,7 +2255,6 @@ focus_tree = {
 					}
 				}
 				custom_effect_tooltip = SPA_the_tangiers_enclave_tt
-				ENG = { country_event = { id = lar_spain.36 hours = 6 random_hours = 18 } }
 			}
 			else = {
 				290 = {

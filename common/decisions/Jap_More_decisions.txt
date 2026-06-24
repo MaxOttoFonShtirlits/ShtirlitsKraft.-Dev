@@ -27,7 +27,7 @@ jap_occupation_reorganization = {
                 hidden_effect = {	
                 add_ideas = { national_defense_state }
                 }
-                #add_ideas = { rng_hidden_idea_1 }
+                add_ideas = { rng_hidden_idea_1 }
                 set_politics = {
                     ruling_party = fascism
                     elections_allowed = no
@@ -104,7 +104,7 @@ jap_occupation_reorganization = {
             #  every_state = { limit = {is_core_of = RNG is_controlled_by = JAP} add_core_of = JAP remove_core_of = RNG}
             RNG = {
             hidden_effect = {	
-                #add_ideas = { rng_hidden_idea_2 }
+                add_ideas = { rng_hidden_idea_2 }
                 set_technology = {
 				    excavation1 = 1
 					excavation2 = 1
