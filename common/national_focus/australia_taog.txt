@@ -3472,19 +3472,15 @@ focus_tree = {
 		y = 0
 	
 		cost = 10
-
 		allow_branch = {
-			if = {
+			IF = {
 				limit = {
 					has_game_rule = {
 						rule = obsolete_focus_branches_visibility
 						option = HIDE
 					}
 				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
+				has_completed_focus = AST_australia_first
 			}
 		}
 
@@ -3599,6 +3595,17 @@ focus_tree = {
 		}
 
 		bypass = {
+		}
+		allow_branch = {
+			IF = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				has_completed_focus = AST_australia_first
+			}
 		}
 
 		available_if_capitulated = no
@@ -5666,7 +5673,6 @@ focus_tree = {
 #		prerequisite = { }
 		mutually_exclusive = { focus = AST_war_is_coming focus = AST_australia_first }
 #		relative_position_id = 	
-
 		x = 71
 		y = 0
 	
@@ -5684,6 +5690,17 @@ focus_tree = {
 					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_war_is_coming }
 				}
+			}
+		}
+		allow_branch = {
+			IF = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				has_completed_focus = AST_australia_first
 			}
 		}
 
