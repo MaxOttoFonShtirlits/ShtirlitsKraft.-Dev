@@ -1,10 +1,8 @@
-version="Le-Dinart Pidor"
+version="1"
 tags={
-	"Historical"
-	"Alternative History"
+	"Utilities"
+	"Graphics"
 	"Fixes"
-	"Balance"
 }
-name="ShtirlitsCraft 2"
-supported_version="1.18.2.0"
-remote_file_id="3725365677"
+name="Shtirlitscraft 3"
+supported_version="1.19.1.0"
