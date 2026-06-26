@@ -7144,7 +7144,6 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			GER = { has_war = yes}
 		}
 
 		bypass = {

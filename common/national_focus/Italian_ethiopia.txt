@@ -7,20 +7,14 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 focus_tree = {
-	id = ethiopia_tree
+	id = Italian_ethiopia_tree
 	
 	country = {
 		factor = 0
 		modifier = {
 			add = 10
-			original_tag = ETH
+			original_tag = AOI
 			has_dlc = "By Blood Alone"
-			NOT = {
-				any_other_country = { 
-					original_tag = ETH # There can be only one...
-					has_government = ROOT # or four actually...
-				}
-			}
 		}
 	}
 
@@ -55,8 +49,9 @@ focus_tree = {
 				271 = { is_controlled_by = ROOT }
 			}
 			ELSE = {
-				any_owned_state = {
-					is_capital = yes  
+				any_state = {
+					is_capital = yes 
+					is_owned_by = ROOT 
 					is_controlled_by = ROOT
 				}
 			}
@@ -2616,6 +2611,7 @@ focus_tree = {
  		available = {
  			has_global_flag = second_italo_ethiopian_war_flag
  		}
+		allow_branch = { if = { limit = { has_game_rule = { rule = obsolete_focus_branches_visibility option = HIDE }} has_completed_focus = GER_oppose_hitler_ww }}
  		bypass = { } 
 
  		search_filters = {FOCUS_FILTER_MANPOWER}
@@ -3093,6 +3089,7 @@ focus_tree = {
 				ruling_only = yes 
 			}
 		}
+		allow_branch = { if = { limit = { has_game_rule = { rule = obsolete_focus_branches_visibility option = HIDE }} has_completed_focus = GER_oppose_hitler_ww }}
 		ai_will_do = {
 			base = 2
 		}
@@ -3154,7 +3151,7 @@ focus_tree = {
 			ETH_BOP_decentralization_small_effect = yes 
 			custom_effect_tooltip = ETH_boarding_the_train_tt
 			ETH = { add_country_leader_trait = imperator_absentis }
-			set_country_flag = ETH_selassie_left_flag
+			set_country_flag = ETH_selassie_left_ethiopia_flag
 			add_ideas = ETH_prince_regent_idea
 		}
 	}
@@ -3538,7 +3535,7 @@ focus_tree = {
 				}
 				create_intelligence_agency = { 
 					name = arbegnoch 
-					icon = GFX_intelligence_agency_logo_eth_fetno_derash 
+					icon = GFX_agency_logo_eth_fetno_derash 
 				}
 			}
 			# Adds resistance in northern and central Ethiopia
@@ -4223,15 +4220,8 @@ focus_tree = {
 					target = ROOT
 					value > 99
 				}
-				OR = {
-					owns_state = 454
-					any_country = {
-						is_subject_of = PREV
-						owns_state = 454
-					}
-				}
+				owns_state = 454
 			}
-
 		}
 		available_if_capitulated = yes 
 
@@ -4346,7 +4336,7 @@ focus_tree = {
 	focus = {
 		id = ETH_support_anti-colonialist_resistance
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		prerequisite = { focus = ETH_reclaiming_ethiopia focus = ETH_fait_accompli focus = ETH_international_mediation }
+		prerequisite = { focus = ETH_reclaiming_ethiopia focus = ETH_fait_accompli focus = ETH_fait_accompli focus = ETH_international_mediation }
 
 		x = -3 
 		y = 1
@@ -4758,18 +4748,7 @@ focus_tree = {
 		completion_reward = {
 			IF = {
 				limit = { NOT = { is_faction_leader = yes } }
-				IF = {
-					limit = {
-						has_dlc = "No Compromise, No Surrender"
-					}
-					set_rule = { can_create_factions = yes }
-					create_faction_from_template = faction_template_ETH_african_union_faction
-					add_faction_initiative = 1
-				}
-				ELSE = {
-					set_rule = { can_create_factions = yes }
-					create_faction_from_template = faction_template_ETH_african_union_faction
-				}
+				create_faction = ETH_african_union_faction
 				every_country = {
 					limit = { is_subject_of = ROOT }
 					ROOT = {
@@ -5695,6 +5674,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}	
+		allow_branch = { if = { limit = { has_game_rule = { rule = obsolete_focus_branches_visibility option = HIDE }} has_completed_focus = GER_oppose_hitler_ww }}
 
 		completion_reward = {
 			add_timed_idea = {
@@ -5939,29 +5919,14 @@ focus_tree = {
 		y = 1
 			
 		cost = 5
-		available = { 
-			has_government = communism 
-		}
-		
-		bypass = {
-		}
+		available = { has_government = communism }
+			
 
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
 		completion_reward = {			
-			IF = {
-				limit = {
-					JAP = {
-						NOT = {
-							has_completed_focus = JAP_cooperate_with_anarchists
-						}
-					}
-				}
-				custom_effect_tooltip = ETH_support_from_the_japanese_communists_tt
-				set_country_flag = IA_anarchists_recruited_flag
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-			
+			custom_effect_tooltip = ETH_support_from_the_japanese_communists_tt
+			set_country_flag = IA_anarchists_recruited_flag
 			JAP = {
 				IF = {
 					limit = {
@@ -6016,7 +5981,6 @@ focus_tree = {
 
 	focus = {
 		id = ETH_peoples_army
-		text = ETH_peoples_army_focus		#otherwise conflicts with Mass Assault doctrine peoples_army
 		prerequisite = { focus = ETH_humanitarian_aid focus = ETH_support_from_the_japanese_communists }
 		mutually_exclusive = { focus = ETH_international_brigades_communist}
 		relative_position_id =  ETH_support_from_the_japanese_communists
@@ -6034,19 +5998,11 @@ focus_tree = {
 				}
 				remove_ideas = ETH_conservative_high_command_idea
 			}
-
-			add_mastery_bonus = {
-				name = ETH_peoples_army_focus
-				bonus = 0.1
-				days = 240
-				grand_doctrine = mass_assault
-				track = infantry
-			}
 			add_doctrine_cost_reduction = {
-				name = ETH_peoples_army_focus
-				cost_reduction = 0.25
+				name = land_doc_bonus
+				cost_reduction = 0.5
 				uses = 2
-				category = land_doctrine
+				category = cat_mass_assault
 			}
 			add_ideas = ETH_peoples_army_idea
 		}
@@ -6555,9 +6511,6 @@ focus_tree = {
 	focus = {
 		id = ETH_support_spain
 		prerequisite = { focus = ETH_peace_negotiations}
-		allow_branch = {
-			has_dlc = "La Resistance"
-		}
 			
 		icon = GFX_focus_intervention_spain_republic
 		relative_position_id = ETH_peace_negotiations
@@ -7191,24 +7144,24 @@ focus_tree = {
 		search_filters = {}
 		completion_reward = {	
 			navy_experience = 35
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = bb_tech
-			}		
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 1
+						category = bb_tech
+					}		
 			if = {
 				limit = { 
 					has_dlc = "Man the Guns"
 					country_exists = SOV
 				}
-
-				create_ship = {
-					type = ship_hull_heavy_1
-					equipment_variant = "Marat Class"
-					creator = SOV
-					name = "Marat Class I"
+				hidden_effect = {  
+					create_ship = {
+						type = ship_hull_heavy_1
+						equipment_variant = "Marat Class"
+						creator = SOV
+						name = "Marat Class I"
+					}
 				}
-
 			}
 			if = {
 				limit = { not = { has_dlc = "Man the Guns" } }
@@ -7422,6 +7375,7 @@ focus_tree = {
 			has_global_flag = second_italo_ethiopian_war_flag
 			ITA = { has_civil_war = no }
 		}
+		allow_branch = { if = { limit = { has_game_rule = { rule = obsolete_focus_branches_visibility option = HIDE }} has_completed_focus = GER_oppose_hitler_ww }}
 
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
@@ -7719,11 +7673,10 @@ focus_tree = {
 	focus = {
 		id = ETH_amedeos_feast_of_maskal
 		icon = GFX_focus_ETH_amedeos_feast_of_maskal
-		prerequisite = { focus = ETH_invite_italian_settlers focus = ETH_replace_the_abuna }
 		mutually_exclusive = { focus = ETH_assertiveness }
-		x = 1
-		y = 1
-		relative_position_id = ETH_invite_italian_settlers
+		x = 10
+		y = 0
+		relative_position_id = ETH_develop_the_capital_region
 		cost = 10
 		available = {
 			is_subject_of = ITA
@@ -7747,39 +7700,12 @@ focus_tree = {
 				localization = ETH_amedeos_feast_of_maskal
 			}
 			effect_tooltip = {
-				swap_ideas = {
-					remove_idea = ETH_victor_emanuel_of_ethiopia_idea
-					add_idea = ETH_victor_emanuel_of_ethiopia_idea_2
-				}
+				add_idea = ETH_victor_emanuel_of_ethiopia_idea_2
 			}
 			hidden_effect = {
-				IF = {
-					limit = {
-						has_idea = ETH_victor_emanuel_of_ethiopia_idea
-					}
-					swap_ideas = {
-						remove_idea = ETH_victor_emanuel_of_ethiopia_idea
-						add_idea = ETH_victor_emanuel_of_ethiopia_idea_2
-					}
-				}
+				add_idea = ETH_victor_emanuel_of_ethiopia_idea_2
 			}	
-
 			add_political_power = 100 
-			custom_effect_tooltip = ETH_amedeos_feast_of_maskal_tt
-			IF = { 
-				limit = {
-					has_completed_focus = ETH_sway_the_warlords
-				}
-				ETH_seyoum_mengesha = {
-					clr_character_flag = ETH_imprisoned_flag 
-				}
-				ETH_ayalew_birru = {
-					clr_character_flag = ETH_imprisoned_flag 
-				}
-				ETH_ras_kassa = {
-					clr_character_flag = ETH_imprisoned_flag 
-				}
-			}
 		}
 	}
 	focus = {
@@ -8557,23 +8483,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
-			IF = {
-				limit = { is_or_will_be_jimma = yes}
-				ITA = {
-					country_event = {
-						id = BBA_ethiopia_fascist_events.65
-						hours = 1
-					}
-				}
-			}
-			ELSE = {
-				ITA = {
-					country_event = {
-						id = BBA_ethiopia_fascist_events.64
-						hours = 1
-					}
-				}
-			}
+			add_offsite_building = { type = industrial_complex level = 5 }
 		}
 	}
 	focus = {
