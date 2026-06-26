@@ -74,7 +74,9 @@ NDefines.NSupply.RAILWAY_FLOW_PER_LEVEL = 5.0                    -- vanilla: 5.0
 -- ============================================================
 
 NDefines.NSupply.SUPPLY_HUB_FULL_MOTORIZATION_BONUS = 2.8        -- vanilla: 2.2 | slightly buffed: fully motorizing a hub is a real strategic choice
---NDefines.NSupply.SUPPLY_HUB_FULL_MOTORIZATION_TRUCK_COST = 60.0  -- vanilla: 60.0 | unchanged, cost stays the same
+-- Motorized supply requires stronger truck investment.
+NDefines.NSupply.SUPPLY_HUB_FULL_MOTORIZATION_TRUCK_COST = 350
+NDefines.NSupply.SUPPLY_POINTS_PER_TRAIN = 0.2
 
 -- ============================================================
 -- ARMY SUPPLY BUFFER GAIN
@@ -219,3 +221,6 @@ NDefines.NSupply.NAVAL_BASE_FLOW = 3.5                              -- vanilla: 
 -- Additional flow per naval base level.
 -- A level 5 port gives 13.5 flow (vs vanilla 20). Meaningful but not a solve-all.
 NDefines.NSupply.NAVAL_FLOW_PER_LEVEL = 2.0                         -- vanilla: 3.0
+
+
+
