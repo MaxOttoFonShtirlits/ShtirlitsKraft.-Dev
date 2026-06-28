@@ -1,59 +1,33 @@
 on_actions = {
-    on_weekly = {
+    on_monthly = {
         effect = {
-            ### СЛАВА УКРАИНЕ
-            if = {
-                limit = {
-                    check_variable = { casualties_k > casualties_calculated_deaths_k }
-                }
-                # Разница в тыс. человек
-                set_variable = { casualties_civs_to_be_removed_k = casualties_k }
-                subtract_from_variable = { casualties_civs_to_be_removed_k = casualties_calculated_deaths_k }
-
-                # Переводим в абсолютное число людей (1k = 1000)
-                set_variable = { casualties_civs_to_be_removed = casualties_civs_to_be_removed_k }
-                multiply_variable = { casualties_civs_to_be_removed = 1000 }
-
-                # Распределяем только если есть что распределять и известна база
-                if = {
-                    limit = {
-                        check_variable = { max_manpower_k > 0 }
-                        check_variable = { casualties_civs_to_be_removed > 0 }
-                    }
-                    every_state = {
-                        limit = {
-                            # Только коренные штаты под вашим контролем (гражданское население)
-                            is_core_of = ROOT
-                            is_controlled_by = ROOT
-                        }
-                        # Доля штата в общем населении (в тыс.)
-                        set_variable = { casualties_civs_percent_for_state = state_population_k }
-                        divide_variable = { casualties_civs_percent_for_state = ROOT.max_manpower_k }
-
-                        # Во избежание сверхмалых долей при нулевом населении штата просто игнорируем
-                        if = {
-                            limit = {
-                                check_variable = { casualties_civs_percent_for_state > 0 }
-                            }
-                            set_variable = { casualties_civs_to_be_removed_for_state = ROOT.casualties_civs_to_be_removed }
-                            multiply_variable = { casualties_civs_to_be_removed_for_state = casualties_civs_percent_for_state }
-                            round_variable = casualties_civs_to_be_removed_for_state
-                            multiply_variable = { casualties_civs_to_be_removed_for_state = -1 }
-                            add_manpower = casualties_civs_to_be_removed_for_state
-                        }
-                    }
-                }
-
-                # Фиксируем учтённые потери (в тыс.)
-                add_to_variable = { casualties_calculated_deaths_k = casualties_civs_to_be_removed_k }
-            }
-
-            # Если статистика потерь сбросилась (например, при окончании войны)
             if = {
                 limit = {
                     check_variable = { casualties_calculated_deaths_k > casualties_k }
                 }
                 set_variable = { casualties_calculated_deaths_k = casualties_k }
+            }
+            if = {
+                limit = {
+                    check_variable = { casualties_k > casualties_calculated_deaths_k }
+                    check_variable = { max_manpower_k > 0 }
+                }
+                set_temp_variable = { temp_delta_k = casualties_k }
+                subtract_from_variable = { temp_delta_k = casualties_calculated_deaths_k }
+                every_controlled_state = {
+                    limit = {
+                        is_core_of = ROOT
+                        check_variable = { state_population_k > 0 }
+                    }
+                    set_temp_variable = { temp_remove = ROOT.temp_delta_k }
+                    multiply_variable = { temp_remove = state_population_k }
+                    divide_variable = { temp_remove = ROOT.max_manpower_k }
+                    multiply_variable = { temp_remove = 1000 }
+                    round_variable = temp_remove
+                    multiply_variable = { temp_remove = -1 }
+                    add_manpower = temp_remove
+                }
+                add_to_variable = { casualties_calculated_deaths_k = temp_delta_k }
             }
         }
     }
