@@ -2950,7 +2950,6 @@ tactic_inspired_assault = { #Unique Aquileian infantry attack tactic
 	attacker = 0.30
 	attacker_movement_speed = 0.10
 }
-
 tactic_poison_ammo_ambush = { #zebra tactics
 	is_attacker = no
 	trigger = {
@@ -2962,13 +2961,15 @@ tactic_poison_ammo_ambush = { #zebra tactics
 	base =  { 
 		factor = 4 
 		modifier = {
-			factor = 0
-			NOT = {
-				is_fighting_in_terrain = jungle
-				is_fighting_in_terrain = forest
-				is_fighting_in_terrain = urban
-			}
-		}
+        factor = 0
+            NOT = {
+                OR = {
+                is_fighting_in_terrain = jungle
+                is_fighting_in_terrain = forest
+                is_fighting_in_terrain = urban
+                }
+            }
+        }
 	}
 
 	picture = ambush
@@ -2989,8 +2990,10 @@ tactic_zebra_steppe_charge = { #zebra tactics
 		modifier = {
 			factor = 0
 			NOT = {
-				is_fighting_in_terrain = plains
-				is_fighting_in_terrain = desert
+				OR = {
+                is_fighting_in_terrain = plains
+                is_fighting_in_terrain = desert
+                }
 			}
 		}
 	}
