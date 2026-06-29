@@ -1,21 +1,128 @@
 on_actions = {
-    on_daily = {
-        random_events = { 100 = tactic_technology_trigger.1 }
-        random_events = { 100 = tactic_technology_trigger.2 }
-        random_events = { 100 = tactic_technology_trigger.3 }
-        random_events = { 100 = tactic_technology_trigger.4 }
-        random_events = { 100 = tactic_technology_trigger.5 }
-        random_events = { 100 = tactic_technology_trigger.6 }
-        random_events = { 100 = tactic_technology_trigger.7 }
-        random_events = { 100 = tactic_technology_trigger.8 }
-        random_events = { 100 = tactic_technology_trigger.9 }
-        random_events = { 100 = tactic_technology_trigger.10 }
-        random_events = { 100 = tactic_technology_trigger.11 }
-        random_events = { 100 = tactic_technology_trigger.12 }
-        random_events = { 100 = tactic_technology_trigger.13 }
-        random_events = { 100 = tactic_technology_trigger.14 }
-        random_events = { 100 = tactic_technology_trigger.15 }
-        random_events = { 100 = tactic_technology_trigger.16 }
+    on_research_complete = {
+        effect = {
+
+            ### MOBILE WARFARE ###
+            if = {
+                limit = {
+                    has_doctrine = armored_spearhead
+                    NOT = { has_tech = TAC_armored_spearhead }
+                }
+                set_technology = { TAC_armored_spearhead = 1 }
+            }
+            if = {
+                limit = {
+                    has_doctrine = mobile_infantry
+                    NOT = { has_tech = TAC_mechanized_offensive_mw }
+                }
+                set_technology = { TAC_mechanized_offensive_mw = 1 }
+            }
+            if = {
+                limit = {
+                    has_doctrine = mobile_defense
+                    NOT = { has_tech = TAC_backhand_blow }
+                }
+                set_technology = { TAC_backhand_blow = 1 }
+            }
+            if = {
+                limit = {
+                    has_completed_subdoctrine = armored_spearhead
+                    NOT = { has_tech = TAC_modern_blitzkrieg }
+                }
+                set_technology = { TAC_modern_blitzkrieg = 1 }
+            }
+
+            ### GRAND BATTLE PLAN ###
+            if = {
+                limit = {
+                    has_doctrine = great_war_infantry
+                    NOT = { has_tech = TAC_grand_battle_plan }
+                }
+                set_technology = { TAC_grand_battle_plan = 1 }
+            }
+            if = {
+                limit = {
+                    has_doctrine = armored_cavalry
+                    NOT = { has_tech = TAC_mechanized_offensive_gbp }
+                }
+                set_technology = { TAC_mechanized_offensive_gbp = 1 }
+            }
+            if = {
+                limit = {
+                    has_doctrine = expeditionary_warfare
+                    NOT = { has_tech = TAC_branch_inter_operation }
+                }
+                set_technology = { TAC_branch_inter_operation = 1 }
+            }
+
+            ### SUPERIOR FIREPOWER ###
+            if = {
+                limit = {
+                    has_doctrine = fire_concentration
+                    NOT = { has_tech = TAC_delay_sp }
+                }
+                set_technology = { TAC_delay_sp = 1 }
+            }
+            if = {
+                limit = {
+                    has_completed_subdoctrine = fire_concentration
+                    NOT = { has_tech = TAC_overwhelming_firepower }
+                }
+                set_technology = { TAC_overwhelming_firepower = 1 }
+            }
+            if = {
+                limit = {
+                    has_doctrine = streamlined_deployment
+                    NOT = { has_tech = TAC_mechanized_offensive_sp }
+                }
+                set_technology = { TAC_mechanized_offensive_sp = 1 }
+            }
+
+            ### MASS ASSAULT ###
+            if = {
+                limit = {
+                    has_doctrine = rapid_domination
+                    NOT = { has_tech = TAC_operational_concentration }
+                }
+                set_technology = { TAC_operational_concentration = 1 }
+            }
+            if = {
+                limit = {
+                    has_doctrine = assault_infantry
+                    NOT = { has_tech = TAC_vast_offensives }
+                }
+                set_technology = { TAC_vast_offensives = 1 }
+            }
+
+            ### SPECIAL FORCES ###
+            if = {
+                limit = {
+                    has_tech = ski_troops
+                    NOT = { has_tech = TAC_cold_weather_specialists }
+                }
+                set_technology = { TAC_cold_weather_specialists = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = marines_jungle_troops
+                    NOT = { has_tech = TAC_jungle_specialists }
+                }
+                set_technology = { TAC_jungle_specialists = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = marines_commandoes_mechanised
+                    NOT = { has_tech = TAC_mechanized_marine_corps }
+                }
+                set_technology = { TAC_mechanized_marine_corps = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = paras_combat_drop
+                    NOT = { has_tech = TAC_combat_insertion }
+                }
+                set_technology = { TAC_combat_insertion = 1 }
+            }
+        }
     }
 }
-
